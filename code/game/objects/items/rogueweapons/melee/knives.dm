@@ -265,7 +265,7 @@
 	name = "sail dagger"
 	force = 17
 	throwforce = 15
-	desc = "An exceptionally protective parrying dagger popular in the Etruscan Isles, this dagger features a plain metal guard in the shape of a ship's sail."
+	desc = "An exceptionally protective parrying dagger popular Greencrest circles, this dagger features a plain metal guard in the shape of a ship's sail."
 	wdefense = 7
 	icon_state = "sail_dagger"
 
@@ -375,7 +375,7 @@
 /obj/item/rogueweapon/huntingknife/idagger/navaja
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut/seax,  /datum/intent/dagger/thrust/pick)
 	name = "navaja"
-	desc = "A folding Etruscan knife valued by merchants, mercenaries and peasants for its convenience. It possesses a long hilt, allowing for a sizeable blade with good reach."
+	desc = "A folding Valorian knife valued by merchants, mercenaries and peasants for its convenience. It possesses a long hilt, allowing for a sizeable blade with good reach."
 	force = 5
 	icon_state = "navaja_c"
 	item_state = "elfdag"

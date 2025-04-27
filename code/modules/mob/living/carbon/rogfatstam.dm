@@ -1,7 +1,7 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
 	maxrogfat = maxrogstam / 10
 
-	if(world.time > last_fatigued + 20) //regen fatigue
+	if(world.time > last_fatigued + 12) //regen fatigue
 		var/added = rogstam / maxrogstam
 		added = round(-10+ (added*-40))
 		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
@@ -17,7 +17,7 @@
 	var/athletics_skill = 0
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
-	maxrogstam = (STAEND + (athletics_skill/2 ) ) * 100
+	maxrogstam = (STAEND + (athletics_skill) ) * 100
 	if(cmode)
 		if(!HAS_TRAIT(src, TRAIT_BREADY))
 			rogstam_add(-2)
@@ -87,7 +87,7 @@
 
 	return nutrition_amount
 
-/mob/living/rogfat_add(added as num, emote_override, force_emote = TRUE) //call update_rogfat here and set last_fatigued, return false when not enough fatigue left
+/mob/living/rogfat_add(added as num, emote_override, force_emote = TRUE, stagger = TRUE) //call update_rogfat here and set last_fatigued, return false when not enough fatigue left
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return TRUE
 	if(HAS_TRAIT(src, TRAIT_FORTITUDE))
@@ -132,7 +132,8 @@
 						C.heart_attack()
 		return FALSE
 	else
-		last_fatigued = world.time
+		if(stagger)
+			last_fatigued = world.time
 		update_health_hud()
 		return TRUE
 

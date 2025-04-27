@@ -82,7 +82,7 @@
 				)
 
 /datum/supply_pack/rogue/weapons/erapier
-	name = "Etruscan Rapier"
+	name = "Valorian Rapier"
 	cost = 80
 	contains = list(
 					/obj/item/rogueweapon/sword/rapier/vaquero,

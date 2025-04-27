@@ -20,13 +20,15 @@
         "mom": "mama", 
         "my": "mon", 
 		"shit": "merde",
-        "thanks": "merci",  
-        "thank you": "merci",   
+        "thanks": "merci",    
         "who's": "vho's",
 		"wine": "vin",
-		"eggcheese": "omelette du fromage",
-		"cheese omelette": "omelette du fromage"
+		"eggcheese": "omelette du fromage"
     },
+	"multiword": {
+		"thank you": "merci",   
+		"cheese omelette": "omelette du fromage"
+	},
     "start": {
 		"ga": "ge",
 		"cheese": "fromage"

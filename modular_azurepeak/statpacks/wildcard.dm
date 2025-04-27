@@ -22,6 +22,6 @@
 
 /datum/statpack/wildcard/virtuous
 	name = "Virtuous"
-	desc = "The breadth of my being is one of many, distinguished talents. \n (Allows access to 'virtues', special traits/quirks that replace the bonus normally given by a statpack.)"
+	desc = "The breadth of my being is one of many, distinguished talents. \n (Allows access to a second 'virtue', special traits/quirks that replace the bonus normally given by a statpack.)"
 	stat_array = list(STAT_CONSTITUTION = 1, STAT_ENDURANCE = 1)
 
