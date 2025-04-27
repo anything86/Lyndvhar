@@ -70,7 +70,7 @@
 	contains = list(/obj/item/clothing/neck/roguetown/talkstone)
 
 /datum/supply_pack/rogue/Mage/serfstone
-	name = "Azurian serfstone"
+	name = "Lyndhardtian serfstone"
 	cost = 80
 	contains = list(/obj/item/scomstone/bad)
 

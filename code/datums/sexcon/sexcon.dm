@@ -118,6 +118,28 @@
 	last_ejaculation_time = world.time
 	SSticker.cums++
 
+/datum/sex_controller/proc/ejaculate_container(obj/item/reagent_containers/glass/C)
+	log_combat(user, user, "Ejaculated into a container")
+	user.visible_message(span_lovebold("[user] spills into [C]!"))
+	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
+	C.reagents.add_reagent(/datum/reagent/erpjuice/cum, 3) // Adjust amount as needed
+	after_ejaculation()
+
+/datum/sex_controller/proc/handle_container_ejaculation()
+	if(arousal < PASSIVE_EJAC_THRESHOLD)
+		return
+	if(is_spent())
+		return
+	if(!can_ejaculate())
+		return
+	ejaculate_container(user.get_active_held_item())
+
+/datum/sex_controller/proc/after_milking()
+	set_arousal(80)
+	user.emote("sexmoanhvy", forced = TRUE)
+	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
+	last_ejaculation_time = world.time
+
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)
 		return
@@ -298,6 +320,8 @@
 	return TRUE
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
+	if(current_action) // Don't passively ejaculate if currently performing a specific sex action
+		return
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
 		return
 	if(is_spent())
@@ -617,3 +641,22 @@
 			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
 			return "<span class='love_extreme'>[string]</span>"
+
+// Everything here is a port over from Ratkeep, we don't actually have the same path under alchemist/reagents.dm so I am putting it here for the time being
+/datum/reagent/erpjuice/cum
+	name = "Erotic Fluid"
+	description = "A thick, sticky, cream like fluid. produced during an orgasm."
+	reagent_state = LIQUID
+	color = "#ebebeb"
+	taste_description = "salty and tangy"
+	metabolization_rate = 0.1
+
+/datum/reagent/erpjuice/cum/on_mob_life(mob/living/carbon/M) 
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!HAS_TRAIT(H, TRAIT_NOHUNGER))
+			H.adjust_hydration(1)
+			H.adjust_nutrition(0.5) 
+		if(H.blood_volume < BLOOD_VOLUME_NORMAL)
+			H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+	..()

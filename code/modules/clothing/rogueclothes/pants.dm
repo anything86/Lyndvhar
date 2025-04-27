@@ -149,8 +149,8 @@
 	max_integrity = 250
 
 /obj/item/clothing/under/roguetown/trou/otavan
-	name = "otavan leather trousers"
-	desc = "Padded leather armor made by Otavan tailors, its quality is remarkable."
+	name = "valorian leather trousers"
+	desc = "Padded leather armor made by Valorian tailors, its quality is remarkable."
 	icon_state = "fencerpants"
 	resistance_flags = FIRE_PROOF
 	armor = list("blunt" = 55, "slash" = 70, "stab" = 55, "fire" = 0, "acid" = 0)

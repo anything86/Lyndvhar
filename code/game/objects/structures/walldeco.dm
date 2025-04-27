@@ -177,6 +177,24 @@
 	icon_state = "mona"
 	pixel_y = 32
 
+/obj/structure/fluff/walldeco/paintingbig_1
+	name = "Zad Painting"
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "paintingbig_1"
+	pixel_y = 32
+
+/obj/structure/fluff/walldeco/paintingbig_2
+	name = "Noc Painting"
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "paintingbig_2"
+	pixel_y = 32
+
+/obj/structure/fluff/walldeco/paintingbig_3
+	name = "Strange Painting"
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "paintingbig_3"
+	pixel_y = 32
+
 /obj/structure/fluff/walldeco/chains
 	name = "hanging chains"
 	alpha = 180
@@ -230,6 +248,16 @@
 
 /obj/structure/fluff/walldeco/rpainting/crown
 	icon_state = "painting_3"
+
+/obj/structure/fluff/walldeco/rpainting/rat
+	icon_state = "painting_4"
+
+
+/obj/structure/fluff/walldeco/rpainting/saiga
+	icon_state = "painting_5"
+
+/obj/structure/fluff/walldeco/rpainting/candle
+	icon_state = "painting_6"
 
 /obj/structure/fluff/walldeco/med
 	name = "diagram"

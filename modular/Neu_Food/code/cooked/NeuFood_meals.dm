@@ -84,7 +84,7 @@
 /* salmon st dendor*/
 /obj/item/reagent_containers/food/snacks/rogue/dendorsalmon
 	name = "saint dendor's salmon"
-	desc = "A dish invented in Otava, of a green sauce of fat and herbs atop salmon."
+	desc = "A dish invented in Valoria, of a green sauce of fat and herbs atop salmon."
 	icon_state = "salmon_st_columbia"
 	tastes = list("warm fish" = 1, "fatty herbaceousness" = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_GOOD)

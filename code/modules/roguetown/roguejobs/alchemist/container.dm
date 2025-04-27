@@ -77,7 +77,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/hagwoodbitter = 48)
-	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Grenzelhoft occupied state of Zorn."
+	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Lyndhardtian province of Calmirixial."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/aurorian = 48)
@@ -89,7 +89,7 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/butterhairs = 48)
-	desc = "A bottle with the Dwarven Federation Trade Alliance cork-seal. This beer, known as butterhairs: is widely considered one of the greatest exported by the Dwarves."
+	desc = "A bottle with the Dwarven Commerce Alliance cork-seal. This beer, known as butterhairs: is widely considered one of the greatest exported by the Dwarves."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/stonebeards = 48)
@@ -110,15 +110,15 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/redwine = 48)
-	desc = "A bottle with the Otavan Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."
+	desc = "A bottle with the Valorian Merchant Guild cork-seal. This one appears to be labelled as a relatively young red-wine from the coinlord state."
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/whitewine = 48)
-	desc = "A bottle with the Otavan Merchant Guild cork-seal. This one appears to be labelled as a sweet wine from the colder northern regions."
+	desc = "A bottle with the Valorian Merchant Guild cork-seal. This one appears to be labelled as a sweet wine from the colder northern regions."
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/elfred = 48)
-	desc = "A bottle gilded with a silver cork-seal. It appears to be labelled as an elvish red wine from Otava. Likely worth more than what an entire village makes!"
+	desc = "A bottle gilded with a silver cork-seal. It appears to be labelled as an elvish red wine from the Republica. Likely worth more than what an entire village makes!"
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/elfblue = 48)
@@ -135,23 +135,23 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/rtoper
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/rtoper = 48)
-	desc = "A bottle with the Rockhill-crest cork-seal. An especially tart cider from the kingdom of Rockhill. Myths say the brewers let the barrels age in the bog, which results in that especially stong flavour."
+	desc = "A bottle with the Dunargun-crest cork-seal. An especially tart cider from the Dunargun Province. Myths say the brewers let the barrels age in the bog, which results in that especially stong flavour."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/nred = 48)
-	desc = "A bottle with the City of Norwandine cork-seal. A red ale brewed to perfection in the lands of Hammerhold."
+	desc = "A bottle with the City of Norwandine cork-seal. A red ale brewed to perfection in the lands of Rhaenval."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/gronnmead = 48)
-	desc = "A bottle with a Shieldmaiden Berewrey cork-seal. A deep red honey-wine, refined with the red berries native to Gronns highlands."
+	desc = "A bottle with a Shieldmaiden Berewrey cork-seal. A deep red honey-wine, refined with the red berries native to far northern Rhaenvalian highlands."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/avarmead = 48)
-	desc = "A bottle with a simple cork-seal. A golden honey-wine brewed in the Avar Steppes. Manages to keep a proper taste while staying strong."
+	desc = "A bottle with a simple cork-seal. A golden honey-wine brewed in the Greencrest plains. Manages to keep a proper taste while staying strong."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/avarrice = 48)
-	desc = "A bottle with a simple cork-seal. A murky, white wine made from rice grown in the steppes of Avar."
+	desc = "A bottle with a simple cork-seal. A murky, white wine made from rice grown in the plantations of Greencrest."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/saigamilk = 48)
@@ -159,12 +159,12 @@
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/kgunlager = 48)
-	desc = "A bottle with a Yamaguchi Brewery cork-seal. A pale lager brewed in the far-away lands of Kazengun, refined with green tea for an unique flavour-profile. Even lighter than elven-brew!"
+	desc = "A bottle with a Yamaguchi Brewery cork-seal. A pale lager brewed in the far-away lands of Saltlia, refined with green tea for an unique flavour-profile. Even lighter than elven-brew!"
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/kgunsake = 48)
-	desc = "A bottle with a Golden Swan cork-seal. A translucient, pale-blue liquid made from rice. A favourite drink of the warlords and nobles of Kazengun."
+	desc = "A bottle with a Golden Swan cork-seal. A translucient, pale-blue liquid made from rice. A favourite drink of the warlords and nobles of Saltlia."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/kgunplum = 48)
-	desc = "A bottle with a Golden Swan cork-seal. A reddish-golden alcohol made from a fruit commonly found on the Kazengun-isles. A favourite of the commoners."
+	desc = "A bottle with a Golden Swan cork-seal. A reddish-golden alcohol made from a fruit commonly found on the Saltlian provincials. A favourite of the commoners."
