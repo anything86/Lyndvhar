@@ -845,6 +845,16 @@
 	tools = list(/obj/item/needle)
 	craftdiff = 5
 	sellprice = 22
+
+/datum/crafting_recipe/roguetown/furcloak
+	name = "fur cloak"
+	result = list(/obj/item/clothing/cloak/raincloak/furcloak)
+	reqs = list(/obj/item/natural/fibers = 3,
+				/obj/item/natural/fur = 5,
+				/obj/item/natural/cloth = 3)
+	tools = list(/obj/item/needle)
+	craftdiff = 4
+	sellprice = 20		
 	
 /datum/crafting_recipe/roguetown/sewing/sleevelessovercoat
 	name = "sleeveless overcoat"
