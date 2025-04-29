@@ -1001,6 +1001,8 @@
 	else if(mobility_flags & MOBILITY_MOVE)
 		if(on_fire)
 			resist_fire() //stop, drop, and roll
+		else if(has_status_effect(/datum/status_effect/leash_pet))
+			resist_leash()
 		else if(last_special <= world.time)
 			resist_restraints() //trying to remove cuffs.
 
@@ -1124,6 +1126,9 @@
 	return TRUE
 
 /mob/living/proc/resist_fire()
+	return
+
+/mob/living/proc/resist_leash()
 	return
 
 /mob/living/proc/resist_restraints()

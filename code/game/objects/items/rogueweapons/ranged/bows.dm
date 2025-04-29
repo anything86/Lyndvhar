@@ -39,7 +39,7 @@
 
 /datum/intent/arc/bow
 	chargetime = 1
-	chargedrain = 2
+	chargedrain = 1.25
 	charging_slowdown = 3
 
 /datum/intent/arc/bow/can_charge()

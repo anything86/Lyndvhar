@@ -45,14 +45,13 @@ GLOBAL_VAR_INIT(herald_spawned, FALSE)
 	H.verbs += /mob/living/carbon/human/proc/heraldannouncement
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 
-	head = /obj/item/clothing/head/roguetown/bardhat
-	shoes = /obj/item/clothing/shoes/roguetown/boots
-	pants = /obj/item/clothing/under/roguetown/tights/random
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
+	head = /obj/item/clothing/head/roguetown/articap
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
+	pants = /obj/item/clothing/under/roguetown/trou
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
-	cloak = /obj/item/clothing/cloak/raincloak/blue
+	cloak = /obj/item/clothing/cloak/raincloak/brown
 	r_hand = /obj/item/scomstone
 	if(prob(50))
 		cloak = /obj/item/clothing/cloak/raincloak/red

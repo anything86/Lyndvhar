@@ -15,9 +15,16 @@
 			message = copytext(message, 2)
 
 		if(message_mode == MODE_ADMIN)
-			client.cmd_admin_say(message)
+			if(client)
+				message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
+				client.cmd_admin_say(message)
+			return
+
 		else if(message_mode == MODE_DEADMIN)
-			client.dsay(message)
+			if(client)
+				message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
+				client.dsay(message)
+			return
 		return
 
 	if(check_emote(message, forced))

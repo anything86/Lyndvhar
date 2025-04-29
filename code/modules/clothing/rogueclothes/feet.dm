@@ -23,6 +23,10 @@
 	sewrepair = TRUE
 	armor = list("blunt" = 30, "slash" = 20, "stab" = 20, "piercing" = 20, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/shoes/roguetown/boots/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete/roguetown/boots)
+
 /obj/item/clothing/shoes/roguetown/boots/psydonboots
 	name = "psydonian boots"
 	desc = "Blacksteel-heeled boots. The leather refuses to be worn down, no matter how far you march through these lands."
@@ -210,6 +214,7 @@
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
+	do_sound_bell = FALSE
 	icon_state = "jestershoes"
 	resistance_flags = null
 	sewrepair = TRUE
@@ -262,6 +267,16 @@
 	is_barefoot = TRUE
 	sewrepair = TRUE
 	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
+
+/obj/item/clothing/shoes/roguetown/anklets
+	name = "golden anklets"
+	desc = "Luxurious anklets made of the finest gold. They leave the feet bare while adding an exotic flair."
+	gender = PLURAL
+	icon_state = "anklets"
+	item_state = "anklets"
+	is_barefoot = TRUE
+	sewrepair = TRUE
+	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "piercing" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/otavan/inqboots
 	name = "inquisitorial boots"

@@ -39,6 +39,11 @@
 	smells_like = "living beings"
 	output_reagents = list(/datum/reagent/medicine/gender_potion = 9)
 
+/datum/alch_cauldron_recipe/aphrodisiac
+	recipe_name = "Aphrodisiac Wine"
+	smells_like = "ardent sweetness"
+	output_reagents = list(/datum/reagent/consumable/ethanol/beer/emberwine = 24)
+
 //Healing potions
 /datum/alch_cauldron_recipe/health_potion
 	recipe_name = "Elixir of Health"

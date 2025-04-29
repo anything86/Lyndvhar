@@ -187,6 +187,13 @@
                 /obj/item/natural/fibers = 1)
     craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/clothblindfold
+	name = "cloth blindfold"
+	result = list(/obj/item/clothing/mask/rogue/blindfold)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+
 /* craftdif of 2+ */
 
 /datum/crafting_recipe/roguetown/sewing/wrappings
@@ -486,6 +493,12 @@
 	reqs = list(/obj/item/natural/cloth = 1)
 	craftdiff = 0
 	sellprice = 3
+
+/datum/crafting_recipe/roguetown/sewing/leash
+	name = "rope leash (rope) - (1 rope; NONE)"
+	result = list(/obj/item/leash = 1)
+	reqs = list(/obj/item/rope = 1)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/cape
 	name = "cape"
@@ -938,3 +951,31 @@
 	tools = list(/obj/item/needle)
 	craftdiff = 5
 	sellprice = 40
+
+/datum/crafting_recipe/roguetown/sewing/exoticsilkbra
+	name = "exotic silk bra"
+	result = list (/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra)
+	reqs = list(/obj/item/natural/silk = 3,
+				/obj/item/clothing/ring/gold = 1)
+	craftdiff = 6
+
+/datum/crafting_recipe/roguetown/sewing/anklets
+	name = "exotic silk anklets"
+	result = list (/obj/item/clothing/shoes/roguetown/anklets)
+	reqs = list(/obj/item/natural/silk = 3,
+				/obj/item/clothing/ring/gold = 1)
+	craftdiff = 6
+
+/datum/crafting_recipe/roguetown/sewing/exoticsilkbelt
+	name = "exotic silk belt"
+	result = list (/obj/item/storage/belt/rogue/leather/exoticsilkbelt)
+	reqs = list(/obj/item/natural/silk = 3,
+				/obj/item/clothing/ring/gold = 1)
+	craftdiff = 6
+
+/datum/crafting_recipe/roguetown/sewing/exoticsilkmask
+	name = "exotic silk mask"
+	result = list (/obj/item/clothing/mask/rogue/exoticsilkmask)
+	reqs = list(/obj/item/natural/silk = 3,
+				/obj/item/clothing/ring/gold = 1)
+	craftdiff = 6

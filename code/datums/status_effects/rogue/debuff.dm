@@ -223,6 +223,17 @@
 	name = "Devitalised"
 	desc = "Something has been taken from me, and it will take time to recover."
 
+/datum/status_effect/debuff/emberwine
+	id = "emberwine"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/emberwine
+	effectedstats = list("strenght" = -1, "endurance" = -2, "speed" = -2, "intelligence" = -3)
+	duration = 1 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/emberwine
+	name = "Emberwine"
+	desc = "I feel a strange heat coursing through my body..."
+	icon_state = "fire"
+
 /datum/status_effect/debuff/vamp_dreams
 	id = "sleepytime"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/vamp_dreams

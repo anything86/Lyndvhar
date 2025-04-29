@@ -1465,7 +1465,7 @@
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/roguetown/articap
-	desc = "A sporting cap with a small gear adornment. Popular fashion amongst engineers."
+	desc = "A sporting cap, popular amongst the common people of Lyndvhar."
 	icon_state = "articap"
 
 /obj/item/clothing/head/roguetown/brimmed
@@ -1528,8 +1528,8 @@
 	icon_state = "archercap"
 
 /obj/item/clothing/head/roguetown/physician
-	name = "doctor's hat"
-	desc = "My cure is most effective."
+	name = "short brimmed hat"
+	desc = "a hat with a short brim"
 	icon_state = "physhat"
 
 /obj/item/clothing/head/roguetown/grenzelhofthat
@@ -1708,7 +1708,7 @@
 
 /obj/item/clothing/head/roguetown/bucklehat //lifeweb sprite
 	name = "folded hat"
-	desc = "A plain leather hat with decorative buckle. Made popular by the citizens of Grenzelhoft."
+	desc = "A plain leather hat with decorative buckle. Made popular by the ne'er-do-wells of Valoria."
 	icon_state = "bucklehat"
 	sewrepair = TRUE
 	salvage_result = /obj/item/natural/hide/cured

@@ -332,3 +332,10 @@
 		var/obj/item/rogueweapon/huntingknife/throwingknife/psydon/A = new()
 		arrows += A
 	update_icon()
+
+/obj/item/storage/belt/rogue/leather/exoticsilkbelt
+	name = "exotic silk belt"
+	desc = "A gold adorned belt with the softest of silks barely concealing one's bits."
+	icon_state = "exoticsilkbelt"
+	var/max_storage = 5
+	sewrepair = TRUE

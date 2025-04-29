@@ -49,11 +49,11 @@
 	if(mastermob && chargetime)
 		var/newtime = chargetime
 		//skill block
-		newtime = newtime + 80
-		newtime = newtime - (mastermob.mind?.get_skill_level(/datum/skill/combat/crossbows) * 20)
-		//per block
 		newtime = newtime + 20
-		newtime = newtime - ((mastermob.STAPER)*1.5)
+		newtime = newtime - (mastermob.mind?.get_skill_level(/datum/skill/combat/crossbows) * 10)
+		//per block
+		newtime = newtime + 15
+		newtime = newtime - ((mastermob.STAPER)*1.2)
 		if(newtime > 0)
 			return newtime
 		else
@@ -77,11 +77,11 @@
 	if(mastermob && chargetime)
 		var/newtime = chargetime
 		//skill block
-		newtime = newtime + 80
-		newtime = newtime - (mastermob.mind?.get_skill_level(/datum/skill/combat/crossbows) * 20)
-		//per block
 		newtime = newtime + 20
-		newtime = newtime - ((mastermob.STAPER)*1.5)
+		newtime = newtime - (mastermob.mind?.get_skill_level(/datum/skill/combat/crossbows) * 15)
+		//per block
+		newtime = newtime + 15
+		newtime = newtime - ((mastermob.STAPER)*1.2)
 		if(newtime > 0)
 			return newtime
 		else
@@ -101,7 +101,7 @@
 	else
 		if(!cocked)
 			to_chat(user, span_info("I step on the stirrup and use all my might..."))
-			if(do_after(user, 50 - user.STASTR, target = user))
+			if(do_after(user, 128 - user.STASTR, target = user))
 				playsound(user, 'sound/combat/Ranged/crossbow_medium_reload-01.ogg', 100, FALSE)
 				cocked = TRUE
 		else

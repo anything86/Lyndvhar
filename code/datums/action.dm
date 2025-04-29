@@ -347,7 +347,11 @@
 		return S.can_cast(owner)
 	return FALSE
 
-
+/datum/action/spell_action/proc/examine(mob/user)
+	var/list/inspec = list("<br><span class='notice'><b>[name]</b> intent</span>")
+	if(desc)
+		inspec += "\n[desc]"
+	to_chat(user, "[inspec.Join()]")
 
 //Preset for general and toggled actions
 /datum/action/innate

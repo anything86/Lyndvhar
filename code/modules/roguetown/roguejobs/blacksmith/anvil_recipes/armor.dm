@@ -28,6 +28,11 @@
 	createditem_num = 1
 	craftdiff = 0
 
+/datum/anvil_recipe/armor/iron/gorget
+	name = "Ringed Gorget"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/neck/roguetown/gorget/oring
+
 /datum/anvil_recipe/armor/iron/breastplate
 	name = "Breastplate (+1 Iron)"
 	req_bar = /obj/item/ingot/iron
@@ -274,6 +279,11 @@
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/neck/roguetown/gorget/steel
 	craftdiff = 2
+
+/datum/anvil_recipe/armor/steel/sgorget/oring
+	name = "Ringed Steel Gorget"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/neck/roguetown/gorget/steel/oring
 
 /datum/anvil_recipe/armor/steel/helmetsall
 	name = "Sallet"

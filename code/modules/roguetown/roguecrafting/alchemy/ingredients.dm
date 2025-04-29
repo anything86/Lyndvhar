@@ -129,7 +129,7 @@
 	name = "sinew"
 	icon_state = "sinew"
 	dropshrink = 0.9
-	major_pot = /datum/alch_cauldron_recipe/stam_poison
+	major_pot = /datum/alch_cauldron_recipe/aphrodisiac
 	med_pot = /datum/alch_cauldron_recipe/end_potion
 	minor_pot = /datum/alch_cauldron_recipe/health_potion
 
@@ -268,7 +268,7 @@
 	name = "euphrasia"
 	icon_state = "euphrasia"
 
-	major_pot = /datum/alch_cauldron_recipe/spd_potion
+	major_pot = /datum/alch_cauldron_recipe/aphrodisiac
 	med_pot = /datum/alch_cauldron_recipe/stam_poison
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
 
@@ -347,7 +347,7 @@
 
 	major_pot = /datum/alch_cauldron_recipe/lck_potion
 	med_pot = /datum/alch_cauldron_recipe/spd_potion
-	minor_pot = /datum/alch_cauldron_recipe/health_potion
+	minor_pot = /datum/alch_cauldron_recipe/aphrodisiac
 
 /obj/item/alch/rosa
 	name = "rosa"
@@ -363,7 +363,7 @@
 	alternate_worn_layer  = 8.9 //On top of helmet
 
 	major_pot = /datum/alch_cauldron_recipe/rosewater_potion
-	med_pot = /datum/alch_cauldron_recipe/rosewater_potion
+	med_pot = /datum/alch_cauldron_recipe/aphrodisiac
 	minor_pot = /datum/alch_cauldron_recipe/rosewater_potion
 
 /obj/item/alch/rosa/equipped(mob/living/carbon/human/user, slot)

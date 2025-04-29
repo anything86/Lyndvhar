@@ -83,6 +83,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/facial_hair_color = "000"		//Facial hair color
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
+	var/extra_language = "None" // Extra language
 	var/voice_color = "a0a0a0"
 	var/voice_pitch = 1
 	var/detail_color = "000"
@@ -422,7 +423,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
 
-			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
+			dat += "<b>Extra Language: </b><a href='?_src_=prefs;preference=extra_language;task=input'>Change</a>"
+			dat += "<br><b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 			dat += "<br><b>Nickname Color: </b> </b><a href='?_src_=prefs;preference=highlight_color;task=input'>Change</a>"
 			dat += "<br><b>Voice Pitch: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
 			dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
@@ -1533,6 +1535,30 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							return
 						voice_color = sanitize_hexcolor(new_voice)
 
+				if("extra_language")
+					var/static/list/selectable_languages = list(
+						/datum/language/elvish,
+						/datum/language/dwarvish,
+						/datum/language/celestial,
+						/datum/language/hellspeak,
+						/datum/language/orcish,
+						/datum/language/draconic,
+						/datum/language/canilunzt,
+						/datum/language/grenzelhoftian
+					)
+					var/list/choices = list("None")
+					for(var/language in selectable_languages)
+						if(language in pref_species.languages)
+							continue
+						var/datum/language/a_language = new language()
+						choices[a_language.name] = language
+
+					var/chosen_language = input(user, "Choose your character's extra language:", "Character Preference") as null|anything in choices
+					if(chosen_language)
+						if(chosen_language == "None")
+							return
+						extra_language = choices[chosen_language]
+
 				if("voice_pitch")
 					var/new_voice_pitch = input(user, "Choose your character's voice pitch ([MIN_VOICE_PITCH] to [MAX_VOICE_PITCH], lower is deeper):", "Voice Pitch") as null|num
 					if(new_voice_pitch)
@@ -2304,6 +2330,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	character.nickname = nickname
 
 	character.eye_color = eye_color
+	if(extra_language)
+		character.grant_language(extra_language)
 	character.voice_color = voice_color
 	character.voice_pitch = voice_pitch
 	var/obj/item/organ/eyes/organ_eyes = character.getorgan(/obj/item/organ/eyes)

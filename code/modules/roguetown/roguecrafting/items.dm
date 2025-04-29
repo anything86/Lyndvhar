@@ -44,6 +44,22 @@
 	verbage_simple = "tie"
 	verbage = "ties"
 
+/datum/crafting_recipe/roguetown/bellcollar
+	name = "leather collar with catbell"
+	result = /obj/item/clothing/neck/roguetown/collar/leather/bell
+	reqs = list(/obj/item/clothing/neck/roguetown/collar/leather = 1, /obj/item/catbell = 1)
+	craftdiff = 0
+	verbage_simple = "affix"
+	verbage = "affixes"
+
+/datum/crafting_recipe/roguetown/bellcollar/cow
+	name = "leather collar with cowbell"
+	result = /obj/item/clothing/neck/roguetown/collar/leather/bell/cow
+	reqs = list(/obj/item/clothing/neck/roguetown/collar/leather = 1, /obj/item/catbell/cow = 1)
+	craftdiff = 0
+	verbage_simple = "affix"
+	verbage = "affixes"
+
 /datum/crafting_recipe/roguetown/unclothbelt
 	name = "untie cloth belt"
 	result = /obj/item/natural/cloth
@@ -750,6 +766,35 @@
 	craftdiff = 4
 
 
+// Blacksmithing Recipes
+
+/datum/crafting_recipe/roguetown/gorget/oring
+	name = "ringed gorget"
+	skillcraft = /datum/skill/craft/blacksmithing
+	reqs = list(/obj/item/clothing/neck/roguetown/gorget = 1)
+	result = /obj/item/clothing/neck/roguetown/gorget/oring
+	craftdiff = 2
+	tools = list(/obj/item/rogueweapon/hammer = 1)
+	req_table = TRUE
+
+/datum/crafting_recipe/roguetown/gorget/soring
+	name = "ringed steel gorget"
+	skillcraft = /datum/skill/craft/blacksmithing
+	reqs = list(/obj/item/clothing/neck/roguetown/gorget/steel = 1)
+	result = /obj/item/clothing/neck/roguetown/gorget/steel/oring
+	craftdiff = 2
+	tools = list(/obj/item/rogueweapon/hammer = 1)
+	req_table = TRUE
+
+/datum/crafting_recipe/roguetown/chainleash
+	name = "chain leash"
+	skillcraft = /datum/skill/craft/blacksmithing
+	reqs = list(/obj/item/rope/chain = 1)
+	result = /obj/item/leash/chain
+	craftdiff = 2
+	tools = list(/obj/item/rogueweapon/hammer = 1)
+	req_table = TRUE
+
 /datum/crafting_recipe/roguetown/heatershield
 	name = "heater shield"
 	result = /obj/item/rogueweapon/shield/heater/crafted
@@ -845,6 +890,14 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/tallow = 1,
 				/obj/item/alch/rosa = 1,
 				/datum/reagent/water/blessed = 25)
+
+/datum/crafting_recipe/hair_dye
+    name = "Hair Dye Cream"
+    result = /obj/item/hair_dye_cream
+    reqs = list(
+        /obj/item/reagent_containers/glass/bowl = 1,
+        /obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3
+    )
 
 /datum/crafting_recipe/roguetown/slingcraft
 	name = "sling"

@@ -7,27 +7,27 @@
 
 /datum/supply_pack/rogue/drugs/ozium
 	name = "Ozium"
-	cost = 5
+	cost = 15
 	contains = list(/obj/item/reagent_containers/powder/ozium)
 
 /datum/supply_pack/rogue/drugs/purifiedozium
 	name = "Purified Ozium"
-	cost = 20
+	cost = 30
 	contains = list(/obj/item/reagent_containers/powder/purified_ozium)
 
 /datum/supply_pack/rogue/drugs/moondust
-	name = "Moon Dust"
-	cost = 10
+	name = "Moondust"
+	cost = 30
 	contains = list(/obj/item/reagent_containers/powder/moondust)
 
 /datum/supply_pack/rogue/drugs/pdust
 	name = "Purified Moondust"
-	cost = 30
+	cost = 80
 	contains = list(/obj/item/reagent_containers/powder/moondust_purest)
 
 /datum/supply_pack/rogue/drugs/spice
 	name = "Spice"
-	cost = 20
+	cost = 40
 	contains = list(/obj/item/reagent_containers/powder/spice)
 
 /datum/supply_pack/rogue/drugs/swampzig
@@ -41,6 +41,11 @@
 	contains = list(/obj/item/clothing/mask/cigarette/rollie/nicotine)
 
 /datum/supply_pack/rogue/drugs/starsugar
-	name = "Starsugar"
-	cost = 40
+	name = "Premium Starsugar"
+	cost = 150
 	contains = list(/obj/item/reagent_containers/powder/starsugar)
+
+/datum/supply_pack/rogue/drugs/emberwine
+	name = "Baothian Emberwine"
+	cost = 160
+	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/emberwine)

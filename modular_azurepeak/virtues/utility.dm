@@ -57,10 +57,11 @@
 	var/static/list/selectable_languages = list(
 		/datum/language/elvish,
 		/datum/language/dwarvish,
-		/datum/language/orcish, 
-		/datum/language/hellspeak,
-		/datum/language/draconic,
 		/datum/language/celestial,
+		/datum/language/hellspeak,
+		/datum/language/orcish,
+		/datum/language/draconic,
+		/datum/language/canilunzt,
 		/datum/language/grenzelhoftian
 	)
 		

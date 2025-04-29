@@ -45,6 +45,8 @@
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
 			pants = /obj/item/clothing/under/roguetown/chainlegs
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			belt = /obj/item/storage/belt/rogue/leather/shalal
 			H.grant_language(/datum/language/celestial)
 
 		if("Blade Dancer")
@@ -72,6 +74,8 @@
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
+			shoes = /obj/item/clothing/shoes/roguetown/boots
+			belt = /obj/item/storage/belt/rogue/leather/shalal
 			H.grant_language(/datum/language/celestial)
 			var/weapons = list("Shamshir","Whips and Knives",)
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons

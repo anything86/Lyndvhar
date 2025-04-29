@@ -367,7 +367,9 @@
 						if(30 to 40)
 							need_mob_update += R.addiction_act_stage4(C)
 						if(40 to INFINITY)
-							remove_addiction(R)
+							if(!R.addiction_permanent)
+								remove_addiction(R)
+							else R.addiction_stage = 30
 						else
 							SEND_SIGNAL(C, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 		addiction_tick++

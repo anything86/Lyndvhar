@@ -252,3 +252,54 @@
 	icon_state = "naledimask"
 	desc = "Runes and wards, meant for the Maktaba; the gold has somehow rusted in unnatural, impossible agony. The most prominent of these etchings is in the shape of the Khaliphate insignia."
 	sellprice = 0
+
+
+/obj/item/clothing/mask/rogue/exoticsilkmask
+	name = "exotic silk mask"
+	icon_state = "exoticsilkmask"
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE
+	adjustable = CAN_CADJUST
+	toggle_icon_state = FALSE
+
+/obj/item/clothing/mask/rogue/exoticsilkmask/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			flags_inv = null
+			body_parts_covered = NECK
+			to_chat(user, span_notice("You pull down the [src] to expose your face."))
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_wear_mask()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEFACE|HIDEFACIALHAIR
+			body_parts_covered = NECK|MOUTH
+			to_chat(user, span_notice("You pull the [src] back up to cover your face."))
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_wear_mask()
+
+/obj/item/clothing/mask/rogue/blindfold
+	name = "blindfold"
+	desc = "A strip of cloth tied around the eyes to block vision."
+	icon_state = "blindfold"
+	item_state = "blindfold"
+	body_parts_covered = EYES
+	sewrepair = TRUE
+	tint = 3
+	mob_overlay_icon = 'icons/mob/clothing/eyes.dmi'
+	icon = 'icons/obj/clothing/glasses.dmi'
+
+/obj/item/clothing/mask/rogue/blindfold/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_MASK)
+		user.become_blind("blindfold_[REF(src)]")
+
+/obj/item/clothing/mask/rogue/blindfold/dropped(mob/living/carbon/human/user)
+	..()
+	user.cure_blind("blindfold_[REF(src)]")

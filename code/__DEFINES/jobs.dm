@@ -143,6 +143,7 @@
 #define MERCHANT	(1<<8)
 #define SCRIBE		(1<<9)
 #define ELDER		(1<<10)
+
 #define PEASANTS	(1<<5)
 
 #define HUNTER		(1<<0)
@@ -152,7 +153,7 @@
 #define LUMBERJACK	(1<<4)
 #define MINER		(1<<5)
 #define COOK		(1<<6)
-#define KNAVEWENCH (1<<7)
+#define KNAVEWENCH	(1<<7)
 #define GRABBER		(1<<8)
 #define NITEMASTER	(1<<9)
 #define WENCH		(1<<10)
@@ -166,6 +167,7 @@
 #define MIGRANT		(1<<18)
 #define BANDIT		(1<<19)
 #define COURTAGENT	(1<<20)
+#define WRETCH		(1<<21)
 
 #define YOUNGFOLK	(1<<6)
 
@@ -284,6 +286,7 @@
 #define JDO_MIGRANT 32.3
 #define JDO_BANDIT 31.3
 #define JDO_COURTAGENT 30.3
+#define JDO_WRETCH 30.4
 
 #define JDO_MERCENARY 31
 #define JDO_GRENZELHOFT 31.1

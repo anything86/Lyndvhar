@@ -100,8 +100,8 @@
 	l_sleeve_status = SLEEVE_NORMAL
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
-	name = "tinker suit"
-	desc = "Typical fashion of the best engineers."
+	name = "shirt and vest"
+	desc = "Typical apparel of the Lyndvhar"
 	icon_state = "artishirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/lowcut
@@ -136,8 +136,8 @@
 	boobed = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
-	name = "tinker suit"
-	desc = "Typical fashion of the best engineers."
+	name = "collared shirt and vest"
+	desc = "Common attire amongst the rising members of the peasantry, of course such prospects are absurd."
 	icon_state = "artishirt"
 
 //Royal clothing:
@@ -185,7 +185,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/princess
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "pristine dress"
-	desc = "A flowy, intricate dress made by the finest tailors in the land for the monarch's children."
+	desc = "A flowy, intricate dress made by the finest Lyndhardian tailors for the young and spoiled aristocracy."
 	icon_state = "princess"
 	boobed = TRUE
 	detail_color = CLOTHING_BLUE
@@ -194,7 +194,7 @@
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/prince
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	name = "gilded dress shirt"
-	desc = "A gold-embroidered dress shirt specially tailored for the monarch's children."
+	desc = "A gold-embroidered dress shirt specially tailored for the young and spoiled aristocracy."
 	icon_state = "prince"
 	boobed = TRUE
 	detail_color = CLOTHING_MAJENTA
@@ -419,6 +419,7 @@
 	desc = ""
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "jestershirt"
+	do_sound_bell = FALSE
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
@@ -497,6 +498,17 @@
 	desc = "A billowing tunic made of the finest silks and softest fabrics. Inlaid with golden thread, this is the height of fashion for the wealthiest of wearers."
 	icon_state = "stewardtunic"
 	item_state = "stewardtunic"
+
+/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
+	name = "exotic silk bra"
+	desc = "An exquisite bra crafted from the finest silk and adorned with gold rings. It leaves little to the imagination."
+	icon_state = "exoticsilkbra"
+	item_state = "exoticsilkbra"
+	body_parts_covered = CHEST
+	boobed = TRUE
+	sewrepair = TRUE
+	flags_inv = null
+	slot_flags = ITEM_SLOT_SHIRT
 
 //WEDDING CLOTHES
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/weddingdress

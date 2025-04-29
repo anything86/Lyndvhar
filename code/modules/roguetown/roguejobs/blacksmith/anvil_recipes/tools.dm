@@ -23,6 +23,13 @@
 	created_item = /obj/item/cooking/pan
 	craftdiff = 0
 
+/datum/anvil_recipe/general/catbell
+	name = "Catbell x3"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/catbell,
+						/obj/item/catbell,
+						/obj/item/catbell)
+
 /datum/anvil_recipe/tools/iron/keyring
 	name = "Keyrings x3"
 	req_bar = /obj/item/ingot/iron
@@ -121,6 +128,11 @@
 	created_item = /obj/item/rogueweapon/thresher
 	i_type = "Tools"
 
+/datum/anvil_recipe/general/chainleash
+	name = "Chain Leash"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/leash/chain
+
 /datum/anvil_recipe/tools/iron/pot
 	name = "Pot"
 	req_bar = /obj/item/ingot/iron
@@ -204,4 +216,15 @@
 	createditem_num = 3
 	craftdiff = 2
 
-// --------- BRONZE RECIPES -----------
+
+/datum/anvil_recipe/general/cupsgold
+	name = "Cowbell"
+	req_bar = /obj/item/ingot/copper
+	created_item = list(/obj/item/catbell/cow)
+
+/datum/anvil_recipe/general/cowbell
+	name = "Cowbell x3"
+	req_bar = /obj/item/ingot/copper
+	created_item = list(/obj/item/catbell/cow,
+						/obj/item/catbell/cow,
+						/obj/item/catbell/cow)

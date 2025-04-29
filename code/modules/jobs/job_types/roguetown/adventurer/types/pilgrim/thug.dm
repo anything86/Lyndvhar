@@ -22,14 +22,15 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE) 
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	head = /obj/item/clothing/head/roguetown/articap
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	pants = /obj/item/clothing/under/roguetown/trou
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 	backr = /obj/item/storage/backpack/rogue/satchel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/tanned
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	beltl = /obj/item/flashlight/flare/torch
 	H.change_stat("strength", 2)

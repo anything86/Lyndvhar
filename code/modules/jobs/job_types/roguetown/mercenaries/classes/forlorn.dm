@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/forlorn
-	name = "Forvheipal Jannisary"
-	tutorial = "A Jannisary from the strange and enigmatic kingdom in Yoheon, Forvheipal. The Jannisary are an elite sellsword contingent of the Zapyrixian Order- mostly made up of Lupians and Vulpkians. They will do any work for the highest bidder- and thus you will, too."
+	name = "Forvheipal Janissary"
+	tutorial = "A Janissary from the strange and enigmatic kingdom in Yoheon, Forvheipal. The Janissary are an elite sellsword contingent of the Zapyrixian Order- mostly made up of Lupians and Vulpkians. They will do any work for the highest bidder- and thus you will, too."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/mercenary/forlorn

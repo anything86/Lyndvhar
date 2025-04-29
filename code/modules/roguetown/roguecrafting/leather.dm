@@ -131,6 +131,16 @@
 	reqs = list(/obj/item/natural/hide/cured = 1,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
+	
+/datum/crafting_recipe/roguetown/hunting/lcollar
+	name = "leather collar"
+	result = list(/obj/item/clothing/neck/roguetown/collar/leather)
+	reqs = list(/obj/item/natural/hide/cured = 1)
+
+/datum/crafting_recipe/roguetown/hunting/lleash
+	name = "leather leash"
+	result = list(/obj/item/leash/leather)
+	reqs = list(/obj/item/natural/hide/cured = 1)
 
 /datum/crafting_recipe/roguetown/leather/bracers
 	name = "leather bracers"

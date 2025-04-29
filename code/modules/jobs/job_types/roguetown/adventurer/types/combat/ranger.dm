@@ -60,7 +60,7 @@
 					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 					beltl = /obj/item/quiver/arrows
 				if("Crossbow")
-					H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+					H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
 					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 					beltl = /obj/item/quiver/bolts
 			H.change_stat("perception", 2)
