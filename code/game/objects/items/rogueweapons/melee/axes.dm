@@ -312,3 +312,7 @@
 	wdefense = 5
 	wbalance = 1
 	max_blade_int = 450
+	
+/obj/item/rogueweapon/stoneaxe/silver/psyaxe/ComponentInitialize()
+	. = ..()				//Pre-blessed, +5 force, +100 blade int, +100 int, +2 def, make silver.
+	AddComponent(/datum/component/psyblessed, TRUE, 5, 100, 100, 2, TRUE)

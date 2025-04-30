@@ -407,6 +407,17 @@
 	to_chat(owner, span_warning("The weight of the world rests upon my shoulders once more."))
 	REMOVE_TRAIT(owner, TRAIT_FORTITUDE, MAGIC_TRAIT)
 
+/atom/movable/screen/alert/status_effect/buff/censerbuff
+	name = "Orthodoxist Blessing."
+	desc = "A shard of his blessings has inspired me to ENDURE!"
+	icon_state = "censerbuff"
+
+/datum/status_effect/buff/censerbuff
+	id = "censer"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/censerbuff
+	duration = 15 MINUTES
+	effectedstats = list("endurance" = 1, "constitution" = 1)
+
 #define GUIDANCE_FILTER "guidance_glow"
 /atom/movable/screen/alert/status_effect/buff/guidance
 	name = "Guidance"

@@ -122,6 +122,6 @@
 	movement_interrupt = TRUE
 
 /obj/effect/proc_holder/spell/aimed/fireball/fire_projectile(list/targets, mob/living/user)
-	var/range = 6 + 2*spell_level
+	var/range = 6
 	projectile_var_overrides = list("range" = range)
 	return ..()

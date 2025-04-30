@@ -450,6 +450,10 @@
 	name = "Nitori"
 	icon_state = "nitori"
 
+/datum/sprite_accessory/hair/head/newyou
+	name = "New You"
+	icon_state = "newyou"
+
 /datum/sprite_accessory/hair/head/odango
 	name = "Odango"
 	icon_state = "odango"
@@ -616,6 +620,10 @@
 
 /datum/sprite_accessory/hair/head/shorthair3
 	name = "Short Hair 3"
+	icon_state = "shorthair3"
+
+/datum/sprite_accessory/hair/head/shorthair6
+	name = "Short Hair 6"
 	icon_state = "shorthair3"
 
 /datum/sprite_accessory/hair/head/shorthair7

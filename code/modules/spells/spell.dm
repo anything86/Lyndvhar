@@ -1,6 +1,12 @@
 #define TARGET_CLOSEST 1
 #define TARGET_RANDOM 2
 #define MAGIC_XP_MULTIPLIER 0.3 //used to miltuply the amount of xp gained from spells
+#define SPELL_SCALING_THRESHOLD 10 // The threshold at which the spell scaling starts to kick in
+#define SPELL_POSITIVE_SCALING_THRESHOLD 15 // The threshold at which spell scaling stop
+#define FATIGUE_REDUCTION_PER_INT 0.05 // The amount of fatigue reduction per point of intelligence above / below threshold
+#define COOLDOWN_REDUCTION_PER_INT 0.05 // The amount of cooldown reduction per point of intelligence above / below threshold
+#define CHARGE_REDUCTION_PER_SKILL 0.05 // The amount of charge reduction per skill level.
+#define FATIGUE_REDUCTION_PER_SKILL 0.05 // The amount of fatigue reduction per skill level.
 
 /obj/effect/proc_holder
 	var/panel = "Debug"//What panel the proc holder needs to go on.
@@ -27,6 +33,7 @@
 	var/charging_slowdown = 0
 	var/obj/inhand_requirement = null
 	var/overlay_state = null
+	var/ignore_los = TRUE
 
 
 /obj/effect/proc_holder/Initialize()
@@ -156,6 +163,8 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/level_max = 4 //The max possible level_max is 4
 	var/cooldown_min = 0 //This defines what spell quickened four times has as a cooldown. Make sure to set this for every spell
 	var/player_lock = TRUE //If it can be used by simple mobs
+	var/spell_tier = 1 // Tier of the spell, used to determine whether you can learn it based on your spell. Starts at 1.
+	var/refundable = FALSE // If true, the spell can be refunded. This is modified at the point it is added to the user's mind by learnspell.
 
 	var/overlay = 0
 	var/overlay_icon = 'icons/obj/wizard.dmi'
@@ -186,14 +195,11 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(ranged_ability_user && chargetime)
 		var/newtime = chargetime
 		//skill block
-		newtime = newtime - (chargetime * (ranged_ability_user.mind.get_skill_level(associated_skill) * 0.05))
-		//int block
-		if(ranged_ability_user.STAINT > 10)
-			newtime = newtime - (chargetime * (ranged_ability_user.STAINT * 0.02))
-		else if(ranged_ability_user.STAINT < 10)
-			var/diffy = 10 - ranged_ability_user.STAINT
-			newtime = newtime + (chargetime * (diffy * 0.02))
-		testing("[chargetime] newtime [newtime]")
+		newtime = newtime - (chargetime * (ranged_ability_user.mind.get_skill_level(associated_skill) * CHARGE_REDUCTION_PER_SKILL))
+		//spellbook cdr
+		var/obj/item/book/spellbook/sbook = ranged_ability_user.is_holding_item_of_type(/obj/item/book/spellbook)
+		if(sbook && sbook?.open)
+			newtime = newtime - (chargetime * (sbook.get_cdr()))
 		if(newtime > 0)
 			return newtime
 		else
@@ -204,14 +210,14 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(ranged_ability_user && releasedrain)
 		var/newdrain = releasedrain
 		//skill block
-		newdrain = newdrain - (releasedrain * (ranged_ability_user.mind.get_skill_level(associated_skill) * 0.05))
+		newdrain = newdrain - (releasedrain * (ranged_ability_user.mind.get_skill_level(associated_skill) * FATIGUE_REDUCTION_PER_SKILL))
 		//int block
-		if(ranged_ability_user.STAINT > 10)
-			newdrain = newdrain - (releasedrain * (ranged_ability_user.STAINT * 0.02))
+		if(ranged_ability_user.STAINT > SPELL_SCALING_THRESHOLD)
+			var/diff = min(ranged_ability_user.STAINT, SPELL_POSITIVE_SCALING_THRESHOLD) - SPELL_SCALING_THRESHOLD
+			newdrain = newdrain - (releasedrain * diff * FATIGUE_REDUCTION_PER_INT)
 		else if(ranged_ability_user.STAINT < 10)
-			var/diffy = 10 - ranged_ability_user.STAINT
-			newdrain = newdrain + (releasedrain * (diffy * 0.02))
-//		newdrain = newdrain + (ranged_ability_user.checkwornweight() * 10)
+			var/diffy = SPELL_SCALING_THRESHOLD - ranged_ability_user.STAINT
+			newdrain = newdrain + (releasedrain * (diffy * FATIGUE_REDUCTION_PER_INT))
 		if(!ranged_ability_user.check_armor_skill())
 			newdrain += 80
 		if(newdrain > 0)
@@ -373,6 +379,13 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	recharging = TRUE
 
 /obj/effect/proc_holder/spell/process()
+	if(ranged_ability_user)
+		if(ranged_ability_user.STAINT > SPELL_SCALING_THRESHOLD)
+			var/diff = min(ranged_ability_user.STAINT, SPELL_POSITIVE_SCALING_THRESHOLD) - SPELL_SCALING_THRESHOLD
+			charge_max = initial(charge_max) - (initial(charge_max) * diff * COOLDOWN_REDUCTION_PER_INT)
+		else if(ranged_ability_user.STAINT < SPELL_SCALING_THRESHOLD)
+			var/diff2 = SPELL_SCALING_THRESHOLD - ranged_ability_user.STAINT
+			charge_max = initial(charge_max) + (initial(charge_max) * (diff2 * COOLDOWN_REDUCTION_PER_INT))
 	if(recharging && charge_type == "recharge" && (charge_counter < charge_max))
 		charge_counter += 2	//processes 5 times per second instead of 10.
 		if(charge_counter >= charge_max)
@@ -381,13 +394,39 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 			recharging = FALSE
 
 /obj/effect/proc_holder/spell/proc/perform(list/targets, recharge = TRUE, mob/user = usr) //if recharge is started is important for the trigger spells
+	if(!ignore_los)
+		if(length(targets))
+			var/radius
+			if(range > 0)	//accounts for touch / self spells that use negative range
+				radius = range
+			else
+				radius = 1
+			if(get_dist(targets[1], user) > radius)
+				to_chat(user, span_warning("It's too far!"))
+				revert_cast()
+				return
+			var/atom/A = targets[1]
+			var/turf/target_turf = get_turf(A)
+			var/turf/source_turf = get_turf(user)
+			if(A.z > user.z)
+				source_turf = get_step_multiz(source_turf, UP)
+			if(A.z < user.z)
+				source_turf = get_step_multiz(source_turf, DOWN)
+			if(!(target_turf in view(source_turf)))
+				to_chat(user, span_warning("I do not have line of sight! Casting on nearest tile."))
+				var/list/possible_targets = getline(source_turf, target_turf)
+				for(var/i = possible_targets.len; i > 0; i--) // Since turfs added by the getline are in ordered by distance, we need to start from the end
+					var/atom/closest_tile = possible_targets[i]
+					if(closest_tile in view(source_turf))
+						targets[1] = closest_tile
+						break; // Found furthest tile, do not self-frag
 	before_cast(targets, user = user)
-	invocation(user)
 	if(user && user.ckey)
 		user.log_message(span_danger("cast the spell [name]."), LOG_ATTACK)
 	if(recharge)
 		recharging = TRUE
 	if(cast(targets, user = user))
+		invocation(user)
 		start_recharge()
 		if(sound)
 			playMagSound()
@@ -658,3 +697,12 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	user.visible_message(span_warning("A wreath of gentle light passes over [user]!"), span_notice("I wreath myself in healing light!"))
 	user.adjustBruteLoss(-10)
 	user.adjustFireLoss(-10)
+
+#undef TARGET_CLOSEST
+#undef TARGET_RANDOM
+#undef MAGIC_XP_MULTIPLIER
+#undef SPELL_SCALING_THRESHOLD
+#undef SPELL_POSITIVE_SCALING_THRESHOLD
+#undef FATIGUE_REDUCTION_PER_INT
+#undef COOLDOWN_REDUCTION_PER_INT
+#undef CHARGE_REDUCTION_PER_SKILL

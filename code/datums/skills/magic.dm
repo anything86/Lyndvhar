@@ -12,6 +12,7 @@
 
 /datum/skill/magic/arcane
 	name = "Arcane Magic"
+	desc = "Decreases casting time by 5% per level."
 
 /datum/skill/magic/druidic
 	name = "Druidic Trickery"

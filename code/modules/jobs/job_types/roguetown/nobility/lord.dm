@@ -14,7 +14,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		/datum/species/human/northern,
 		/datum/species/elf/wood,
 		/datum/species/human/halfelf,
-		/datum/species/dwarf/mountain
+		/datum/species/dwarf/mountain,
+		/datum/species/demihuman
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
@@ -29,7 +30,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	visuals_only_outfit = /datum/outfit/job/roguetown/lord/visuals
 
 	display_order = JDO_LORD
-	tutorial = "Elevated into overlordship of the city through a web of intrigue and political upheaval, you are the absolute authority of these lands ever since the succession crisis and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error of their ways."
+	tutorial = "At one point you were merely a vassal to the Ruby Throne, given special status and overseen by the Empress herself. However since her death there has been almost no communication outside of the city. You have had to take increasing amounts of autocratic power in order to sustain your port, so much so that many see you as effectively a monarch in your own right. And many want to take this from you, or use it to their advantage- keep your family alive and your power secure, and Lyndvhar may live to see another dae."
 	whitelist_req = FALSE
 	min_pq = 10
 	max_pq = null

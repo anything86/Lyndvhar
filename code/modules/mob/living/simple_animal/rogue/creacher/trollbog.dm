@@ -38,7 +38,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 
 	STACON = 16
-	STASTR = 16
+	STASTR = 15
 	STASPD = 3
 	STAEND = 15
 
@@ -51,7 +51,7 @@
 	retreat_health = 0
 	food = 0
 
-	dodgetime = 15
+	dodgetime = 30
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.

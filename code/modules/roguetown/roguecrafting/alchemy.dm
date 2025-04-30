@@ -177,7 +177,7 @@
 /datum/crafting_recipe/roguetown/alchemy/d2ros
 	name = "diamond to riddle of steel" /// holy grail requires legendary. (sell price on average is 350. rontz and diamond worth 100 each. you get to legndary you deserve 150-200 profit)
 	result = list(/obj/item/riddleofsteel = 1)
-	reqs = list(/obj/item/roguegem/diamond = 2, /obj/item/rogueore/iron = 1, /obj/item/rogueore/coal = 1)
+	reqs = list(/obj/item/roguegem/diamond = 10, /obj/item/ingot/steel = 5, /obj/item/rogueore/coal = 5)
 	craftdiff = 6
 	verbage_simple = "transmute"
 

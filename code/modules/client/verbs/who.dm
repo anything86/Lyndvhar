@@ -94,7 +94,7 @@
 	if(holder)
 		msg += "<br><b>Whitelisted players:</b> [wled]"
 	to_chat(src, msg)
-
+/* No more adminwho!, uncomment if you want it again, there's also a pair of verbs += /client/proc/adminwho which this needs in holder2dm and client_procs.dm
 /client/proc/adminwho()
 	set category = "Admin"
 	set name = "Adminwho"
@@ -131,4 +131,4 @@
 				msg += "\t[C] is a [C.holder.rank]\n"
 		msg += span_info("Adminhelps are also sent to IRC. If no admins are available in game adminhelp anyways and an admin on IRC will see it and respond.")
 	to_chat(src, msg)
-
+*/

@@ -5,7 +5,7 @@
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/witch
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
-	traits_applied = list(TRAIT_RITUALIST, TRAIT_DEATHSIGHT)
+	traits_applied = list(TRAIT_RITUALIST, TRAIT_DEATHSIGHT, TRAIT_ARCYNE_T1)
 	cmode_music = 'sound/music/combat_cult.ogg'
 
 /datum/outfit/job/roguetown/adventurer/witch/pre_equip(mob/living/carbon/human/H)
@@ -45,6 +45,7 @@
 		H.change_stat("intelligence", 3)
 		H.change_stat("speed", 2)
 		H.change_stat("fortune", 1)
+		H.mind.adjust_spellpoints(1)
 		GLOB.excommunicated_players += H.real_name
 		if(H.age == AGE_OLD)
 			H.change_stat("speed", -1)

@@ -132,10 +132,10 @@
 /datum/world_topic/adminwho
 	keyword = "adminwho"
 	require_comms_key = TRUE
-
+/*
 /datum/world_topic/adminwho/Run(list/input)
 	return ircadminwho()
-
+*/
 /datum/world_topic/status
 	keyword = "status"
 

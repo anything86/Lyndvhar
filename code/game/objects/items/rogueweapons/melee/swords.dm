@@ -535,6 +535,10 @@
 	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
 
+/obj/item/rogueweapon/sword/long/psysword/ComponentInitialize()
+	. = ..()								//+3 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
+
 /obj/item/rogueweapon/sword/iron
 	name = "sword"
 	desc = "A simple iron sword, the most classical war weapon."
@@ -613,7 +617,7 @@
 	desc = "A duelist's weapon derived from western battlefield instruments, it features a tapered \
 	blade with a specialized stabbing tip."
 	icon = 'icons/roguetown/weapons/64.dmi'
-	icon_state = "rapier1"
+	icon_state = "rapier"
 	bigboy = TRUE
 	pixel_y = -16
 	pixel_x = -16

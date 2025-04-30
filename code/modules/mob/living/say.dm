@@ -219,7 +219,17 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	spans |= speech_span
 
 	if(sanitize)
-		message = trim(copytext(sanitize(message), 1, MAX_MESSAGE_LEN))
+		// Sanitize the raw message content first
+		message = sanitize(message) 
+		// Now apply the player formatting which adds HTML tags
+		message = replacetextEx(message, regex(@"^([/+]*)(.*?)([/+]*)$"), /proc/format_dialogue) 
+		// Trim the final message length
+		message = trim(copytext(message, 1, MAX_MESSAGE_LEN))
+	else
+		// If not sanitizing, just apply formatting and trim
+		message = replacetextEx(message, regex(@"^([/+]*)(.*?)([/+]*)$"), /proc/format_dialogue)
+		message = trim(copytext(message, 1, MAX_MESSAGE_LEN))
+
 	if(!message || message == "")
 		return
 

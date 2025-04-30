@@ -11,9 +11,10 @@
 		/datum/species/human/northern,
 		/datum/species/elf/wood,
 		/datum/species/human/halfelf,
-		/datum/species/dwarf/mountain
+		/datum/species/dwarf/mountain,
+		/datum/species/demihuman
 	)
-	tutorial = "Picked out of your political value rather than likely any form of love, you have become the Viscount's most trusted confidant--and likely friend--throughout your marriage. Your loyalty and perhaps even your love will be tested this day... for the daggers that threaten your beloved are as equally pointed at your own throat."
+	tutorial = "Picked out of your political value rather than likely any form of love, you have become the Viscount's most trusted confidant--and likely friend--throughout your marriage. Your loyalty and perhaps even your love will be tested this week... for the daggers that threaten your beloved are as equally pointed at your own throat."
 
 	spells = list(/obj/effect/proc_holder/spell/self/convertrole/servant, /obj/effect/proc_holder/spell/self/grant_nobility)
 	outfit = /datum/outfit/job/roguetown/lady

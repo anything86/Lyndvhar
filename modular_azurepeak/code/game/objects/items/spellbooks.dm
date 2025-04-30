@@ -1,10 +1,13 @@
+#define ROCK_CHARGE_REDUCTION 0.15
+#define GEM_CHARGE_REDUCTION 0.25
+
 /**
   * Spellbooks for learning arcane points.
   * Difficult to learn by default, has multipliers for weed, gems and rituals.
   * Inherits most of it's functionality from default granters, however also has some copy paste from roguebooks for parity.
   */
 
-/obj/item/book/granter/spellbook
+/obj/item/book/spellbook
 	var/open = FALSE
 	icon = 'icons/roguetown/items/books.dmi'
 	icon_state = "spellbookbrown_0"
@@ -18,16 +21,10 @@
 	associated_skill = /datum/skill/misc/reading
 	name = "\improper tome of the arcyne"
 	desc = "A crackling, glowing book, filled with runes and symbols that hurt the mind to stare at."
-	pages_to_mastery = 7
-	remarks = list("Recall that place of white and black, so cold after its season of heat...", "Time slips away as I devour each pictograph and sigil...", "Noc is a shrewd God, and his followers’ writings are no different...", "The smell of wet rain fills the room with every turned page...", "Helical text spans the page like a winding puzzle...", "Tracing a finger over one rune renders  my hand paralyzed, if only for a moment...", "This writer was clearly influenced by the Z, their writings somewhat heretical...", "The Sun-And-Moon theory implicates Astrata and Noc as the primary drivers of magick...", "The Sea-And-Moon theory connects Abyssor and Noc as the chief patrons of arcyne...", "This page clearly details the benefits of swampweed on one's capacity to conceptualize the arcyne...", "Conceptualize. Theorize. Feel. Flow. Manifest...", "Passion. Strength. Power. Victory. The tenets through which we break the chains of reality...", "Didn’t I just read this page...?", "A lone illustration of Noc’s visage fills this page, his stony gaze boring into my soul...", "My eyes begin to lid as I finish this chapter. These symbols cast a heavy fog over my mind...", "This chapter focuses on the mysteries of the Khaliphate, and their abstruse traditions on Khuzker and their power...", "The book states Grenzelhoftian jesters are reknowned for dabbling in the arcyne to please their lords. Is there something I could learn from fools...?", "Silver. Blade. Mana. Blood. These are the ingredients I’ll need to imbibe the very ground with arcyne abilities...", "Elysium incants speak to me in an extinct tongue immortalized on parchment...", "My mind wanders and waves. Z's temptations draw close, but I weather through as I finally finish this chapter...", "I close my eyes for but a moment, and the competing visages of Noc and Z stare into my very soul. I see them blink, and my eyelids open...", "I am the Root. The Root is me. I must reach it, and the Tree...", "I feel the arcyne circuits running through my body, empowered with each word I read...", "Am I reading? Are these words, symbols or inane scribbles? I cannot be sure, yet with each one my eyes glaze over, I can feel the arcyne pulse within me...", "A mystery is revealed before my very eyes. I do not read it, yet I am aware. Gems are the Root's natural arcyne energy, manifest. Perhaps I can use them to better my conceptualization...")
-	oneuse = FALSE
-	var/owner
-	var/list/allowed_readers = list()
-	var/stored_gem = FALSE
 	var/picked // if the book has had it's style picked or not
 	var/born_of_rock = FALSE // was a magical stone used to make it instead of a gem?
 
-/obj/item/book/granter/spellbook/getonmobprop(tag)
+/obj/item/book/spellbook/getonmobprop(tag)
 	. = ..()
 	if(tag)
 		if(open)
@@ -84,21 +81,66 @@
 					return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
-/obj/item/book/granter/spellbook/attack_self(mob/user)
+/obj/item/book/spellbook/examine(mob/user)
+	. = ..()
+	. += span_notice("Reading it once per day allows you to unbind two spells and refund its spell point.")
+	if(born_of_rock)
+		. += span_notice("This tome was made from a magical stone instead of a proper gem. Holding it in your hand with it open reduces spell charge time by [ROCK_CHARGE_REDUCTION * 100]%")
+	else
+		. += span_notice("This tome was made from a gem. Holding it in your hand with it open reduces spell charge time by [GEM_CHARGE_REDUCTION * 100]%") 
+
+/obj/item/book/spellbook/attack_self(mob/user)
 	if(!open)
 		attack_right(user)
 		return
 	..()
 	user.update_inv_hands()
 
-/obj/item/book/granter/spellbook/rmb_self(mob/user)
+/obj/item/book/spellbook/rmb_self(mob/user)
 	attack_right(user)
 	return
 
-/obj/item/book/granter/spellbook/read(mob/user)
+// Override
+/obj/item/book/spellbook/read(mob/user)
+	change_spells()
 	return FALSE
 
-/obj/item/book/granter/spellbook/attack_right(mob/user)
+/obj/item/book/spellbook/proc/change_spells(mob/user = usr)
+	var/datum/mind/user_mind = user.mind
+	if(!user_mind) return // How??
+	if(user_mind.has_changed_spell)
+		to_chat(user, span_warning("I have already unbinded my spells today!"))
+		return
+	var/list/resettable_spells = list()
+	var/list/spell_list = user_mind.spell_list
+	for(var/i = 1, i <= spell_list.len, i++)
+		var/obj/effect/proc_holder/spell/spell = spell_list[i]
+		if(spell.refundable == TRUE)
+			if(spell.cost > 0)
+				resettable_spells["[spell.name]: [spell.cost]"] = spell_list[i]
+	if(!resettable_spells.len)
+		to_chat(user, span_warning("I have no spells to unbind!"))
+		return
+	for(var/i = 1, i <= 2, i++)
+		var/choice = input(user, "Choose up to two spells to unbind. Cancel both to not use up your daily unbinding.") as null|anything in resettable_spells
+		var/obj/effect/proc_holder/spell/item = resettable_spells[choice]
+		if(!item)
+			continue
+		if(!resettable_spells.len)
+			return
+		resettable_spells.Remove(choice)
+		user_mind.used_spell_points -= item.cost
+		user_mind.RemoveSpell(item)
+		user_mind.check_learnspell()
+		user_mind.has_changed_spell = TRUE
+
+/obj/item/book/spellbook/proc/get_cdr()
+	if(born_of_rock)
+		return ROCK_CHARGE_REDUCTION
+	else
+		return GEM_CHARGE_REDUCTION
+
+/obj/item/book/spellbook/attack_right(mob/user)
 	if(!picked)
 		var/list/designlist = list("green", "yellow", "brown")
 		var/mob/living/carbon/human/gamer = user
@@ -126,90 +168,9 @@
 	update_icon()
 	user.update_inv_hands()
 
-/obj/item/book/granter/spellbook/update_icon()
+/obj/item/book/spellbook/update_icon()
 	icon_state = "[base_icon_state]_[open]"
 
-/obj/item/book/granter/spellbook/on_reading_start(mob/user)
-	to_chat(user, span_notice("Arcyne mysteries abound in this enigmatic tome, gift of Noc..."))
-
-/obj/item/book/granter/spellbook/on_reading_finished(mob/user)
-	var/mob/living/carbon/human/gamer = user
-	if(gamer != owner && !allowed_readers.Find(gamer))
-		to_chat(user, span_notice("What was that gibberish? Even for the arcyne it was completely illegible!"))
-		return
-	user.mind?.has_studied = TRUE
-	var/mob/living/reader = user
-	var/chance2learn = (reader.STAINT*2 + (user.mind?.get_skill_level(/datum/skill/misc/reading)*2) + (user.mind?.get_skill_level(/datum/skill/magic/arcane)*2))
-	if(reader.has_status_effect(/datum/status_effect/buff/weed))
-		to_chat(user, span_smallgreen("Swampweed truly does open one's third eye to the secrets of the arcyne..."))
-		chance2learn += 3.5
-	var/obj/effect/roguerune/rune = (locate(/obj/effect/roguerune) in range(1, user))
-	if(rune)
-		to_chat(user, span_cultsmall("The rune beneath my feet glows..."))
-		chance2learn += rune.spellbonus
-		rune.do_invoke_glow()
-	if(stored_gem)
-		to_chat(user, span_smallnotice("I can feel the magical energies imbued within the crystaline dust scattered upon my tome resonate with the arcyne..."))
-		chance2learn += stored_gem
-		stored_gem = FALSE
-	if(!isarcyne(user))
-		if (gamer != owner) // if you didn't make this book, get fucked.
-			chance2learn = 1
-		else
-			chance2learn *= 0.5
-			chance2learn = min(chance2learn, 15) 
-	if (born_of_rock)
-		// the rock tomes are a *lot* easier to make, so we make them worse by them reducing your chances by 20%
-		chance2learn *= 0.8
-	testing("chance to learn is [chance2learn]")
-	if(prob(chance2learn))
-		user.visible_message(span_warning("[user] is filled with arcyne energy! You witness [user.p_their()] body convulse and spark brightly."), \
-			span_notice("Noc blesses me. I have been granted knowledge and wisdom beyond my years, this tome's mysteries unveiled one at a time."))
-		var/currentlevel = user.mind?.get_skill_level(/datum/skill/magic/arcane)
-		var/expgain = get_arcyne_exp(currentlevel)
-		testing("exp to be gained is [expgain]")
-		user.mind?.add_sleep_experience(/datum/skill/magic/arcane, expgain, TRUE)
-		user.log_message("successfully studied their spellbook and gained a spell point", LOG_ATTACK, color="orange")
-		onlearned(user)
-	else
-		if(prob(55))
-			to_chat(user, span_notice("Confounded arcyne mysteries, what fool wrote this drivel!? I must sleep before I can bring myself to open this damned thing again..."))
-			to_chat(user, span_small("Some of those words I've heard before, but never read. I must meditate on their meaning..."))
-			user.mind?.add_sleep_experience(/datum/skill/misc/reading, reader.STAINT*10)
-		else
-			to_chat(user, span_phobia("THIS KNOWLEDGE IS NOT FOR ME IT PERVADES MY MIND MY THOUGHTS MY WILL I AM NOT WORTHY I AM NOT WORTHY I AM NOT"))
-			var/mob/living/carbon/freaky = user
-			freaky.freak_out()
-		return
-	
-/obj/item/book/granter/spellbook/onlearned(mob/user)
-	used = FALSE
-
-/obj/item/book/granter/spellbook/recoil(mob/user)
-	user.visible_message(span_warning("[src] shoots out a spark of angry, arcyne energy at [user]!"))
-	var/mob/living/gamer = user
-	gamer.electrocute_act(5, src)
-
-/obj/item/book/granter/spellbook/attack(mob/living/M, mob/living/carbon/human/user)
-	var/mob/living/carbon/human/gamer = user
-	if(gamer != owner)
-		return
-	if (M.stat != DEAD)
-		if(user == M)
-			to_chat(user, span_warning("I'm already chained to this tome!"))
-			return
-		if(ishuman(M))
-			M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), \
-								span_danger("[user] beats [M] over the head with [src]!"))
-			if(src.allowed_readers.len <= 2 && !src.allowed_readers.Find(user))
-				src.allowed_readers += M
-			else
-				to_chat(user, span_smallnotice("I can't change this pleboid to my tome..."))
-			playsound(src.loc, "punch", 25, TRUE, -1)
-			log_combat(user, M, "attacked", src)
-	else
-		M.visible_message(span_danger("[user] smacks [M]'s lifeless corpse with [src]."))
-		playsound(src.loc, "punch", 25, TRUE, -1)
 
 /// Book slapcrafting
 
@@ -286,8 +247,7 @@
 					playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 					user.visible_message(span_warning("[user] crushes [user.p_their()] [P]! Its powder seeps into the [src]."), \
 						span_notice("I run my arcyne energy into the crystal. It shatters and seeps into the cover of the tome! Runes and symbols of an unknowable language cover its pages now..."))
-					var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
-					newbook.owner = user
+					var/obj/item/book/spellbook/newbook = new /obj/item/book/spellbook(loc)
 					newbook.desc += " Traces of [P] dust linger in its margins."
 					qdel(P)
 					qdel(src)
@@ -296,8 +256,7 @@
 						playsound(loc, 'modular_azurepeak/sound/spellbooks/crystal.ogg', 100, TRUE)
 						user.visible_message(span_warning("[user] crushes [user.p_their()] [P]! Its powder seeps into the [src]."), \
 							span_notice("By the Ten! That gem just exploded -- and my useless tome is filled with gleaming energy and strange letters!"))
-						var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
-						newbook.owner = user
+						var/obj/item/book/spellbook/newbook = new /obj/item/book/spellbook(loc)
 						newbook.desc += " Traces of [P] dust linger in its margins."
 						qdel(P)
 						qdel(src)
@@ -320,8 +279,7 @@
 						user.visible_message(span_warning("[user] crushes [user.p_their()] [P]! Its powder seeps into the [src]."), \
 							span_notice("I join my arcyne energy with that of the magical stone in my hands, which shudders briefly before dissolving into motes of ash. Runes and symbols of an unknowable language cover its pages now..."))
 						to_chat(user, span_notice("...yet even for an enigma of the arcyne, these characters are unlike anything I've seen before. They're going to be -much- harder to understand..."))
-						var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
-						newbook.owner = user
+						var/obj/item/book/spellbook/newbook = new /obj/item/book/spellbook(loc)
 						newbook.born_of_rock = TRUE
 						newbook.desc += " Traces of multicolored stone limn its margins."
 						qdel(P)
@@ -332,8 +290,7 @@
 							user.visible_message(span_warning("[user] carefully sets down [the_rock] upon [src]. Nothing happens for a moment or three, then suddenly, the glow surrounding the stone becomes as liquid, seeps down and soaks into the tome!"), \
 							span_notice("I knew this stone was special! Its colourful magick has soaked into my tome and given me gift of mystery!"))
 							to_chat(user, span_notice("...what in the world does any of this scribbling possibly mean?"))
-							var/obj/item/book/granter/spellbook/newbook = new /obj/item/book/granter/spellbook(loc)
-							newbook.owner = user
+							var/obj/item/book/spellbook/newbook = new /obj/item/book/spellbook(loc)
 							newbook.born_of_rock = TRUE
 							newbook.desc += " Traces of multicolored stone limn its margins."
 							qdel(P)
@@ -349,51 +306,12 @@
 	else
 		return ..()
 
-// chance2learn buff shit
-
-/obj/item/roguegem
-	var/arcyne_potency = 20
-
-/obj/item/roguegem/yellow
-	arcyne_potency = 5
-
-/obj/item/roguegem/green
-	arcyne_potency = 7
-
-/obj/item/roguegem/violet
-	arcyne_potency = 10
-
-/obj/item/roguegem/blue
-	arcyne_potency = 15
-
-/obj/item/roguegem/diamond
-	arcyne_potency = 25
-
 /obj/item/roguegem/amethyst
 	name = "amythortz"
 	icon_state = "amethyst"
-	sellprice = 18
-	arcyne_potency = 25
 	desc = "A deep lavender crystal, it surges with magical energy, yet it's artificial nature means it is worth little."
 
-/obj/item/book/granter/spellbook/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/roguegem))
-		if(!stored_gem)
-			if(isarcyne(user))
-				var/obj/item/roguegem/gem = P
-				var/crafttime = (60 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
-				if(do_after(user, crafttime, target = src))
-					playsound(loc, 'modular_azurepeak/sound/spellbooks/glass.ogg', 100, TRUE)
-					to_chat(user, span_notice("Running my arcyne energy through this crystal, I imbue the tome with my natural essence, attuning it to my state of mind..."))
-					stored_gem = gem.arcyne_potency
-					qdel(P)
-			else
-				to_chat(user, span_notice("Why am I jamming a gem into a book? I must look like a fool!"))
-		else
-			to_chat(user, span_notice("This tome is already coursing with arcyne energies..."))
-	else
-		return ..()
-
+// Leaving this in for now for aesthetics, but they're now useless
 /obj/effect/roguerune/
 	name = "arcyne rune"
 	desc = "Strange symbols pulse upon the ground..."
@@ -403,85 +321,7 @@
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	layer = SIGIL_LAYER
 	color = "#3A0B61"
-	var/spellbonus = 15
-	var/scribe_damage = 10
 
-/obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
-	name = "glowing purple silver dagger"
-	desc = "This dagger glows a faint purple. Powder runs across its blade."
-	var/is_bled = FALSE
-	var/rune_to_scribe = /obj/effect/roguerune/
-
-/obj/item/rogueweapon/huntingknife/idagger/silver/attackby(obj/item/M, mob/user, params)
-	var/mob/living/carbon/gamer = user
-	if(istype(M, /obj/item/alch/golddust))
-		if(isarcyne(gamer))
-			var/crafttime = (60 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
-			if(do_after(user, crafttime, target = src))
-				playsound(loc, 'modular_azurepeak/sound/spellbooks/scrapeblade.ogg', 100, TRUE)
-				to_chat(user, span_notice("I scrape the arcyne powder into the blade, and it throbs in a deep purple..."))
-				var/obj/arcyne_knife = new /obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
-				qdel(M)
-				qdel(src)
-				user.put_in_active_hand(arcyne_knife)
-	else 
-		return ..()
-
-/obj/item/rogueweapon/huntingknife/idagger/silver/arcyne/attack_self(mob/living/carbon/human/user)
-	if(!isarcyne(user))
-		return
-	if(!is_bled)
-		playsound(loc, get_sfx("genslash"), 100, TRUE)
-		user.visible_message(span_warning("[user] cuts open [user.p_their()] palm!"), \
-							span_cult("I slice open my palm!"))
-		if(user.blood_volume)
-			var/obj/effect/roguerune/rune = rune_to_scribe
-			user.apply_damage(initial(rune.scribe_damage), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		is_bled = TRUE
-		return
-	var/turf/Turf = get_turf(user)
-	if(locate(/obj/effect/roguerune) in Turf)
-		to_chat(user, span_cult("There is already a rune here."))
-		return
-	var/crafttime = (100 - ((user.mind?.get_skill_level(/datum/skill/magic/arcane))*5))
-	if(do_after(user, crafttime, target = src))
-		playsound(loc, 'modular_azurepeak/sound/spellbooks/bladescrape.ogg', 100, TRUE)
-		user.visible_message(span_warning("[user] carves an arcyne rune with [user.p_their()] [src]!"), \
-							span_notice("I drag the blade in symbols and circles, the manna powder falling into the crevices as I trace arcyne patterns. A rune now carved before me in iridiscent purple."))
-		new rune_to_scribe(Turf)
-		var/obj/silver_knife = new /obj/item/rogueweapon/huntingknife/idagger/silver/
-		qdel(src)
-		user.put_in_active_hand(silver_knife)
-	
 // helper proc
 /proc/isarcyne(mob/living/carbon/human/A)
 	return istype(A) && A.mind && (A.mind?.get_skill_level(/datum/skill/magic/arcane) > SKILL_LEVEL_NONE)
-
-/obj/effect/roguerune/proc/do_invoke_glow()
-	set waitfor = FALSE
-	animate(src, transform = matrix()*2, alpha = 0, time = 5, flags = ANIMATION_END_NOW) //fade out
-	sleep(5)
-	animate(src, transform = matrix(), alpha = 255, time = 0, flags = ANIMATION_END_NOW)
-	qdel(src)
-
-/obj/item/book/granter/spellbook/magician/Initialize()
-	. = ..()
-	var/mob/living/carbon/human/L = loc
-	owner = L
-	
-/proc/get_arcyne_exp(level_amount)
-	var/returnval
-	switch(level_amount)
-		if(SKILL_LEVEL_NONE)
-			returnval = SKILL_EXP_NOVICE
-		if(SKILL_LEVEL_NOVICE)
-			returnval = SKILL_EXP_APPRENTICE - SKILL_EXP_NOVICE
-		if(SKILL_LEVEL_APPRENTICE)
-			returnval = SKILL_EXP_JOURNEYMAN - SKILL_EXP_APPRENTICE
-		if(SKILL_LEVEL_JOURNEYMAN)
-			returnval = SKILL_EXP_EXPERT - SKILL_EXP_JOURNEYMAN
-		if(SKILL_LEVEL_EXPERT)
-			returnval = SKILL_EXP_MASTER - SKILL_EXP_EXPERT
-		if(SKILL_LEVEL_MASTER)
-			returnval = SKILL_EXP_LEGENDARY - SKILL_EXP_MASTER
-	return returnval

@@ -952,6 +952,50 @@
 	craftdiff = 5
 	sellprice = 40
 
+/datum/crafting_recipe/roguetown/sewing/silkydress
+	name = "silky dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/silkydress
+	reqs = list(/obj/item/natural/cloth = 6,
+				/obj/item/natural/fibers = 3)
+	tools = list(/obj/item/needle)
+	craftdiff = 6
+	sellprice = 50
+
+/datum/crafting_recipe/roguetown/sewing/weaving/springgown
+	name = "gown (spring)"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/gown
+	reqs = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/silk = 4)
+	craftdiff = 6
+	sellprice = 85
+
+/datum/crafting_recipe/roguetown/sewing/weaving/summergown
+	name = "gown (summer)"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/gown/summergown
+	reqs = list(/obj/item/natural/fibers = 2,
+				/obj/item/natural/cloth = 1,
+				/obj/item/natural/silk = 3)
+	craftdiff = 6
+	sellprice = 70
+
+/datum/crafting_recipe/roguetown/sewing/weaving/fallgown
+	name = "gown (fall, silk)"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/gown/fallgown
+	reqs = list(/obj/item/natural/fibers = 3,
+				/obj/item/natural/silk = 2,
+				/obj/item/natural/cloth = 2)
+	craftdiff = 6
+	sellprice = 75
+
+/datum/crafting_recipe/roguetown/sewing/weaving/wintergown
+	name = "gown (winter)"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/gown/wintergown
+	reqs = list(/obj/item/natural/fibers = 3,
+				/obj/item/natural/silk = 2,
+				/obj/item/natural/fur = 1)
+	craftdiff = 6
+	sellprice = 90
+
 /datum/crafting_recipe/roguetown/sewing/exoticsilkbra
 	name = "exotic silk bra"
 	result = list (/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra)

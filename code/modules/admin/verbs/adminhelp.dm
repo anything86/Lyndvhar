@@ -502,17 +502,19 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 // Used for methods where input via arg doesn't work
 /client/proc/get_adminhelp()
-	var/msg = input(src, "Please describe your problem concisely and an admin will help as soon as they're able.", "Adminhelp contents") as text
-	adminhelp(msg)
+	// Replace the input prompt and call with the direct alert
+	var/discord_msg = ("Please Go to the Discord and File your problem in the #Adminhelp Channel!")
+	alert(src, discord_msg, "Adminhelp Information")
 
-/client/verb/adminhelp(msg as text)
+/client/verb/adminhelp()
 	set category = "Admin"
 	set name = "Adminhelp"
 
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
-		return
-
+	// Replace the entire verb logic with the alert
+	var/discord_msg = ("Please Go to the Discord and File your problem in the #Adminhelp Channel!")
+	alert(src, discord_msg, "Adminhelp Information")
+	return // Prevent any further processing of the original adminhelp logic
+	/*
 	//handle muting and automuting
 	if(prefs.muted & MUTE_ADMINHELP)
 		to_chat(src, span_danger("Error: Admin-PM: You cannot send adminhelps (Muted)."))
@@ -539,7 +541,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			current_ticket.Close()
 
 	new /datum/admin_help(msg, src, FALSE)
-
+*/
 //
 // LOGGING
 //
@@ -617,7 +619,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	for(var/I in servers)
 		world.Export("[servers[I]]?[list2params(message)]")
 
-
+/*
 /proc/ircadminwho()
 	var/list/message = list("Admins: ")
 	var/list/admin_keys = list()
@@ -632,7 +634,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			message += "[admin]"
 
 	return jointext(message, "")
-
+*/
 /proc/keywords_lookup(msg,irc)
 
 	//This is a list of words which are ignored by the parser when comparing message contents for names. MUST BE IN LOWER CASE!

@@ -16,9 +16,17 @@
 	var/convert_damage = TRUE //If you want to convert the caster's health to the shift, and vice versa.
 	var/convert_damage_type = BRUTE //Since simplemobs don't have advanced damagetypes, what to convert damage back into.
 
+	var/pick_again = null
 	var/shapeshift_type
 	var/list/possible_shapes = list(
-		/mob/living/simple_animal/pet/dog/corgi
+		/mob/living/simple_animal/hostile/retaliate/rogue/cat,
+		/mob/living/simple_animal/hostile/retaliate/rogue/mudcrab,
+		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat,
+		/mob/living/simple_animal/hostile/retaliate/rogue/spider,
+		/mob/living/simple_animal/hostile/retaliate/rogue/mossback,
+		/mob/living/simple_animal/hostile/retaliate/rogue/wolf,
+		/mob/living/simple_animal/hostile/retaliate/rogue/mole,
+		/mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	)
 /obj/effect/proc_holder/spell/targeted/shapeshift/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -42,8 +50,6 @@
 			if(shapeshift_type)
 				return
 			shapeshift_type = new_shapeshift_type
-			if(!shapeshift_type) //If you aren't gonna decide I am!
-				shapeshift_type = pick(animal_list)
 			shapeshift_type = animal_list[shapeshift_type]
 
 		var/obj/shapeshift_holder/S = locate() in M
@@ -58,14 +64,18 @@
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster
 	if(H)
-		to_chat(caster, "<span class='warning'>You're already shapeshifted!</span>")
+		to_chat(caster, span_warning("You're already shapeshifted!"))
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)
 	H = new(shape,src,caster)
+	shape.name = "[shape] ([caster.real_name])"
 
 	clothes_req = FALSE
 	human_req = FALSE
+
+	playsound(caster.loc, pick('sound/combat/gib (1).ogg','sound/combat/gib (2).ogg'), 200, FALSE, 3)
+	caster.spawn_gibs(FALSE)
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Restore(mob/living/shape)
 	var/obj/shapeshift_holder/H = locate() in shape
@@ -73,6 +83,9 @@
 		return
 
 	H.restore()
+
+	if(pick_again == TRUE)
+		shapeshift_type = null
 
 	clothes_req = initial(clothes_req)
 	human_req = initial(human_req)

@@ -54,6 +54,7 @@
 		H.change_stat("intelligence", -2)
 		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_ARCYNE_T1, TRAIT_GENERIC)
 
 /datum/outfit/job/roguetown/disciple/proc/naledi_equip(mob/living/carbon/human/H)
 	backpack_contents = list(/obj/item/roguekey/inquisition = 1)

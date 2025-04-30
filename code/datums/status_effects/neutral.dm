@@ -127,6 +127,15 @@
 	if(.)
 		listening_in = tracker
 
+/datum/status_effect/ugotmail
+	id = "mail"
+	alert_type = /atom/movable/screen/alert/status_effect/ugotmail
+
+/atom/movable/screen/alert/status_effect/ugotmail
+	name = "Mail"
+	desc = "I have a letter waiting for me at the HERMES."
+	icon_state = "mail"
+
 //Xylix Gambling
 /datum/status_effect/wheel
 	id = "lucky(?)"

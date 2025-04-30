@@ -8,7 +8,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_RESPECTED_UP
 	allowed_patrons = list(/datum/patron/old_god) //You MUST have a Psydonite character to start. Just so people don't get japed into Oops Suddenly Psydon!
-	tutorial = "You are the direct hand of the Psydonic inquisition. You have been sent by the Bisphoric of Valoria, the leading realm of the Psydonian Orthodoxy, on a diplomatic misssion.. officially, that is. /n /n Unofficially, you work to cast out the sinners from God's house. Heresy of all kinds must be corrected; from Ten-worshippers that stray too far from doctrine, to fools that worship the Daemons. The city of Lyndvhar tolerates you due to your ability to fight the daemonic, and the Pantheonic Church tolerates you due to your aligned goals...but it is probably best to not let them peer too closely."
+	tutorial = "You are the direct hand of the Psydonic inquisition. You have been sent by the Bisphoric of Valoria, the leading realm of the Psydonian Orthodoxy, on a diplomatic misssion.. officially, that is. /n /n Unofficially, you work to cast out the sinners from God's house. Heresy of all kinds must be corrected; from Pantheon-worshippers that stray too far towards heretical thought, to fools that worship the Daemons, and converting those willing. The city of Lyndvhar tolerates you due to your ability to fight the daemonic, and the Pantheonic Church tolerates you due to your aligned goals...but it is probably best to not let them peer too closely."
 	whitelist_req = TRUE
 	cmode_music = 'sound/music/inquisitorcombat.ogg'
 	selection_color = JCOLOR_INQUISITION
@@ -38,8 +38,8 @@
 ////Classic Inquisitor with a much more underground twist. Use listening devices, sneak into places to gather evidence, track down suspicious individuals. Has relatively the same utility stats as Confessor, but fulfills a different niche in terms of their combative job as the head honcho. 
 
 /datum/advclass/inquisitor/inspector
-	name = "The Eye of Psydon"
-	tutorial = "Your eternal service to fighting the FORCES OF HERESY has manifested within you into a profession of underground connections of Confessors, away from the prying eyes of others. Stop HERESY in their tracks, predict their movements, collect evidence through listening devices and, when the time comes - strike with impunity with your blade and swift dodging prowess."
+	name = "Inspector"
+	tutorial = "Your eternal service to fighting monsters has manifested within you into a profession of underground connections of Confessors, away from the prying eyes of others. Stop daemonic activities in their tracks, predict their movements, collect evidence through listening devices and, when the time comes - strike with impunity with your blade and swift dodging prowess."
 	outfit = /datum/outfit/job/roguetown/inquisitor/inspector
 
 	category_tags = list(CTAG_INQUISITOR)
@@ -94,8 +94,8 @@
 ///The dirty, violent side of the Inquisition. Meant for confrontational, conflict-driven situations as opposed to simply sneaking around and asking questions. Templar with none of the miracles, but with all the muscles and more. 
 
 /datum/advclass/inquisitor/muscle
-	name = "The Fist of Psydon"
-	tutorial = "Your specialty in the Inquisition was never fruitful in terms of espionage and stealth or the mystic miracles of PSYDON. You had a unique talent in busting down doors to secret churches and worship spots, extracting confessions on the spot out of those who did not yield to PSYDON, and driving out the Daemons with a silver blade. Face down the FORCES OF EVIL with whips and chains. You are the Fist of Psydon."
+	name = "Daemon Hunter"
+	tutorial = "Your specialty in the Inquisition was never fruitful in terms of espionage and stealth or the mystic miracles of Psydon. You had a unique talent in busting down doors to secret churches and worship spots, extracting confessions on the spot out of those who did not yield to Psydon, and driving out the Daemons with a silver blade. Face down the FORCES OF EVIL with whips and chains. You are Psydon's fist."
 	outfit = /datum/outfit/job/roguetown/inquisitor/muscle
 	cmode_music = 'sound/music/templarofpsydonia.ogg'
 
@@ -161,8 +161,8 @@
 
 
 /datum/advclass/inquisitor/gangster
-	name = "The SOUL of Psydon"
-	tutorial = "You do everything, everywhere, all at once. You have no specialty, you have no specialized skill but what PSYDON has willed into your earthly flesh and bones. Only your faith guides you. RISE."
+	name = "Puritan"
+	tutorial = "Abandoning your titles and estate in the republic, you joined with the Valorian Inquisition in order to fight the heretical and monsters abroad. Serving no true specialty, your blade has been your go-to option for problems-- as well as your silver tongue. Despite abandoning your titles, you are still seen by many as noble-blooded, and that can get you places in Psydon's name."
 	outfit = /datum/outfit/job/roguetown/inquisitor/gangster
 
 	category_tags = list(CTAG_INQUISITOR)
@@ -208,6 +208,7 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_INQUISITION, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 /mob/living/carbon/human/proc/torture_victim()
 	set name = "Extract Confession"
@@ -264,7 +265,7 @@
 		return
 	if(!H.stat)
 		var/static/list/faith_lines = list(
-			"DO YOU DENY THE PANTHEON?",
+			"DO YOU DENY THE GODS?",
 			"WHO IS YOUR GOD?",
 			"ARE YOU FAITHFUL?",
 			"WHO IS YOUR SHEPHERD?",

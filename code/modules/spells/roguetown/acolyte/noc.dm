@@ -11,6 +11,9 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = 'sound/magic/churn.ogg'
+	spell_tier = 2 // Combat spell
+	invocation = "Obcaeco!"
+	invocation_type = "whisper"
 	associated_skill = /datum/skill/magic/arcane
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
@@ -49,6 +52,7 @@
 	range = 3
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
+	spell_tier = 2
 	invocation_type = "none"
 	sound = 'sound/misc/area.ogg' //This sound doesnt play for some reason. Fix me.
 	associated_skill = /datum/skill/magic/arcane

@@ -31,7 +31,8 @@
 		TRAIT_CABAL,
 		TRAIT_DEATHSIGHT,
 		TRAIT_COUNTERCOUNTERSPELL,
-		TRAIT_RITUALIST
+		TRAIT_RITUALIST,
+		TRAIT_ARCYNE_T3
 		)
 
 	var/STASTR = 10
@@ -121,6 +122,7 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+	H.mind.adjust_spellpoints(5)
 
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 5)

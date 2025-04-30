@@ -229,6 +229,10 @@
 	wdefense = 5
 	wbalance = 0.5
 
+/obj/item/rogueweapon/spear/psyspear/ComponentInitialize()
+	. = ..()								//+3 force, +50 Blade int, +50 Int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 3, 50, 50, 1, TRUE)
+
 /obj/item/rogueweapon/spear/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -392,6 +396,10 @@
 	is_silver = TRUE
 	wdefense = 5
 	smeltresult = /obj/item/ingot/silver
+
+/obj/item/rogueweapon/halberd/psyhalberd/ComponentInitialize()
+	. = ..()								//+5 force, +100 blade int, +100 int ,+2 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 5, 100, 100, 1, TRUE)
 
 /obj/item/rogueweapon/halberd/glaive
 	force_wielded = 35
@@ -558,6 +566,10 @@
 	wdefense = 3
 	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
+
+/obj/item/rogueweapon/greatsword/psygsword/ComponentInitialize()
+	. = ..()								//+3 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 /obj/item/rogueweapon/estoc
 	name = "estoc"

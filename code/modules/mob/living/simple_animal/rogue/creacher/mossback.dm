@@ -10,7 +10,7 @@
 	gender = MALE
 	emote_hear = null
 	emote_see = null
-	turns_per_move = 3
+	turns_per_move = 5
 	see_in_dark = 10
 	move_to_delay = 3
 	base_intents = list(/datum/intent/simple/claw/mossback)
@@ -38,8 +38,9 @@
 	retreat_health = 0
 	food = 0
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
-	dodgetime = 0
+	dodgetime = 6 SECONDS //Can only dodge once per 6 seconds
 	aggressive = 1
+	rot_type = null
 //	stat_attack = UNCONSCIOUS
 
 	can_have_ai = FALSE //disable native ai

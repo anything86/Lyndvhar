@@ -291,6 +291,10 @@
 	max_blade_int = 100
 	max_integrity = 210
 	wdefense = 5
+	
+/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger/ComponentInitialize()
+	. = ..()				//It's preblessed with silver only. Mostly redundant, but safely prevents double-blessing.
+	AddComponent(/datum/component/psyblessed, TRUE, FALSE, FALSE, FALSE, FALSE, TRUE)
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/pickup(mob/user)
 	. = ..()

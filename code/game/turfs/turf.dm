@@ -593,7 +593,13 @@
 		return
 	if(has_gravity(src))
 		playsound(src, "bodyfall", 100, TRUE)
-	faller.drop_all_held_items()
+	if(ishuman(faller))
+		var/mob/living/carbon/human/H = faller
+		var/disarmchance = (100 - (H.STACON + H.STASPD)*3) //Saving throw
+		if(prob(disarmchance))
+			H.drop_all_held_items()
+	else
+		faller.drop_all_held_items()
 
 /turf/proc/photograph(limit=20)
 	var/image/I = new()

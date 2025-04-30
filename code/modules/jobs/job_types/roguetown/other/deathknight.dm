@@ -73,6 +73,7 @@
 		ADD_TRAIT(H, TRAIT_NOSLEEP, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_ARCYNE_T2, TRAIT_GENERIC)
 		for(var/obj/item/bodypart/B in H.bodyparts)
 			B.skeletonize(FALSE)
 		H.update_body()
@@ -87,6 +88,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
+	H.mind.adjust_spellpoints(5)
 
 
 	belt = /obj/item/storage/belt/rogue/leather

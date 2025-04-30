@@ -258,9 +258,9 @@
 /datum/sleep_adv/proc/finish()
 	if(!mind.current)
 		return
-	if(mind.has_studied)
-		mind.has_studied = FALSE
-		to_chat(mind.current, span_smallnotice("I feel like I can study my tome again..."))
+	if(mind.has_changed_spell)
+		mind.has_changed_spell = FALSE
+		to_chat(mind.current, span_smallnotice("I feel like I can change my spells again."))
 	if(mind.has_rituos)
 		mind.has_rituos = FALSE
 		to_chat(mind.current, span_smallnotice("The toil of invoking Her Lesser Work has fled my feeble form. I can continue my transfiguration..."))

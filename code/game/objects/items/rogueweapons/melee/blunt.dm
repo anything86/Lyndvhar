@@ -358,6 +358,10 @@
 	force_wielded = 35
 	slot_flags = ITEM_SLOT_BACK //Looks better on back
 
+/obj/item/rogueweapon/mace/goden/psymace/ComponentInitialize()
+	. = ..()				//Pre-blessed, +5 force, +100 blade int, +100 int, +2 def, make silver.
+	AddComponent(/datum/component/psyblessed, TRUE, 5, 100, 100, 2, TRUE)
+
 /obj/item/rogueweapon/mace/spiked
 	icon_state = "spiked_club"
 

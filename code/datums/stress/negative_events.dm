@@ -277,6 +277,11 @@
 	desc = span_red("Eating such a meal without a table? Churlish.")
 	timer = 2 MINUTES
 
+/datum/stressevent/syoncalamity
+	stressadd = 15
+	desc = span_boldred("By Psydon, his holy relic has been destroyed! What will we do now?!")
+	timer = 15 MINUTES
+
 /datum/stressevent/soulchurnerhorror
 	timer = 10 SECONDS
 	stressadd = 50

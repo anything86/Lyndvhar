@@ -62,6 +62,9 @@
 	item_d_type = "blunt"
 	releasedrain = 8
 
+/datum/intent/flail/strike/smash/golgotha
+	hitsound = list('sound/items/beartrap2.ogg')
+
 /datum/intent/flail/strike/smash/necra
 	name = "sever"
 	blade_class = BCLASS_CHOP
@@ -112,6 +115,15 @@
 	desc = "The striking head is full of teeth, rattling viciously with ever strike, with every rotation. Each set coming from one the wielder has laid to rest. Carried alongside them as a great show of respect."
 	icon_state = "necraflail"
 	force = 30
+
+/obj/item/rogueweapon/flail/sflail/psyflail
+	name = "psydon's flail"
+	desc = "An ornate flail, plated in a ceremonial veneer of silver. Its flanged head can crumple even the toughest of darksteel-maille."
+	icon_state = "psyflail"
+
+/obj/item/rogueweapon/flail/sflail/psyflail/ComponentInitialize()
+	. = ..()							//+3 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 /datum/intent/whip/lash
 	name = "lash"
@@ -228,6 +240,15 @@
 	desc = "I am wrath. I am silver. I am the mercy of HIM."
 	icon_state = "psywhip"
 	is_silver = TRUE
+
+/obj/item/rogueweapon/whip/psywhip_lesser
+	name = "psydonite whip"
+	desc = "An ornate whip, plated in a ceremonial veneer of silver. Crack the leather and watch as the apostates clammer aside."
+	icon_state = "psywhip_lesser"
+
+/obj/item/rogueweapon/whip/psywhip_lesser/ComponentInitialize()
+	. = ..()					//+3 force, +50 int, +1 def, make silver
+	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 /obj/item/rogueweapon/flail/peasantwarflail
 	force = 10

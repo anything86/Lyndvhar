@@ -34,8 +34,6 @@
 	var/motespeed = 20 // mote summoning speed
 	var/sparkspeed = 30 // spark summoning speed
 	var/spark_cd = 0
-	var/xp_interval = 150 // really don't want people to spam this too much for xp - they will, but the intent is for them to not
-	var/xp_cooldown = 0
 
 /obj/item/melee/touch_attack/prestidigitation/Initialize()
 	. = ..()
@@ -50,20 +48,16 @@
 	qdel(src)
 
 /obj/item/melee/touch_attack/prestidigitation/afterattack(atom/target, mob/living/carbon/user, proximity)
-	var/fatigue_used
 	switch (user.used_intent.type)
 		if (INTENT_HELP) // Clean something like a bar of soap
-			fatigue_used = handle_cost(user, PRESTI_CLEAN)
-			if (clean_thing(target, user))
-				handle_xp(user, fatigue_used, TRUE) // cleaning ignores the xp cooldown because it awards comparatively little
+			handle_cost(user, PRESTI_CLEAN)
+			clean_thing(target, user)
 		if (INTENT_DISARM) // Snap your fingers and produce a spark
-			fatigue_used = handle_cost(user, PRESTI_SPARK)
-			if (create_spark(user, target))
-				handle_xp(user, fatigue_used)
+			handle_cost(user, PRESTI_SPARK)
+			create_spark(user, target)
 		if (/datum/intent/use) // Summon an orbiting arcane mote for light
-			fatigue_used = handle_cost(user, PRESTI_MOTE)
-			if (handle_mote(user))
-				handle_xp(user, fatigue_used)
+			handle_cost(user, PRESTI_MOTE)
+			handle_mote(user)
 
 /obj/item/melee/touch_attack/prestidigitation/proc/handle_cost(mob/living/carbon/human/user, action)
 	// handles fatigue/stamina deduction, this stuff isn't free - also returns the cost we took to use for xp calculations
@@ -85,17 +79,6 @@
 		fatigue_used = 0 // we do this after we've actually changed fatigue because we're hard-capping the raises this gives to Expert
 
 	return fatigue_used
-
-/obj/item/melee/touch_attack/prestidigitation/proc/handle_xp(mob/living/carbon/human/user, fatigue, ignore_cooldown = FALSE)
-	if (!ignore_cooldown)
-		if (world.time < xp_cooldown + xp_interval)
-			return
-
-	xp_cooldown = world.time
-
-	var/obj/effect/proc_holder/spell/targeted/touch/prestidigitation/base_spell = attached_spell
-	if (user)
-		adjust_experience(user, base_spell.associated_skill, fatigue)
 
 /obj/item/melee/touch_attack/prestidigitation/proc/handle_mote(mob/living/carbon/human/user)
 	// adjusted from /obj/item/wisp_lantern & /obj/item/wisp
@@ -197,41 +180,14 @@
 	//list of spells you can learn, it may be good to move this somewhere else eventually
 	//TODO: make GLOB list of spells, give them a true/false tag for learning, run through that list to generate choices
 	var/list/choices = list()
-	var/list/obj/effect/proc_holder/spell/spell_choices = list(/obj/effect/proc_holder/spell/invoked/projectile/fireball,
-		/obj/effect/proc_holder/spell/invoked/projectile/lightningbolt,
-		/obj/effect/proc_holder/spell/invoked/projectile/fetch,
-		/obj/effect/proc_holder/spell/invoked/projectile/spitfire,
-		/obj/effect/proc_holder/spell/invoked/forcewall_weak,
-		/obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe,
-		/obj/effect/proc_holder/spell/self/message,
-		/obj/effect/proc_holder/spell/invoked/push_spell,
-		/obj/effect/proc_holder/spell/invoked/blade_burst,
-		/obj/effect/proc_holder/spell/targeted/touch/nondetection,
-//		/obj/effect/proc_holder/spell/invoked/knock,
-		/obj/effect/proc_holder/spell/invoked/haste,
-		/obj/effect/proc_holder/spell/invoked/featherfall,
-		/obj/effect/proc_holder/spell/targeted/touch/darkvision,
-		/obj/effect/proc_holder/spell/invoked/longstrider,
-		/obj/effect/proc_holder/spell/invoked/invisibility,
-		/obj/effect/proc_holder/spell/invoked/blindness,
-		/obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e,
-//		/obj/effect/proc_holder/spell/invoked/frostbite5e,
-		/obj/effect/proc_holder/spell/invoked/guidance,
-		/obj/effect/proc_holder/spell/invoked/fortitude,
-		/obj/effect/proc_holder/spell/invoked/snap_freeze,
-		/obj/effect/proc_holder/spell/invoked/projectile/frostbolt,
-		/obj/effect/proc_holder/spell/invoked/projectile/arcynebolt,
-		/obj/effect/proc_holder/spell/invoked/gravity,
-		/obj/effect/proc_holder/spell/invoked/projectile/repel,
-		/obj/effect/proc_holder/spell/invoked/poisonspray5e,
-		/obj/effect/proc_holder/spell/targeted/touch/lesserknock,
-		/obj/effect/proc_holder/spell/invoked/counterspell,
-		/obj/effect/proc_holder/spell/invoked/enlarge,
-		/obj/effect/proc_holder/spell/invoked/leap
-		
-	)
+	var/user_spell_tier = get_user_spell_tier(user)
+
+	var/list/spell_choices = GLOB.learnable_spells
 	for(var/i = 1, i <= spell_choices.len, i++)
-		choices["[spell_choices[i].name]: [spell_choices[i].cost]"] = spell_choices[i]
+		var/obj/effect/proc_holder/spell/spell_item = spell_choices[i]
+		if(spell_item.spell_tier > user_spell_tier)
+			continue
+		choices["[spell_item.name]: [spell_item.cost]"] = spell_item
 
 	var/choice = input("Choose a spell, points left: [user.mind.spell_points - user.mind.used_spell_points]") as null|anything in choices
 	var/obj/effect/proc_holder/spell/item = choices[choice]
@@ -248,7 +204,9 @@
 		return		// not enough spell points
 	else
 		user.mind.used_spell_points += item.cost
-		user.mind.AddSpell(new item)
+		var/obj/effect/proc_holder/spell/new_spell = new item
+		new_spell.refundable = TRUE
+		user.mind.AddSpell(new_spell)
 		addtimer(CALLBACK(user.mind, TYPE_PROC_REF(/datum/mind, check_learnspell)), 2 SECONDS) //self remove if no points
 		return TRUE
 
@@ -265,6 +223,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
+	spell_tier = 2
+	invocation = "Murus!"
+	invocation_type = "shout"
 	clothes_req = FALSE
 	active = FALSE
 	sound = 'sound/blank.ogg'
@@ -340,10 +301,14 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	range = 6
+	spell_tier = 3
+	invocation = "Impedio!"
+	invocation_type = "shout"
 	overlay_state = "ensnare"
 	var/area_of_effect = 1
 	var/duration = 5 SECONDS
 	var/delay = 0.8 SECONDS
+	ignore_los = FALSE
 
 /obj/effect/proc_holder/spell/invoked/slowdown_spell_aoe/cast(list/targets, mob/user = usr)
 	var/turf/T = get_turf(targets[1])
@@ -385,6 +350,7 @@
 	releasedrain = 30
 	charge_max = 60 SECONDS
 	warnie = "spellwarning"
+	spell_tier = 1
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "message"
 	var/identify_difficulty = 15 //the stat threshold needed to pass the identify check
@@ -448,21 +414,23 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 2
+	spell_tier = 3
+	invocation = "Obmolior!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "repulse"
-	var/stun_amt = 5
 	var/maxthrow = 3
 	var/sparkle_path = /obj/effect/temp_visual/gravpush
-	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
-	var/push_range = 1
+	var/repulse_force = MOVE_FORCE_VERY_STRONG
+	var/push_range = 3
 
 /obj/effect/proc_holder/spell/invoked/push_spell/cast(list/targets, mob/user)
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
 	playsound(user, 'sound/magic/repulse.ogg', 80, TRUE)
-	user.visible_message("[user] mutters an incantation and a wave of force radiates outward!")
+	user.say("[invocation]", forced = "spell") // This is dogshit but for some reason invocation just don't work on repulse
 	for(var/turf/T in view(push_range, user))
 		new /obj/effect/temp_visual/kinetic_blast(T)
 		for(var/atom/movable/AM in T)
@@ -490,7 +458,11 @@
 			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
 			if(isliving(AM))
 				var/mob/living/M = AM
-				M.Paralyze(stun_amt)
+				if(M.STACON > 10)
+					M.Immobilize(10) //Immobilizes for 1 second
+				else
+					M.Knockdown(10)
+					M.Immobilize(10)
 				to_chat(M, "<span class='danger'>You're thrown back by [user]!</span>")
 			AM.safe_throw_at(throwtarget, ((CLAMP((maxthrow - (CLAMP(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
 
@@ -510,9 +482,14 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "blade_burst"
+	spell_tier = 2 // AOE, but this is essential for PVE
+	invocation = "Erumpere Gladios!"
+	invocation_type = "shout"
+	range = 5
 	var/delay = 14
 	var/damage = 125 //if you get hit by this it's your fault
 	var/area_of_effect = 1
+	ignore_los = FALSE
 
 /obj/effect/temp_visual/trap
 	icon = 'icons/effects/effects.dmi'
@@ -633,6 +610,9 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/darkvision
+	spell_tier = 1
+	invocation = "Nox Oculus"
+	invocation_type = "whisper"
 	xp_gain = TRUE
 	cost = 2
 
@@ -677,6 +657,9 @@
 	no_early_release = TRUE
 	movement_interrupt = TRUE
 	charging_slowdown = 2
+	spell_tier = 1 // Not directly combat useful
+	invocation = "Lenis Cadere"
+	invocation_type = "whisper"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "jump"
@@ -704,6 +687,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 2
+	spell_tier = 2
+	invocation = "Festinatio!"
+	invocation_type = "shout" // I mean, it is fast
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 
@@ -738,6 +724,9 @@
 	no_early_release = TRUE
 	movement_interrupt = TRUE
 	charging_slowdown = 2
+	spell_tier = 4 // CM / Antag / Lich exclusive
+	invocation = "Pulso!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 
@@ -777,6 +766,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	charging_slowdown = 1
+	spell_tier = 1 // Not direct combat useful but still good, replicated by polearm
+	invocation = "Aranea Deambulatio"
+	invocation_type = "whisper"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 
@@ -791,11 +783,11 @@
 
 //ports -- todo: sfx
 
-/obj/effect/proc_holder/spell/invoked/projectile/acidsplash5e
+/obj/effect/proc_holder/spell/invoked/projectile/acidsplash
 	name = "Acid Splash"
 	desc = "A slow-moving glob of acid that sprays over an area upon impact."
 	range = 8
-	projectile_type = /obj/projectile/magic/acidsplash5e
+	projectile_type = /obj/projectile/magic/acidsplash
 	overlay_state = "null"
 	sound = list('sound/magic/whiteflame.ogg')
 	active = FALSE
@@ -810,6 +802,9 @@
 	movement_interrupt = FALSE
 	antimagic_allowed = FALSE //can you use it if you are antimagicked?
 	charging_slowdown = 3
+	spell_tier = 2
+	invocation = "Tabificus!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
@@ -817,12 +812,12 @@
 	xp_gain = TRUE
 	miracle = FALSE
 
-/obj/effect/proc_holder/spell/self/acidsplash5e/cast(mob/user = usr)
+/obj/effect/proc_holder/spell/self/acidsplash/cast(mob/user = usr)
 	var/mob/living/target = user
 	target.visible_message(span_warning("[target] hurls a caustic bubble!"), span_notice("You hurl a caustic bubble!"))
 	. = ..()
 
-/obj/projectile/magic/acidsplash5e //port. todo: the sounds these came with aren't good and drink_blood sounds like ur slurpin pintle
+/obj/projectile/magic/acidsplash //port. todo: the sounds these came with aren't good and drink_blood sounds like ur slurpin pintle
 	name = "acid bubble"
 	icon_state = "green_laser"
 	damage = 10
@@ -832,7 +827,7 @@
 	speed = 15 //higher is slower
 	var/aoe_range = 1
 
-/obj/projectile/magic/acidsplash5e/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/magic/acidsplash/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	var/turf/T = get_turf(src)
 	playsound(src, 'sound/misc/drink_blood.ogg', 100)
@@ -840,32 +835,32 @@
 	for(var/mob/living/L in range(aoe_range, get_turf(src))) //apply damage over time to mobs
 		if(!L.anti_magic_check())
 			var/mob/living/carbon/M = L
-			M.apply_status_effect(/datum/status_effect/buff/acidsplash5e)
-			new /obj/effect/temp_visual/acidsplash5e(get_turf(M))
+			M.apply_status_effect(/datum/status_effect/buff/acidsplash)
+			new /obj/effect/temp_visual/acidsplash(get_turf(M))
 	for(var/turf/turfs_in_range in range(aoe_range+1, T)) //make a splash
-		new /obj/effect/temp_visual/acidsplash5e(T)
+		new /obj/effect/temp_visual/acidsplash(T)
 
-/datum/status_effect/buff/acidsplash5e
+/datum/status_effect/buff/acidsplash
 	id = "acid splash"
-	alert_type = /atom/movable/screen/alert/status_effect/buff/acidsplash5e
+	alert_type = /atom/movable/screen/alert/status_effect/buff/acidsplash
 	duration = 20 SECONDS
 
-/datum/status_effect/buff/acidsplash5e/on_apply()
+/datum/status_effect/buff/acidsplash/on_apply()
 	. = ..()
 	owner.playsound_local(get_turf(owner), 'sound/misc/lava_death.ogg', 35, FALSE, pressure_affected = FALSE)
 	owner.visible_message(span_warning("[owner] is covered in acid!"), span_danger("I am covered in acid!"))
 	owner.emote("scream")
 
-/datum/status_effect/buff/acidsplash5e/tick()
+/datum/status_effect/buff/acidsplash/tick()
 	var/mob/living/target = owner
 	target.adjustFireLoss(3)
 
-/atom/movable/screen/alert/status_effect/buff/acidsplash5e
+/atom/movable/screen/alert/status_effect/buff/acidsplash
 	name = "Acid Burn"
 	desc = "My skin is burning!"
 	icon_state = "debuff"
 
-/obj/effect/temp_visual/acidsplash5e
+/obj/effect/temp_visual/acidsplash
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenshatter2"
 	name = "horrible acrid brine"
@@ -882,8 +877,6 @@
 	releasedrain = 50
 	chargetime = 3
 	charge_max = 25 SECONDS
-	//chargetime = 10
-	//charge_max = 30 SECONDS
 	range = 7
 	warnie = "spellwarning"
 	movement_interrupt = FALSE
@@ -891,7 +884,10 @@
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
 	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	associated_skill = /datum/skill/magic/arcane
+	spell_tier = 2
+	invocation = "Congelationis!"
+	invocation_type = "shout"
 	cost = 1
 
 	xp_gain = TRUE
@@ -948,6 +944,9 @@
 	school = "transmutation"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 2
+	invocation = "Tenax"
+	invocation_type = "whisper"
 	charging_slowdown = 2
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
@@ -984,6 +983,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 2
+	spell_tier = 2
+	invocation = "Ducere"
+	invocation_type = "whisper"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 
@@ -1019,6 +1021,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 2
+	spell_tier = 3
+	invocation = "Congelare Subitus!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	var/delay = 6
@@ -1093,6 +1098,9 @@
 	movement_interrupt = FALSE
 	antimagic_allowed = FALSE //can you use it if you are antimagicked?
 	charging_slowdown = 3
+	spell_tier = 2
+	invocation = "Sagitta Glaciei!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
@@ -1148,6 +1156,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
+	spell_tier = 2
+	invocation = "Magicae Sagitta!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 1
@@ -1192,6 +1203,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 2
+	spell_tier = 2
+	invocation = "Pondus!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	var/delay = 3
@@ -1257,6 +1271,9 @@
 	overlay_state = "fetch"
 	no_early_release = TRUE
 	charging_slowdown = 1
+	spell_tier = 2
+	invocation = "Exmoveo!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	cost = 1
@@ -1302,7 +1319,7 @@
 					throw_target = get_edge_target_turf(firer, get_dir(firer, target))
 			I.throw_at(throw_target, 7, 4)
 
-/obj/effect/proc_holder/spell/invoked/poisonspray5e
+/obj/effect/proc_holder/spell/invoked/aerosolize
 	name = "Aerosolize" //once again renamed to fit better :)
 	desc = "Turns a container of liquid into a smoke containing the reagents of that liquid."
 	overlay_state = "null"
@@ -1318,7 +1335,10 @@
 	chargedloop = null
 	sound = 'sound/magic/whiteflame.ogg'
 	chargedloop = /datum/looping_sound/invokegen
-	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
+	associated_skill = /datum/skill/magic/arcane
+	spell_tier = 2
+	invocation = "Converti in Nebulam!"
+	invocation_type = "shout"
 	cost = 1
 
 	xp_gain = TRUE
@@ -1327,7 +1347,7 @@
 	invocation = ""
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	
-/obj/effect/proc_holder/spell/invoked/poisonspray5e/cast(list/targets, mob/living/user)
+/obj/effect/proc_holder/spell/invoked/aerosolize/cast(list/targets, mob/living/user)
 	var/turf/T = get_turf(targets[1]) //check for turf
 	if(T)
 		var/obj/item/held_item = user.get_active_held_item() //get held item
@@ -1370,6 +1390,9 @@
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
 	hand_path = /obj/item/melee/touch_attack/lesserknock
+	spell_tier = 1
+	invocation = "Parvus Pulso"
+	invocation_type = "whisper" // It is a fake stealth spell (lockpicking is very loud)
 	cost = 1
 	
 /obj/item/melee/touch_attack/lesserknock
@@ -1400,6 +1423,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
+	spell_tier = 3 // Full shut down of another mage should be a full mage privilege, imo
+	invocation = "Respondeo!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/wind
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "rune2"
@@ -1437,6 +1463,9 @@
 	no_early_release = TRUE
 	movement_interrupt = FALSE
 	charging_slowdown = 3
+	spell_tier = 2
+	invocation = "Dilatare!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/wind
 	associated_skill = /datum/skill/magic/arcane
 	overlay_state = "rune1"
@@ -1477,6 +1506,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 2
+	invocation = "Saltus!"
+	invocation_type = "whisper"
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/wind
 	associated_skill = /datum/skill/magic/arcane
@@ -1499,6 +1531,366 @@
 	REMOVE_TRAIT(target, TRAIT_ZJUMP, MAGIC_TRAIT)
 	to_chat(target, span_warning("My legs feel remarkably weaker."))
 	target.Immobilize(5)
+
+/obj/effect/proc_holder/spell/invoked/mirror_transform  // Changed from targeted to invoked
+	name = "Mirror Transform"
+	desc = "Temporarily grants you the ability to use mirrors to change your appearance."
+	clothes_req = FALSE
+	charge_type = "recharge"
+	associated_skill = /datum/skill/magic/arcane
+	cost = 2
+	xp_gain = TRUE
+	// Fix invoked spell variables
+	releasedrain = 35
+	chargedrain = 1  // Fixed from chargeddrain to chargedrain
+	chargetime = 10
+	charge_max = 300 SECONDS
+	warnie = "spellwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	spell_tier = 1
+	invocation = "Effingo"
+	invocation_type = "whisper"
+	charging_slowdown = 3
+	chargedloop = /datum/looping_sound/wind
+	overlay_state = "mirror"
+
+/obj/effect/proc_holder/spell/invoked/mirror_transform/cast(list/targets, mob/user)  // Changed to match invoked spell pattern
+	if(!isliving(targets[1]))
+		return
+	var/mob/living/carbon/human/H = targets[1]
+	if(!istype(H))
+		return
+	ADD_TRAIT(H, TRAIT_MIRROR_MAGIC, TRAIT_GENERIC)
+	H.visible_message(span_notice("[H]'s reflection shimmers briefly."), span_notice("You feel a connection to mirrors forming..."))
+	
+	addtimer(CALLBACK(src, PROC_REF(remove_mirror_magic), H), 5 MINUTES)
+	return TRUE  // Return TRUE for successful cast
+
+/obj/effect/proc_holder/spell/invoked/mirror_transform/proc/remove_mirror_magic(mob/living/carbon/human/H)
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_MIRROR_MAGIC, TRAIT_GENERIC)
+		to_chat(H, span_warning("Your connection to mirrors fades away."))
+
+/obj/effect/proc_holder/spell/invoked/shadowstep
+	name = "Shadowstep"
+	desc = "Project your shadow to swap places with it, teleporting several feet away."
+	cost = 1
+	xp_gain = TRUE
+	releasedrain = 30
+	warnie = "spellwarning"
+	movement_interrupt = TRUE
+	associated_skill = /datum/skill/magic/arcane
+	overlay_state = "shadowstep"
+	chargedrain = 1
+	chargetime = 0 SECONDS
+	charge_max = 30 SECONDS
+	spell_tier = 2
+	// This is super telegraphed so it shouldn't need any whisper. It can stay silent as a unique.
+	var/area_of_effect = 1
+	var/max_range = 7
+	var/turf/destination_turf
+	var/turf/user_turf
+	var/mutable_appearance/tile_effect
+	var/mutable_appearance/target_effect
+	var/datum/looping_sound/invokeshadow/shadowloop
+
+//Resets the tile and turf effects.
+/obj/effect/proc_holder/spell/invoked/shadowstep/proc/reset(silent = FALSE)
+	if(tile_effect && destination_turf)
+		destination_turf.cut_overlay(tile_effect)
+		qdel(tile_effect)
+		destination_turf = null
+	if(user_turf && target_effect)
+		user_turf.cut_overlay(target_effect)
+		qdel(target_effect)
+		user_turf = null
+	update_icon()
+
+/obj/effect/proc_holder/spell/invoked/shadowstep/proc/check_path(turf/Tu, turf/Tt)
+	var/dist = get_dist(Tt, Tu)
+	var/last_dir
+	var/turf/last_step
+	if(Tu.z > Tt.z) 
+		last_step = get_step_multiz(Tu, DOWN)
+	else if(Tu.z < Tt.z)
+		last_step = get_step_multiz(Tu, UP)
+	else 
+		last_step = locate(Tu.x, Tu.y, Tu.z)
+	var/success = FALSE
+	for(var/i = 0, i <= dist, i++)
+		last_dir = get_dir(last_step, Tt)
+		var/turf/Tstep = get_step(last_step, last_dir)
+		if(!Tstep.density)
+			success = TRUE
+			var/list/cont = Tstep.GetAllContents(/obj/structure/roguewindow)
+			for(var/obj/structure/roguewindow/W in cont)
+				if(W.climbable && !W.opacity)	//It's climbable and can be seen through
+					success = TRUE
+					continue
+				else if(!W.climbable)
+					success = FALSE
+					return success
+		else
+			success = FALSE
+			return success
+		last_step = Tstep
+	return success
+
+//Successful teleport, complete reset.
+/obj/effect/proc_holder/spell/invoked/shadowstep/proc/tp(mob/user)
+	if(destination_turf)
+		if(do_teleport(user, destination_turf, no_effects=TRUE))
+			log_admin("[user.real_name]([key_name(user)] Shadowstepped from X:[user_turf.x] Y:[user_turf.y] Z:[user_turf.z] to X:[destination_turf.x] Y:[destination_turf.y] Z:[destination_turf.z] in area: [get_area(destination_turf)]")
+			if(user.m_intent == MOVE_INTENT_SNEAK)
+				playsound(user_turf, 'sound/magic/shadowstep.ogg', 20, FALSE)
+				playsound(destination_turf, 'sound/magic/shadowstep.ogg', 20, FALSE)
+			else
+				playsound(user_turf, 'sound/magic/shadowstep.ogg', 100, FALSE)
+				playsound(destination_turf, 'sound/magic/shadowstep.ogg', 100, FALSE)
+			reset(silent = TRUE)
+
+/obj/effect/proc_holder/spell/invoked/shadowstep/cast(list/targets, mob/user)
+	var/turf/T = get_turf(targets[1])
+	if(!istransparentturf(T))
+		var/reason
+		if(max_range >= get_dist(user, T) && !T.density)
+			if(check_path(get_turf(user), T))	//We check for opaque turfs or non-climbable windows in the way via a simple pathfind.
+				if(get_dist(user, T) < 2 && user.z == T.z)
+					to_chat(user, span_info("Too close!"))
+					revert_cast()
+					return
+				to_chat(user, span_info("I begin to meld with the shadows.."))
+				lockon(T, user)
+				if(do_after(user, 5 SECONDS))
+					tp(user)
+				else
+					reset(silent = TRUE)
+					revert_cast()
+				return
+			else
+				to_chat(user, span_info("The path is blocked!"))
+				revert_cast()
+				return
+		else if(get_dist(user, T) > max_range)
+			reason = "It's too far."
+			revert_cast()
+		else if (T.density)
+			reason = "It's a wall!"
+			revert_cast()
+		to_chat(user, span_info("I cannot shadowstep there! "+"[reason]"))
+	else
+		to_chat(user, span_info("I cannot shadowstep there!"))
+		revert_cast()
+	. = ..()
+
+//Plays affects at target Turf
+/obj/effect/proc_holder/spell/invoked/shadowstep/proc/lockon(turf/T, mob/user)
+	if(user.m_intent == MOVE_INTENT_SNEAK)
+		playsound(T, 'sound/magic/shadowstep_destination.ogg', 20, FALSE, 5)
+	else
+		playsound(T, 'sound/magic/shadowstep_destination.ogg', 100, FALSE, 5)
+	tile_effect = mutable_appearance(icon = 'icons/effects/effects.dmi', icon_state = "curse", layer = 18)
+	target_effect = mutable_appearance(icon = 'icons/effects/effects.dmi', icon_state = "curse", layer = 18)
+	user_turf = get_turf(user)
+	destination_turf = T
+	user_turf.add_overlay(target_effect)
+	destination_turf.add_overlay(tile_effect)
+
+/obj/effect/proc_holder/spell/invoked/blink
+	name = "Blink"
+	desc = "Teleport to a targeted location within your field of view. Limited to a range of 5 tiles. Only works on the same plane as the caster."
+	school = "conjuration"
+	cost = 1
+	releasedrain = 30
+	chargedrain = 1
+	chargetime = 1.5 SECONDS
+	charge_max = 10 SECONDS
+	warnie = "spellwarning"
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	spell_tier = 2
+	charging_slowdown = 2
+	chargedloop = /datum/looping_sound/invokegen
+	associated_skill = /datum/skill/magic/arcane
+	overlay_state = "rune6"
+	xp_gain = TRUE
+	invocation = "Nictare Teleporto!"
+	invocation_type = "shout"
+	var/max_range = 5
+	var/phase = /obj/effect/temp_visual/blink
+
+/obj/effect/temp_visual/blink
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "hierophant_blast"
+	name = "teleportation magic"
+	desc = "Get out of the way!"
+	randomdir = FALSE
+	duration = 4 SECONDS
+	layer = MASSIVE_OBJ_LAYER
+	light_outer_range = 2
+	light_color = COLOR_PALE_PURPLE_GRAY
+
+/obj/effect/temp_visual/blink/Initialize(mapload, new_caster)
+	. = ..()
+	var/turf/src_turf = get_turf(src)
+	playsound(src_turf,'sound/magic/blink.ogg', 65, TRUE, -5)
+
+/obj/effect/proc_holder/spell/invoked/blink/cast(list/targets, mob/user = usr)
+	var/turf/T = get_turf(targets[1])
+	var/turf/start = get_turf(user)
+	
+	if(!T)
+		to_chat(user, span_warning("Invalid target location!"))
+		revert_cast()
+		return
+	if(T.z != start.z)
+		to_chat(user, span_warning("I can only teleport on the same plane!"))
+		revert_cast()
+		return
+	
+	if(istransparentturf(T))
+		to_chat(user, span_warning("I cannot teleport to the open air!"))
+		revert_cast()
+		return
+	if(T.density)
+		to_chat(user, span_warning("I cannot teleport into a wall!"))
+		revert_cast()
+		return
+	// Check range limit
+	var/distance = get_dist(start, T)
+	if(distance > max_range)
+		to_chat(user, span_warning("That location is too far away! I can only blink up to [max_range] tiles."))
+		revert_cast()
+		return
+	
+	// Display a more obvious preparation message
+	user.visible_message(span_warning("<b>[user]'s body begins to shimmer with arcane energy as [user.p_they()] prepare[user.p_s()] to blink!</b>"), 
+						span_notice("<b>I focus my arcane energy, preparing to blink across space!</b>"))
+		
+	// Check if there's a wall in the way, but exclude the target turf
+	var/list/turf_list = getline(start, T)
+	// Remove the last turf (target location) from the check
+	if(length(turf_list) > 0)
+		turf_list.len--
+	
+	for(var/turf/turf in turf_list)
+		if(turf.density)
+			to_chat(user, span_warning("I cannot blink through walls!"))
+			revert_cast()
+			return
+			
+	// Check for doors and bars in the path
+	for(var/turf/traversal_turf in turf_list)
+		// Check for mineral doors
+		for(var/obj/structure/mineral_door/door in (traversal_turf.contents + T.contents))
+			if(door.density)
+				to_chat(user, span_warning("I cannot blink through doors!"))
+				revert_cast()
+				return
+				
+		// Check for windows
+		for(var/obj/structure/roguewindow/window in (traversal_turf.contents + T.contents))
+			if(window.density && !window.climbable)
+				to_chat(user, span_warning("I cannot blink through windows!"))
+				revert_cast()
+				return
+				
+		// Check for bars
+		for(var/obj/structure/bars/bars in (traversal_turf.contents + T.contents))
+			if(bars.density)
+				to_chat(user, span_warning("I cannot blink through bars!"))
+				revert_cast()
+				return
+		// Check for gates
+		for (var/obj/structure/gate/gate in (traversal_turf.contents + T.contents))
+			if(gate.density)
+				to_chat(user, span_warning("I cannot blink through gates!"))
+				revert_cast()
+				return
+	var/obj/spot_one = new phase(start, user.dir)
+	var/obj/spot_two = new phase(T, user.dir)
+	spot_one.Beam(spot_two, "purple_lightning", time = 1.5 SECONDS)
+	playsound(T, 'sound/magic/blink.ogg', 25, TRUE)
+	if(user.buckled) // don't stay remote-buckled to the guillotine/pillory
+		user.buckled.unbuckle_mob(user, TRUE)
+	do_teleport(user, T, channel = TELEPORT_CHANNEL_MAGIC)
+
+	user.visible_message(span_danger("<b>[user] vanishes in a mysterious purple flash!</b>"), span_notice("<b>I blink through space in an instant!</b>"))
+	return TRUE
+
+/obj/effect/proc_holder/spell/invoked/mindlink
+	name = "Mindlink"
+	desc = "Establish a telepathic link with an ally for one minute. Use ,y before a message to communicate telepathically."
+	clothes_req = FALSE
+	overlay_state = "mindlink"
+	associated_skill = /datum/skill/magic/arcane
+	cost = 2
+	xp_gain = TRUE
+	charge_max = 5 MINUTES
+	spell_tier = 3
+	invocation = "Mens Nexu"
+	invocation_type = "whisper"
+
+	// Charged spell variables
+	chargedloop = /datum/looping_sound/invokegen
+	chargedrain = 1
+	chargetime = 20
+	releasedrain = 25
+	no_early_release = TRUE
+	movement_interrupt = FALSE
+	charging_slowdown = 2
+	warnie = "spellwarning"
+	ignore_los = TRUE
+
+/obj/effect/proc_holder/spell/invoked/mindlink/cast(list/targets, mob/living/user)
+	. = ..()
+	if(!istype(user))
+		return
+	
+	var/list/possible_targets = list()
+	if(user.client)
+		possible_targets += user  // Always add self first
+		
+	if(user.mind?.known_people)  // Only check known_people if it exists
+		for(var/mob/living/L in GLOB.player_list)
+			if((L.client && L != user) && (L.real_name in user.mind.known_people))
+				possible_targets += L
+	
+	if(!length(possible_targets))
+		to_chat(user, span_warning("You have no known people to establish a mindlink with!"))
+		return FALSE
+	var/mob/living/first_target = input(user, "Choose the first person to link", "Mindlink") as null|anything in possible_targets
+	if(!first_target)
+		return FALSE
+		
+	var/mob/living/second_target = input(user, "Choose the second person to link", "Mindlink") as null|anything in possible_targets
+	if(!second_target)
+		return FALSE
+	if(first_target == second_target)
+		to_chat(user, span_warning("You cannot link someone to themselves!"))
+		return FALSE
+	user.visible_message(span_notice("[user] touches their temples and concentrates..."), span_notice("I establish a mental connection between [first_target] and [second_target]..."))
+	
+	// Create the mindlink
+	var/datum/mindlink/link = new(first_target, second_target)
+	GLOB.mindlinks += link
+	
+	to_chat(first_target, span_notice("A mindlink has been established with [second_target]! Use ,y before a message to communicate telepathically."))
+	to_chat(second_target, span_notice("A mindlink has been established with [first_target]! Use ,y before a message to communicate telepathically."))
+	
+	addtimer(CALLBACK(src, PROC_REF(break_link), link), 3 MINUTES)
+	return TRUE
+
+/obj/effect/proc_holder/spell/invoked/mindlink/proc/break_link(datum/mindlink/link)
+	if(!link)
+		return
+	
+	to_chat(link.owner, span_warning("The mindlink with [link.target] fades away..."))
+	to_chat(link.target, span_warning("The mindlink with [link.owner] fades away..."))
+	
+	GLOB.mindlinks -= link
+	qdel(link)
 
 
 #undef PRESTI_CLEAN

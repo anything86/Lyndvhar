@@ -41,6 +41,7 @@
 	retreat_health = 0.3
 	attack_sound = list('sound/vo/mobs/spider/attack (1).ogg','sound/vo/mobs/spider/attack (2).ogg','sound/vo/mobs/spider/attack (3).ogg','sound/vo/mobs/spider/attack (4).ogg')
 	aggressive = 1
+	rot_type = null
 
 	//new ai, old ai off
 	AIStatus = AI_OFF

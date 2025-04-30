@@ -1,5 +1,3 @@
-
-
 /obj/structure/roguemachine/mail
 	name = "HERMES"
 	desc = "Carrier zads have fallen severely out of fashion ever since the advent of this hydropneumatic mail system."
@@ -27,6 +25,8 @@
 				else
 					say("You have additional mail available.")
 					break
+		if(!any_additional_mail(M, H.real_name))
+			H.remove_status_effect(/datum/status_effect/ugotmail)
 
 /obj/structure/roguemachine/mail/attack_right(mob/user)
 	. = ..()
@@ -67,7 +67,7 @@
 				P.update_icon()
 				P.forceMove(X.loc)
 				X.say("New mail!")
-				playsound(X, 'sound/misc/mail.ogg', 100, FALSE, -1)
+				playsound(X, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 				break
 		if(found)
 			visible_message(span_warning("[user] sends something."))
@@ -92,6 +92,10 @@
 			X.new_mail=TRUE
 			X.update_icon()
 			send_ooc_note("New letter from <b>[sentfrom].</b>", name = send2place)
+			for(var/mob/living/carbon/human/H in GLOB.human_list)
+				if(H.real_name == send2place)
+					H.apply_status_effect(/datum/status_effect/ugotmail)
+					H.playsound_local(H, 'sound/misc/mail.ogg', 100, FALSE, -1)
 		else
 			to_chat(user, span_warning("The master of mails has perished?"))
 			return
@@ -141,8 +145,7 @@
 						P.update_icon()
 						P.forceMove(X.loc)
 						X.say("New mail!")
-						playsound(X, 'sound/misc/mail.ogg', 100, FALSE, -1)
-						playsound(src.loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+						playsound(X, 'sound/misc/hiss.ogg', 100, FALSE, -1)
 						break
 				if(found)
 					visible_message(span_warning("[user] sends something."))
@@ -172,6 +175,10 @@
 					visible_message(span_warning("[user] sends something."))
 					playsound(loc, 'sound/misc/disposalflush.ogg', 100, FALSE, -1)
 					send_ooc_note("New letter from <b>[sentfrom].</b>", name = send2place)
+					for(var/mob/living/carbon/human/H in GLOB.human_list)
+						if(H.real_name == send2place)
+							H.apply_status_effect(/datum/status_effect/ugotmail)
+							H.playsound_local(H, 'sound/misc/mail.ogg', 100, FALSE, -1)
 					return
 	if(istype(P, /obj/item/roguecoin))
 		if(coin_loaded)
@@ -304,3 +311,9 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 	return ..()
+
+/obj/structure/roguemachine/mail/proc/any_additional_mail(obj/item/roguemachine/mastermail/M, name)
+	for(var/obj/item/I in M.contents)
+		if(I.mailedto == name)
+			return TRUE
+	return FALSE

@@ -17,6 +17,9 @@
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokelightning
 	associated_skill = /datum/skill/magic/arcane
+	spell_tier = 3
+	invocation = "Fulmen!"
+	invocation_type = "shout"
 	cost = 2
 	xp_gain = TRUE
 
@@ -28,7 +31,7 @@
 	hitscan = TRUE
 	movement_type = UNSTOPPABLE
 	light_color = LIGHT_COLOR_WHITE
-	damage = 15
+	damage = 20
 	damage_type = BURN
 	nodamage = FALSE
 	speed = 0.3
@@ -49,10 +52,11 @@
 			var/mob/living/L = target
 			if(L.STACON <= 14)
 				L.electrocute_act(2, src, 2, SHOCK_NOSTUN)
-				L.Paralyze(10)
+				L.Knockdown(10)
+				L.Immobilize(3)
 			else
 				L.electrocute_act(1, src, 1, SHOCK_NOSTUN)
-				L.Paralyze(10)
+				L.Immobilize(5)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodlightning
@@ -65,11 +69,14 @@
 	projectile_type = /obj/projectile/magic/bloodlightning
 	releasedrain = 30
 	chargedrain = 1
-	chargetime = 25
+	chargetime = 20
 	charge_max = 20 SECONDS
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 3 // Doesn't matter for the most part
+	invocation = "Sanguis Sagitta!"
+	invocation_type = "shout"
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/blood
@@ -81,7 +88,7 @@
 	impact_type = null
 	hitscan = TRUE
 	movement_type = UNSTOPPABLE
-	damage = 35
+	damage = 25
 	damage_type = BURN
 	nodamage = FALSE
 	speed = 0.3
@@ -100,7 +107,13 @@
 			return BULLET_ACT_BLOCK
 		if(isliving(target))
 			var/mob/living/L = target
-			L.electrocute_act(3, src)
+			if(L.STACON <= 14)
+				L.electrocute_act(2, src, 2, SHOCK_NOSTUN)
+				L.Knockdown(10)
+				L.Immobilize(3)
+			else
+				L.electrocute_act(1, src, 1, SHOCK_NOSTUN)
+				L.Immobilize(5)
 	qdel(src)
 
 /obj/effect/proc_holder/spell/invoked/projectile/bloodsteal
@@ -118,6 +131,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 2
+	invocation = "Sanguis Furtum!"
+	invocation_type = "shout"
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/blood
@@ -174,6 +190,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 3 // AOE
+	invocation = "Sphaera Ignis!"
+	invocation_type = "shout"
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokefire
 	associated_skill = /datum/skill/magic/arcane
@@ -222,6 +241,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = TRUE
+	spell_tier = 4 // Highest tier AOE
+	invocation = "Maior Sphaera Ignis!"
+	invocation_type = "shout"
 	chargedloop = /datum/looping_sound/invokefire
 	cost = 5
 	xp_gain = TRUE
@@ -250,6 +272,9 @@
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = FALSE
+	spell_tier = 2
+	invocation = "Evomere Flammas!"
+	invocation_type = "shout"
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokefire
 	associated_skill = /datum/skill/magic/arcane
@@ -284,6 +309,9 @@
 	warnie = "spellwarning"
 	overlay_state = "fetch"
 	no_early_release = TRUE
+	spell_tier = 2
+	invocation = "Recolligere"
+	invocation_type = "whisper"
 	charging_slowdown = 1
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane

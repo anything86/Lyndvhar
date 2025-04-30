@@ -390,6 +390,7 @@
 #include "code\datums\hud.dm"
 #include "code\datums\map_config.dm"
 #include "code\datums\mind.dm"
+#include "code\datums\mindlink.dm"
 #include "code\datums\movement_detector.dm"
 #include "code\datums\mutable_appearance.dm"
 #include "code\datums\numbered_display.dm"
@@ -1838,6 +1839,7 @@
 #include "code\modules\spells\spell.dm"
 #include "code\modules\spells\roguetown\_roguetown.dm"
 #include "code\modules\spells\roguetown\confessor.dm"
+#include "code\modules\spells\roguetown\helper.dm"
 #include "code\modules\spells\roguetown\jester.dm"
 #include "code\modules\spells\roguetown\monk.dm"
 #include "code\modules\spells\roguetown\necromancer.dm"
@@ -2048,5 +2050,6 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\orc.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
+#include "modular_hearthstone\code\modules\spells\roguetown\spelllist.dm"
 #include "modular_hearthstone\code\modules\spells\roguetown\wizard.dm"
 // END_INCLUDE

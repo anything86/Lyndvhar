@@ -39,10 +39,6 @@
 
 
 /obj/item/book/granter/attack_self(mob/living/user)
-	if(user.mind?.has_studied == TRUE)
-		to_chat(user, span_notice("These symbols assault my mind -- I cannot control the book's power!"))
-		recoil(user)
-		return FALSE
 	if(reading)
 		to_chat(user, span_warning("I'm already reading this!"))
 		return FALSE

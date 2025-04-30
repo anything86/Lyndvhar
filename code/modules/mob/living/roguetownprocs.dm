@@ -132,7 +132,7 @@
 			if(world.time < last_parry + setparrytime)
 				if(!istype(rmb_intent, /datum/rmb_intent/riposte))
 					return FALSE
-			if(has_status_effect(/datum/status_effect/debuff/feinted))
+			if(has_status_effect(/datum/status_effect/debuff/exposed))
 				return FALSE
 			if(has_status_effect(/datum/status_effect/debuff/riposted))
 				return FALSE
@@ -353,7 +353,7 @@
 					return FALSE
 			if(has_status_effect(/datum/status_effect/debuff/riposted))
 				return FALSE
-			if(has_status_effect(/datum/status_effect/debuff/feinted))
+			if(has_status_effect(/datum/status_effect/debuff/exposed))
 				return FALSE
 			last_dodge = world.time
 			if(src.loc == user.loc)

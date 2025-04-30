@@ -92,11 +92,12 @@
 	cost = 300
 	contains = list(/obj/item/clothing/ring/active/nomag)
 
+/* Moderators get this scrying orb out of my goldface immediately! - Bowl 4/29/2025
 /datum/supply_pack/rogue/luxury/scrying
 	name = "Scrying Orb"
 	cost = 300
 	contains = list(/obj/item/scrying)
-
+*/
 /datum/supply_pack/rogue/luxury/listenst
 	name = "Emerald Choker"
 	cost = 250
@@ -104,7 +105,7 @@
 
 /datum/supply_pack/rogue/luxury/riddleofsteel
 	name = "Riddle of Steel"
-	cost = 500
+	cost = 3500
 	contains = list(/obj/item/riddleofsteel)
 
 /datum/supply_pack/rogue/luxury/polishing_kit
@@ -112,12 +113,12 @@
 	cost = 100
 	contains = list(/obj/item/polishing_cream, /obj/item/armor_brush)
 
-
+/* Kill that too that's magic-adjacent - Bowl 4/29/2025
 /datum/supply_pack/rogue/luxury/talkstone
 	name = "Talkstone"
 	cost = 150
 	contains = list(/obj/item/clothing/neck/roguetown/talkstone)
-
+*/
 
 /datum/supply_pack/rogue/luxury/circlet
 	name = "Circlet"
