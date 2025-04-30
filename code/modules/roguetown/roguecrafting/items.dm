@@ -812,7 +812,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/bell_collar
-	name = "bell Collar"
+	name = "bell collar"
 	result = /obj/item/clothing/neck/roguetown/collar/bell_collar
 	reqs = list(
 				/obj/item/natural/hide/cured = 1,

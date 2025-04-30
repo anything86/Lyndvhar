@@ -219,11 +219,11 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/collar
 	name = "Collar"
-	path = /obj/item/clothing/neck/roguetown/collar
+	path = /obj/item/clothing/neck/roguetown/collar/leather
 
 /datum/loadout_item/bell_collar
 	name = "Bell Collar"
-	path = /obj/item/clothing/neck/roguetown/collar/bell_collar
+	path = /obj/item/clothing/neck/roguetown/collar/leather/bell
 
 /datum/loadout_item/cloth_blindfold
 	name = "Cloth Blindfold"
