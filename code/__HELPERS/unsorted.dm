@@ -1620,3 +1620,12 @@ GLOBAL_LIST_INIT(duplicate_forbidden_vars,list(
 			for(var/atom/contained_atom in M.component_parts)
 				contained_atom.flags_1 |= HOLOGRAM_1
 	return O
+
+// How long an action (e.g. do_after) can takes IN SECONDS by using skill checks
+/proc/get_skill_delay(skill_level, fastest = 0.5, slowest = 5) 
+	if(skill_level == SKILL_LEVEL_NONE) //can't divivde by zero
+		return slowest SECONDS
+	else
+		var/percentage = skill_level / SKILL_LEVEL_LEGENDARY // Turns it into a percentage
+		var/result = LERP(slowest, fastest, percentage)
+		return result SECONDS

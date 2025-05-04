@@ -30,11 +30,13 @@
 	target.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	if(target.sexcon.check_active_ejaculation())
+		target.sexcon.ejaculate()
 
 /datum/sex_action/facesitting/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] gets off [target]'s face."))

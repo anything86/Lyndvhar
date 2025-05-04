@@ -23,7 +23,8 @@
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	if(target.sexcon.check_active_ejaculation())
+		target.sexcon.ejaculate()
 
 /datum/sex_action/rimming/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops rimming [target]'s butt ..."))

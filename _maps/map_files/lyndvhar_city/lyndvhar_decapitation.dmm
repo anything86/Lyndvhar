@@ -4,30 +4,30 @@
 "aj" = (/obj/structure/table/wood,/obj/item/clothing/shoes/roguetown/boots/armor,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
 "ar" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/scarymaze)
 "au" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
-"aH" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
-"aI" = (/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/dragonden)
+"aH" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"aI" = (/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "aL" = (/obj/structure/fluff/railing/fence{dir = 8},/obj/structure/fluff/railing/fence,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap)
 "bg" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "bm" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "bt" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/decap)
-"bu" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"bu" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "bv" = (/obj/structure/bars/passage,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "bw" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "bC" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/scarymaze)
 "bG" = (/turf/closed/wall/mineral/rogue/tent,/area/rogue/indoors/shelter/mountains/decap)
 "bM" = (/obj/structure/table/wood,/obj/structure/bars{icon_state = "barsbent"; layer = 2.81},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"bO" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"bO" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "bQ" = (/obj/structure/bed/rogue/inn/hay,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/cave/dungeon1/gethsmane)
 "ca" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder/ravager,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "cb" = (/mob/living/carbon/human/species/human/northern/searaider/ambush,/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "cd" = (/obj/structure/closet/crate/drawer,/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"cf" = (/turf/open/water/swamp,/area/rogue/outdoors/mountains/decap/stepbelow)
+"cf" = (/turf/open/water/swamp,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "cj" = (/obj/structure/table/wood{icon_state = "tablewood2"; dir = 10},/obj/item/candle/yellow,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "cr" = (/obj/structure/rack/rogue/shelf/biggest,/obj/structure/rack/rogue/shelf/notdense,/obj/item/reagent_containers/glass/bottle/rogue/water,/obj/item/reagent_containers/glass/bottle/rogue/water,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "cy" = (/obj/machinery/light/rogue/torchholder{dir = 4},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"cz" = (/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow)
+"cz" = (/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "cI" = (/obj/machinery/light/rogue/firebowl,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"cM" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"cM" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "cQ" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt,/area/rogue/under/cave/dungeon1/gethsmane)
 "dd" = (/obj/structure/chair/wood/rogue{dir = 4},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "do" = (/mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe,/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/under/cave/dungeon1/gethsmane)
@@ -36,7 +36,7 @@
 "dw" = (/obj/structure/closet/crate/drawer,/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "dx" = (/mob/living/carbon/human/species/goblin/npc/ambush/hell,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "em" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc/orc_marauder/ravager,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"ex" = (/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap/stepbelow)
+"ex" = (/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "eB" = (/obj/structure/spider/stickyweb,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "eG" = (/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
 "eM" = (/obj/structure/stairs/stone{dir = 1; icon_state = "stonestairs"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap)
@@ -49,7 +49,7 @@
 "fs" = (/obj/structure/fluff/sellsign{name = "CONDEMNED BY THE HOLY SEE"},/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
 "fy" = (/obj/structure/stairs/stone/d,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "fI" = (/obj/structure/table/wood,/obj/item/clothing/cloak/templar/malumite,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
-"fR" = (/mob/living/simple_animal/hostile/retaliate/rogue/dragon,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
+"fR" = (/mob/living/simple_animal/hostile/retaliate/rogue/dragon,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "ga" = (/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/cave/dungeon1/gethsmane)
 "gh" = (/obj/machinery/light/rogue/torchholder{dir = 4},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "gl" = (/obj/structure/bars/passage,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
@@ -65,8 +65,8 @@
 "hf" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "hi" = (/obj/structure/table/wood{icon_state = "map2"},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "hk" = (/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"hp" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/dragonden)
-"hs" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow)
+"hp" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
+"hs" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "hw" = (/obj/structure/chair/wood/rogue{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "hy" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
 "hG" = (/turf/open/floor/rogue/blocks/stonered/tiny,/area/rogue/under/cave/dungeon1/gethsmane)
@@ -77,7 +77,7 @@
 "iy" = (/obj/structure/fluff/walldeco/med6{pixel_x = -32},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "iF" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "iM" = (/obj/effect/decal/cobbleedge{dir = 4; icon_state = "borderfall"; pixel_x = -18; pixel_y = 0},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"iW" = (/mob/living/simple_animal/hostile/rogue/skeleton/guard,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"iW" = (/mob/living/simple_animal/hostile/rogue/skeleton/guard,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "jb" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/food,/turf/open/floor/rogue/cobble/mossy,/area/rogue/under/cave/dungeon1/gethsmane)
 "je" = (/obj/structure/chair/bench/church/smallbench,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "jj" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
@@ -117,11 +117,11 @@
 "mN" = (/obj/structure/closet/crate/chest/gold,/obj/item/ingot/gold,/obj/item/ingot/gold,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "mT" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/item/clothing/suit/roguetown/armor/plate/scale,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "mW" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/scarymaze)
-"nb" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow)
+"nb" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "nh" = (/obj/structure/closet/crate/chest/gold,/obj/item/clothing/mask/rogue/spectacles/golden,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "np" = (/turf/open/water/swamp,/area/rogue/under/cave/dungeon1/gethsmane)
 "nt" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/scarymaze)
-"nu" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"nu" = (/mob/living/simple_animal/hostile/rogue/skeleton/bow,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "nw" = (/obj/structure/table/wood,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "nD" = (/obj/structure/table/wood,/obj/item/clothing/head/roguetown/helmet/winged,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
 "nI" = (/turf/open/floor/rogue/cobble,/area/rogue/under/cave/scarymaze)
@@ -129,14 +129,14 @@
 "oj" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "ou" = (/obj/structure/fluff/railing/wood{dir = 1; layer = 2.7; pixel_y = 7},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "ox" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
-"oF" = (/obj/structure/bed/rogue/inn/pileofshit,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"oF" = (/obj/structure/bed/rogue/inn/pileofshit,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "oV" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/scarymaze)
-"pb" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/sword/silver,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"pb" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/sword/silver,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "pl" = (/obj/structure/fluff/railing/wood{icon_state = "woodrailing"; dir = 4; pixel_x = 8},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "pD" = (/obj/machinery/anvil,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "pK" = (/obj/structure/table/wood,/obj/effect/spawner/lootdrop/roguetown/dungeon/food,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "pR" = (/obj/structure/closet/crate/chest/gold,/obj/item/rogueweapon/shield/tower/holysee,/turf/open/floor/rogue/dirt,/area/rogue/under/cave/dungeon1/gethsmane)
-"pU" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"pU" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "pX" = (/obj/structure/closet/crate/chest/neu,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "qa" = (/obj/structure/table/wood{icon_state = "tablewood2"; dir = 10},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "qb" = (/obj/structure/table/wood{icon_state = "tablewood2"; dir = 10},/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dungeon1/gethsmane)
@@ -161,15 +161,15 @@
 "sb" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/scarymaze)
 "si" = (/obj/structure/chair/wood/rogue/chair3{dir = 8},/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dungeon1/gethsmane)
 "sq" = (/obj/structure/table/wood{icon_state = "map5"},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"ss" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/halberd/glaive,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
-"sw" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/medical,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
-"sy" = (/obj/structure/stairs/stone/d{dir = 8},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"ss" = (/obj/structure/closet/crate/chest/old_crate,/obj/item/rogueweapon/halberd/glaive,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"sw" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/medical,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"sy" = (/obj/structure/stairs/stone/d{dir = 8},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "sJ" = (/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "sR" = (/obj/structure/table/church/m,/obj/item/clothing/neck/roguetown/psicross/malum,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "sV" = (/mob/living/simple_animal/hostile/rogue/skeleton/spear,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "sW" = (/turf/closed/wall/mineral/rogue/pipe,/area/rogue/under/cave/mazedungeon)
 "sX" = (/obj/structure/table/church{icon_state = "churchtable_end"},/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
-"tg" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"tg" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon/spells,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "tk" = (/obj/structure/fluff/railing/fence{dir = 4},/obj/structure/fluff/railing/fence{dir = 1},/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap)
 "tv" = (/turf/closed/wall/mineral/rogue/stone/window,/area/rogue/outdoors/mountains/decap)
 "tB" = (/mob/living/carbon/human/species/goblin/npc/ambush/hell,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
@@ -186,9 +186,9 @@
 "uQ" = (/obj/effect/decal/cobbleedge{dir = 4; icon_state = "borderfall"; pixel_x = -18; pixel_y = 0},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "ve" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "vh" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dungeon1/gethsmane)
-"vj" = (/obj/structure/closet/crate/chest/neu,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
-"vk" = (/obj/structure/closet/dirthole/grave,/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
-"vv" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; lockid = "farm"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"vj" = (/obj/structure/closet/crate/chest/neu,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"vk" = (/obj/structure/closet/dirthole/grave,/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"vv" = (/obj/structure/mineral_door/wood/deadbolt{dir = 1; lockid = "farm"},/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "vE" = (/mob/living/carbon/human/species/human/northern/searaider/ambush,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "vF" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc/ranged,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "vJ" = (/obj/structure/fluff/psycross/copper,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
@@ -196,9 +196,9 @@
 "wg" = (/obj/machinery/light/rogue/torchholder{dir = 8},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "wj" = (/obj/structure/rack/rogue,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/obj/effect/spawner/lootdrop/roguetown/dungeon/weapons,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "wu" = (/obj/structure/closet/crate/chest/gold,/obj/item/rogueweapon/sword/decorated,/obj/item/clothing/head/roguetown/helmet/winged,/turf/open/floor/rogue/dirt,/area/rogue/under/cave/dungeon1/gethsmane)
-"wx" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"wx" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "wy" = (/obj/effect/decal/cleanable/blood/gibs,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
-"wB" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"wB" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "wF" = (/obj/structure/rack/rogue/shelf/biggest,/obj/structure/rack/rogue/shelf/notdense,/obj/item/reagent_containers/food/snacks/rogue/meat/coppiette,/obj/item/reagent_containers/food/snacks/rogue/meat/coppiette,/obj/item/reagent_containers/food/snacks/rogue/meat/coppiette,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "wJ" = (/obj/machinery/light/rogue/firebowl,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap)
 "xf" = (/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
@@ -211,15 +211,15 @@
 "xQ" = (/obj/structure/rack/rogue,/obj/item/rogueweapon/pick/steel,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "xS" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "xW" = (/obj/structure/stairs/stone/d,/turf/open/floor/rogue/metal/barograte,/area/rogue/under/cave/mazedungeon)
-"yb" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/outdoors/mountains/decap/stepbelow)
+"yb" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "yc" = (/obj/structure/fluff/statue/gargoyle/candles,/obj/machinery/light/rogue/torchholder,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "yh" = (/obj/effect/spawner/lootdrop/roguetown/dungeon/materials,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "yi" = (/mob/living/simple_animal/hostile/retaliate/rogue/troll,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"yl" = (/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"yl" = (/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "yp" = (/obj/structure/fluff/walldeco/serpflag,/turf/closed/wall/mineral/rogue/stone/window,/area/rogue/under/cave/scarymaze)
 "yF" = (/obj/structure/mineral_door/bars,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "yS" = (/mob/living/simple_animal/hostile/retaliate/rogue/mole,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/mazedungeon)
-"yT" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"yT" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "yU" = (/obj/machinery/light/rogue/firebowl/stump,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "yW" = (/obj/structure/table/wood{dir = 10; icon_state = "tablewood2"},/obj/item/candle/yellow/lit,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "za" = (/obj/structure/lever/wall{pixel_x = 16; redstone_id = "goblinfortentry"},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
@@ -227,7 +227,7 @@
 "zg" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/under/cave/mazedungeon)
 "zk" = (/obj/structure/bed/rogue/inn/hay,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "zt" = (/turf/closed/wall/mineral/rogue/tent{dir = 4},/area/rogue/indoors/shelter/mountains/decap)
-"zz" = (/turf/open/lava,/area/rogue/under/cave/dragonden)
+"zz" = (/turf/open/lava,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "zC" = (/obj/structure/chair/wood/rogue{dir = 8},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "zE" = (/obj/structure/closet/crate/chest/wicker,/obj/effect/spawner/lootdrop/roguetown/dungeon/food,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "zI" = (/obj/structure/chair/bench/church/mid,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
@@ -240,17 +240,17 @@
 "AZ" = (/obj/structure/table/wood{icon_state = "map6"},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "Be" = (/obj/structure/table/wood{icon_state = "tablewood1"},/obj/item/cooking/pan,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Bh" = (/obj/item/roguecoin/gold/pile,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
-"Bs" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
+"Bs" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "BD" = (/obj/structure/closet/crate/drawer,/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "BS" = (/obj/structure/handcart{dir = 8},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"BT" = (/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
-"Ce" = (/turf/open/transparent/openspace,/area/rogue/outdoors/mountains/decap/stepbelow)
+"BT" = (/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
+"Ce" = (/turf/open/transparent/openspace,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Cq" = (/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/mazedungeon)
 "Cv" = (/turf/closed/mineral/random/rogue/high,/area/rogue/under/cavelava)
 "De" = (/obj/structure/rack/rogue,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Dg" = (/obj/machinery/light/rogue/forge,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Dm" = (/obj/machinery/light/roguestreet/midlamp,/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/mountains/decap/stepbelow)
-"Dr" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Dm" = (/obj/machinery/light/roguestreet/midlamp,/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"Dr" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Dt" = (/obj/machinery/light/rogue/torchholder{dir = 1; layer = 4.09; pixel_y = -6},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Dy" = (/obj/structure/chair/wood/rogue{dir = 8},/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "DI" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
@@ -259,20 +259,21 @@
 "Eu" = (/obj/structure/table/wood,/obj/effect/spawner/lootdrop/roguetown/dungeon/medical,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "EJ" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/scarymaze)
 "EP" = (/obj/structure/table/optable,/obj/structure/fluff/walldeco/med{pixel_x = 32},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
+"EV" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/item/rogueweapon/sword/long/judgement,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "Fc" = (/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
-"Fh" = (/obj/structure/stairs/stone/d{dir = 8},/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap/stepbelow)
-"Fj" = (/turf/open/floor/rogue/metal/barograte/open,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Fh" = (/obj/structure/stairs/stone/d{dir = 8},/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"Fj" = (/turf/open/floor/rogue/metal/barograte/open,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Fp" = (/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/scarymaze)
 "FC" = (/obj/structure/handcart,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "FF" = (/obj/structure/chair/wood/rogue{dir = 4},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "FN" = (/mob/living/simple_animal/hostile/rogue/dragger,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/scarymaze)
 "FR" = (/obj/structure/rack/rogue,/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"FT" = (/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/mountains/decap/stepbelow)
+"FT" = (/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Gb" = (/obj/structure/rack/rogue/shelf/biggest,/obj/structure/rack/rogue/shelf/notdense,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "Gn" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
 "GB" = (/mob/living/carbon/human/species/goblin/npc/ambush/hell,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
 "GH" = (/obj/structure/table/vtable,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dungeon1/gethsmane)
-"GJ" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"GJ" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "GK" = (/obj/effect/spawner/lootdrop/roguetown/dungeon/materials,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/mazedungeon)
 "GP" = (/obj/structure/table/wood{icon_state = "tablewood2"; dir = 10},/obj/item/candle/skull,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "GQ" = (/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
@@ -280,18 +281,18 @@
 "Hc" = (/obj/structure/chair/wood/rogue/chair3{dir = 8},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "Hl" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Hm" = (/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"HL" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"HL" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "HP" = (/obj/structure/table/wood{dir = 10; icon_state = "tablewood2"},/obj/item/rogueweapon/pick,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "Id" = (/obj/structure/fluff/railing/wood{dir = 1; layer = 2.7; pixel_y = 7},/turf/open/transparent/openspace,/area/rogue/under/cave/mazedungeon)
 "Ip" = (/obj/structure/rack/rogue/shelf/biggest,/obj/structure/rack/rogue/shelf/notdense,/obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Is" = (/obj/structure/fluff/railing/wood{dir = 8; pixel_x = -8},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "Iu" = (/obj/machinery/light/rogue/oven/north,/obj/machinery/light/rogue/hearth,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"IC" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
+"IC" = (/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "ID" = (/obj/structure/bars/passage,/turf/open/floor/rogue/volcanic,/area/rogue/under/cave/scarymaze)
 "IF" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/under/cave/scarymaze)
 "IJ" = (/obj/structure/closet/crate/chest/gold,/obj/item/reagent_containers/glass/cup/golden,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
-"IZ" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
-"Jb" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow)
+"IZ" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"Jb" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Jc" = (/obj/structure/table/wood,/obj/item/candle/skull/lit,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Jh" = (/mob/living/simple_animal/hostile/rogue/skeleton/spear,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "Ji" = (/obj/machinery/light/rogue/firebowl,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
@@ -302,17 +303,17 @@
 "JG" = (/obj/structure/fluff/statue/gargoyle,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Kc" = (/obj/structure/barricade,/obj/structure/barricade/crude,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
 "Ke" = (/obj/structure/handcart{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Ks" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
+"Ks" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "Kt" = (/obj/machinery/light/rogue/torchholder{pixel_y = 32},/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Ku" = (/obj/structure/table/optable,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Kw" = (/obj/structure/mineral_door/bars,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "KT" = (/obj/structure/rack/rogue,/obj/effect/spawner/lootdrop/roguetown/dungeon/armor,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"KV" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
+"KV" = (/obj/structure/closet/crate/chest/gold,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/obj/effect/spawner/lootdrop/roguetown/dungeon/money,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "KX" = (/obj/machinery/light/roguestreet/midlamp,/turf/open/floor/rogue/metal/barograte,/area/rogue/outdoors/mountains/decap)
 "KY" = (/mob/living/simple_animal/hostile/rogue/skeleton/guard,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "Lb" = (/obj/structure/closet/crate/drawer,/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "Ld" = (/obj/structure/fluff/railing/fence{dir = 1},/obj/structure/fluff/railing/fence{icon_state = "fence"; dir = 4},/turf/open/floor/rogue/volcanic,/area/rogue/outdoors/mountains/decap)
-"Le" = (/obj/structure/stairs/stone/d{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Le" = (/obj/structure/stairs/stone/d{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Li" = (/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap)
 "Lk" = (/obj/structure/bed/rogue/bedroll,/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "Lw" = (/obj/structure/healingfountain,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/scarymaze)
@@ -322,39 +323,39 @@
 "LV" = (/obj/machinery/light/roguestreet/midlamp,/turf/open/floor/rogue/metal/barograte,/area/rogue/under/cave/mazedungeon)
 "My" = (/mob/living/carbon/human/species/goblin/npc/ambush/hell,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "MI" = (/obj/structure/chair/wood/rogue/chair3{dir = 1},/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dungeon1/gethsmane)
-"MN" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave/dragonden)
+"MN" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "MQ" = (/obj/structure/fluff/walldeco/serpflag,/turf/closed/wall/mineral/rogue/stone,/area/rogue/outdoors/mountains/decap)
 "MV" = (/turf/closed/mineral/random/rogue/high,/area/rogue/under/cave/scarymaze)
 "Nr" = (/obj/structure/fluff/walldeco/serpflag,/turf/closed/wall/mineral/rogue/stone,/area/rogue/under/cave/dungeon1/gethsmane)
-"Nw" = (/turf/open/lava,/area/rogue/outdoors/mountains/decap/stepbelow)
-"NN" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
-"NZ" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Nw" = (/turf/open/lava,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"NN" = (/mob/living/simple_animal/hostile/rogue/skeleton/axe,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
+"NZ" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Oe" = (/obj/effect/decal/cobbleedge{dir = 8; icon_state = "borderfall"; pixel_x = 18; pixel_y = -1},/obj/structure/stairs/stone{dir = 4},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "Or" = (/turf/open/transparent/openspace,/area/rogue/under/cave/mazedungeon)
 "Oy" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap)
-"OE" = (/obj/machinery/light/rogue/firebowl/church,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden)
+"OE" = (/obj/machinery/light/rogue/firebowl/church,/turf/open/floor/rogue/cobblerock,/area/rogue/under/cave/dragonden{first_time_text = "NEST OF DRAKES"})
 "OF" = (/turf/closed/wall/mineral/rogue/stone,/area/rogue/under/cave/dungeon1/gethsmane)
 "OS" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
-"OU" = (/turf/closed/mineral/random/rogue/high,/area/rogue/outdoors/mountains/decap/stepbelow)
+"OU" = (/turf/closed/mineral/random/rogue/high,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Pn" = (/obj/structure/fluff/railing/fence{dir = 4; icon_state = "fence"},/obj/structure/fluff/railing/fence{icon_state = "fence"; dir = 1},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "Px" = (/obj/machinery/light/rogue/firebowl/standing/blue,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "PA" = (/obj/structure/bars/passage,/obj/structure/barricade,/obj/structure/barricade/crude,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/dungeon1/gethsmane)
 "PL" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/scarymaze)
-"Qm" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Qm" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Qn" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "Qo" = (/obj/structure/table/church,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "Qt" = (/obj/structure/fluff/railing/wood{icon_state = "woodrailing"; dir = 4; pixel_x = 8},/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Qv" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Qv" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "QD" = (/obj/structure/stairs/stone,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "QM" = (/obj/structure/fluff/railing/wood{dir = 8; pixel_x = -8},/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
 "QR" = (/obj/structure/fluff/traveltile{aportalgoesto = "decapout"; aportalid = "decapin"},/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap)
 "Re" = (/obj/structure/chair/wood/rogue/throne,/mob/living/carbon/human/species/skeleton/npc/no_equipment,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
 "RE" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
-"RH" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow)
+"RH" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "RM" = (/turf/closed/wall/mineral/rogue/craftstone,/area/rogue/under/cavelava)
 "Sf" = (/turf/open/floor/rogue/dirt,/area/rogue/under/cave/dungeon1/gethsmane)
 "Si" = (/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Sm" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Sm" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Ss" = (/obj/structure/fluff/sellsign{name = "DANGER"},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "Su" = (/mob/living/simple_animal/hostile/rogue/dragger,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "SA" = (/obj/structure/table/wood,/obj/item/rogueweapon/hammer,/obj/item/rogueweapon/tongs,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
@@ -375,29 +376,29 @@
 "Uh" = (/obj/structure/bed/rogue/bedroll,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "Us" = (/turf/closed/wall/mineral/rogue/tent{dir = 8},/area/rogue/outdoors/mountains/decap)
 "Uz" = (/obj/effect/decal/cleanable/blood/tracks{dir = 4},/turf/open/floor/rogue/naturalstone,/area/rogue/under/cavelava)
-"UA" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow)
+"UA" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobble,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "UI" = (/obj/structure/rack/rogue,/obj/item/clothing/head/roguetown/helmet/leather/minershelm,/obj/item/clothing/head/roguetown/helmet/leather/minershelm,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "UT" = (/obj/structure/mineral_door/wood/red,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "UY" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/under/cave/scarymaze)
 "Vi" = (/mob/living/simple_animal/hostile/retaliate/rogue/orc/spear,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Vk" = (/turf/closed/wall/mineral/rogue/stone/window,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Vk" = (/turf/closed/wall/mineral/rogue/stone/window,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Vn" = (/obj/structure/flora/roguetree/burnt,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "Vt" = (/obj/structure/closet/crate/roguecloset/inn,/obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"Vy" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Vy" = (/obj/structure/closet/crate/chest/neu_iron,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "VJ" = (/obj/structure/table/wood,/obj/item/rogueweapon/sword/long/malumflamm,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
 "VR" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/concrete,/area/rogue/under/cave/mazedungeon)
 "VT" = (/turf/closed/wall/mineral/rogue/tent{dir = 1},/area/rogue/indoors/shelter/mountains/decap)
 "VX" = (/mob/living/carbon/human/species/human/northern/searaider/ambush,/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
 "Wk" = (/turf/open/lava,/area/rogue/under/cavelava)
 "Wt" = (/obj/structure/fluff/railing/fence{dir = 1},/obj/structure/fluff/railing/fence{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap)
-"WJ" = (/obj/structure/closet/dirthole/grave,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
+"WJ" = (/obj/structure/closet/dirthole/grave,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "WT" = (/obj/structure/bed/rogue/inn/hay,/turf/open/floor/rogue/dirt/road,/area/rogue/indoors/shelter/mountains/decap)
 "Xg" = (/obj/structure/table/wood,/obj/item/clothing/suit/roguetown/armor/plate/full,/turf/open/floor/rogue/wood,/area/rogue/under/cave/mazedungeon)
-"Xh" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow)
+"Xh" = (/turf/open/floor/rogue/dirt,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Xj" = (/obj/structure/table/wood{icon_state = "tablewood2"; dir = 10},/obj/item/candle/yellow,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "Xw" = (/obj/structure/bed/rogue/inn/pileofshit,/obj/item/bedsheet/rogue/cloth,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
 "XM" = (/obj/structure/bed/rogue/inn/pileofshit,/obj/item/bedsheet/rogue/cloth,/turf/open/floor/rogue/cobble,/area/rogue/under/cave/mazedungeon)
-"XP" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/materials,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow)
+"XP" = (/obj/structure/closet/crate/chest/old_crate,/obj/effect/spawner/lootdrop/roguetown/dungeon/materials,/turf/open/floor/rogue/dirt/road,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 "Yc" = (/obj/structure/bars/passage/shutter{redstone_id = "goblinfortentry"},/turf/open/floor/rogue/metal/barograte,/area/rogue/under/cave/mazedungeon)
 "Yp" = (/turf/open/lava,/area/rogue/outdoors/mountains/decap)
 "Yu" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/volcanic,/area/rogue/under/cavelava)
@@ -407,7 +408,7 @@
 "YR" = (/obj/item/rogueweapon/sword/long/exe/astrata,/obj/structure/table/church/m,/turf/open/floor/rogue/tile/checkeralt,/area/rogue/under/cave/mazedungeon)
 "YU" = (/obj/effect/decal/remains/mole,/obj/effect/decal/cleanable/blood,/turf/open/floor/rogue/naturalstone,/area/rogue/under/cave/mazedungeon)
 "Zh" = (/mob/living/carbon/human/species/skeleton/npc/ambush,/turf/open/floor/rogue/blocks,/area/rogue/under/cave/mazedungeon)
-"ZF" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow)
+"ZF" = (/obj/structure/closet/crate/chest/neu_fancy,/obj/effect/spawner/lootdrop/roguetown/dungeon,/turf/open/floor/rogue/cobblerock,/area/rogue/outdoors/mountains/decap/stepbelow{first_time_text = "ANCIENT RUINS"})
 
 (1,1,1) = {"
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
@@ -422,65 +423,65 @@ WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIOEBTBTBTBTBTBTBTBTaIBTBTOEaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTOEaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTKsBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIBTBTBTBTBTBTBTBTBsBTBTBTBTBTBTBTBTBTfRBTBTBTBTBTBTBTaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIOEBTBTBTBTBTBTBTBTBTBsBTBTBTBTBTBTKVBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIBTBTBTfRBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIMNzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIBTBTBTBTBTBTBTKVBTBTBTfRBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIMNzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBsBTBTBTBTBTOEaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIaIaIaIaIOEBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTOEaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNMNMNMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNMNMNaIaIaIMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNMNaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzMNMNMNMNMNMNMNMNMNMNzzMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNMNMNMNMNMNMNMNzzzzMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNMNMNMNMNMNMNzzzzMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNMNaIaIaIaIzzzzaIaIaIaIMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIaIaIaIzzaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIaIaIzzzzaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNaIaIaIaIzzaIaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNaIaIaIaIzzaIaIaIaIaIaIaIaIaIMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNaIaIaIzzzzaIaIaIaIaIaIaIaIMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIaIzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIaIzzaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIzzzzaIhpaIaIaIaIaIaIaIMNMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIzzaIaIMNaIaIaIaIaIaIaIMNMNMNMNMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzMNMNMNMNaIaIzzaIaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzMNMNMNMNMNMNMNMNMNMNzzzzzzaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNaIzzzzaIaIaIaIaIaIaIaIMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNMNzzaIaIaIaIaIaIaIMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzMNMNMNMNzzMNMNMNMNMNMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzMNMNMNzzMNMNMNMNMNMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzMNzzzzMNMNMNMNMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzMNMNMNMNMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
-WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNMNaIaIaIaIOEBTBTBTBTBTBTBTBTaIBTBTOEaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTOEaIaIaIaIaIaIaIaIaIaIMNzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTKsBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIBTBTBTBTBTBTBTBTEVBTBTBTBTBTBTBTBTBTfRBTBTBTBTBTBTBTaIaIaIaIaIaIaIMNMNMNzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNaIaIaIaIBTBTBTBTfRBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIMNMNMNzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkMNMNaIaIaIOEBTBTBTBTBTBTBTBTBTBsBTBTBTBTBTBTKVBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNMNWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNMNaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIMNWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNaIaIaIaIaIBTBTBTBTBTBTBTKsBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIaIaIMNWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzMNMNaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNMNMNWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzMNaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBsBTBTBTBTBTOEaIaIaIaIaIaIMNMNMNzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzMNMNaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIMNMNzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzMNaIaIaIaIaIaIaIaIaIOEBTBTBTBTBTBTBTBTBTBTBTBTBTBTaIaIaIaIaIaIaIaIMNzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzMNaIaIaIaIaIaIaIaIaIaIaIBTBTBTBTBTBTBTBTBTBTOEaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzMNMNaIMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzMNMNMNMNMNMNMNaIaIaIaIaIaIaIaIaIaIaIaIaIMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzMNMNMNMNMNMNaIMNMNMNMNMNMNMNMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNMNaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNMNaIaIaIMNMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififififWkWkWkWkWkWkWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNaIaIaIaIMNzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififififififififWkifififWkWkWkzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzMNMNaIaIaIaIzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififififififififWkWkififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififififififififWkWkififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififififeGeGeGeGWkWkeGeGeGeGififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGeGeGeGWkeGeGeGeGeGeGeGifififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGeGeGWkWkeGeGeGeGeGeGeGeGifififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififeGeGeGeGWkeGeGeGeGeGeGeGeGeGifififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififeGeGeGeGWkeGeGeGeGeGeGeGeGeGififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififeGeGeGWkWkeGeGeGeGeGeGeGeGifififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkeGeGeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGeGWkeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGififififififififWkWkWkWkWkWkWkeGeGeGeGeGeGeGeGeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGeGWkeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGififeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGWkWkeGhpeGeGeGeGeGeGeGififififeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGWkeGeGifeGeGeGeGeGeGeGifififififififeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififeGeGWkeGeGeGeGeGeGeGeGeGifififWkWkWkWkififififififififififWkWkWkeGWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififeGWkWkeGeGeGeGeGeGeGeGififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififWkeGeGeGeGeGeGeGifififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkififififWkififififififififififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififWkififififififififififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifWkWkifififififififififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkifififififififififififififWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
+WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk
 WkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWkWk

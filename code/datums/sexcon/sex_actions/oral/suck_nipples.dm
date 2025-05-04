@@ -28,7 +28,8 @@
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(target, 1, 3, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	if(target.sexcon.check_active_ejaculation())
+		target.sexcon.ejaculate()
 
 	var/obj/item/organ/breasts/breasts = target.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milk_to_add = min(max(breasts.breast_size, 1), breasts.milk_stored)

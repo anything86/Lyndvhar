@@ -807,13 +807,13 @@
 
 /datum/crafting_recipe/roguetown/collar
 	name = "collar"
-	result = /obj/item/clothing/neck/roguetown/collar
+	result = /obj/item/clothing/neck/roguetown/collar/leather
 	reqs = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/bell_collar
-	name = "bell Collar"
-	result = /obj/item/clothing/neck/roguetown/collar/bell_collar
+	name = "bell collar"
+	result = /obj/item/clothing/neck/roguetown/collar/leather/bell
 	reqs = list(
 				/obj/item/natural/hide/cured = 1,
 				/obj/item/jingle_bells = 1,

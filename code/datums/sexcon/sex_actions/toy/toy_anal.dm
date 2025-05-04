@@ -27,7 +27,8 @@
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 6, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 /datum/sex_action/toy_anal/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)

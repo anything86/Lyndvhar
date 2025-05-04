@@ -31,7 +31,8 @@
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 /datum/sex_action/toy_vagina/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)

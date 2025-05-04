@@ -68,7 +68,9 @@
 	var/wetness = 0
 	var/block2add
 	var/detail_tag
+	var/altdetail_tag
 	var/detail_color
+	var/altdetail_color
 	var/boobed_detail = TRUE
 	var/sleeved_detail = TRUE
 	var/list/original_armor //For restoring broken armor
@@ -101,8 +103,14 @@
 /obj/item/proc/get_detail_tag() //this is for extra layers on clothes
 	return detail_tag
 
+/obj/item/proc/get_altdetail_tag() //this is for extra layers on clothes
+	return altdetail_tag
+
 /obj/item/proc/get_detail_color() //this is for extra layers on clothes
 	return detail_color
+
+/obj/item/proc/get_altdetail_color() //this is for extra layers on clothes
+	return altdetail_color
 
 /obj/item/clothing/MiddleClick(mob/user, params)
 	..()

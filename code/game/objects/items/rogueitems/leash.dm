@@ -58,7 +58,7 @@
 	equip_sound = 'sound/foley/equip/rummaging-01.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	throw_range = 4
-	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_HIP
 	force = 1
 	throwforce = 1
 	w_class = WEIGHT_CLASS_SMALL
@@ -313,7 +313,7 @@
 /obj/item/leash/proc/drop_effects(mob/user, silent)
 	SIGNAL_HANDLER
 	if(leash_master == user)
-		if(leash_master.is_holding(src) || leash_master.get_item_by_slot(ITEM_SLOT_BELT) == src)
+		if(leash_master.is_holding(src) || leash_master.get_item_by_slot(ITEM_SLOT_HIP) == src)
 			return  //Dom still has the leash as it turns out. Cancel the proc.
 	if(!leash_pet)
 		return
@@ -422,14 +422,14 @@
 				collar.AddComponent(/datum/component/squeak, list('sound/items/collarbell1.ogg',\
 													'sound/items/collarbell2.ogg',\
 													'sound/items/collarbell3.ogg',\
-													'sound/items/collarbell4.ogg'), 50, 100, 1)
+													'sound/items/collarbell4.ogg'), 50, 100, 2)
 				if(istype(src, /obj/item/catbell/cow))
-					collar.icon_state = "collar_leather_cow"
+					collar.icon_state = "cowbellcollar"
 					C.update_inv_neck()
 					collar.desc = "A comfortable collar made of leather, this one has a lil jingly cowbell!"
 					collar.salvage_result = list(/obj/item/natural/hide/cured = 1, /obj/item/catbell = 1)
 				else if(istype(src, /obj/item/catbell))
-					collar.icon_state = "collar_leather_cat"
+					collar.icon_state = "catbellcollar"
 					C.update_inv_neck()
 					collar.desc = "A comfortable collar made of leather, this one has a lil jingly catbell!"
 					collar.salvage_result = list(/obj/item/natural/hide/cured = 1, /obj/item/catbell/cow = 1)

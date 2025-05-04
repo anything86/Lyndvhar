@@ -50,4 +50,5 @@
 	if(H.mind)
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
-		H.change_stat("intelligence", -1)
+		H.change_stat("intelligence", 1)
+		H.change_stat("speed", -1)

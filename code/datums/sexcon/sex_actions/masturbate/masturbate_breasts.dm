@@ -24,7 +24,8 @@
 	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fondles [user.p_their()] breasts..."))
 
 	user.sexcon.perform_sex_action(user, 1, 4, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 /datum/sex_action/masturbate_breasts/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops fondling [user.p_their()] breasts."))

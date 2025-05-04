@@ -26,7 +26,8 @@
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 /datum/sex_action/masturbate_vagina_finger/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops fingering."))

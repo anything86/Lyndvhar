@@ -29,7 +29,8 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 
-	user.sexcon.handle_passive_ejaculation()
+	if(user.sexcon.check_active_ejaculation())
+		user.sexcon.ejaculate()
 
 /datum/sex_action/masturbate_penis/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_warning("[user] stops jerking off."))

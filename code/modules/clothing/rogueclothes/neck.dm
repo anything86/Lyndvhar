@@ -226,13 +226,15 @@
 /obj/item/clothing/neck/roguetown/gorget/prisoner/Initialize()
 	. = ..()
 	name = "cursed collar"
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	ADD_TRAIT(src, TRAIT_NO_SELF_UNEQUIP, CURSED_ITEM_TRAIT)
 
+/*
 /obj/item/clothing/neck/roguetown/gorget/prisoner/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(QDELETED(src))
 		return
 	qdel(src)
+*/
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
@@ -419,17 +421,19 @@
 	. = ..()
 	name = "cursed collar"
 	resistance_flags = FIRE_PROOF
-	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	ADD_TRAIT(src, TRAIT_NO_SELF_UNEQUIP, CURSED_ITEM_TRAIT)
 	clothing_flags = ITEM_SLOT_NECK
 	icon = 'modular/icons/obj/items/leashes_collars.dmi'
 	mob_overlay_icon = 'modular/icons/mob/collars_leashes.dmi'
 	icon_state = "leathercollar"
 
+/*
 /obj/item/clothing/neck/roguetown/collar/leather/cursed/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(QDELETED(src))
 		return
 	qdel(src)
+*/
 
 /obj/item/clothing/neck/roguetown/collar/leather/bell
 	name = "jingly leather collar"
@@ -439,6 +443,10 @@
 	do_sound_bell = TRUE
 	bell = TRUE
 	salvage_result = list(/obj/item/natural/hide/cured = 1, /obj/item/catbell = 1)
+
+/obj/item/clothing/neck/roguetown/collar/leather/bell/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_JINGLE_BELLS)
 
 /obj/item/clothing/neck/roguetown/collar/leather/bell/cow
 	name = "jingly leather collar"
@@ -509,7 +517,7 @@
 	icon_state = "psybracelet"
 	item_state = null
 
-/obj/item/clothing/neck/roguetown/collar
+/*/obj/item/clothing/neck/roguetown/collar
 	name = "collar"
 	desc = "A band of leather which signifies bondage to another."
 	icon_state = "collar"
@@ -520,9 +528,9 @@
 /obj/item/clothing/neck/roguetown/collar/bell_collar
 	name = "bell collar"
 	desc = "A band of leather with a bell protects the local zads from the local catfolk."
-	icon_state = "bell_collar"
-	icon_state = "bell_collar"
+	icon_state = "catbellcollar"
+	item_state = "catbellcollar"
 
 /obj/item/clothing/neck/roguetown/collar/bell_collar/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_JINGLE_BELLS)
+	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_JINGLE_BELLS)*/
