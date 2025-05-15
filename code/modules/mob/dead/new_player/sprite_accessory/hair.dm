@@ -906,7 +906,7 @@
 	name = "Zoey"
 	icon_state = "zoey"
 
-/datum/sprite_accessory/hair/head/gronnbraid
+/datum/sprite_accessory/hair/head/rhaenvalianbraid
 	name = "Rhaenvalian Braid"
 	icon_state = "gronnbraid"
 

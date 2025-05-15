@@ -24,7 +24,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/black
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/clothing/ring/silver
-	backpack_contents = list(/obj/item/roguekey/inquisition = 1)
+	backpack_contents = list(/obj/item/storage/keyring/orthodoxist = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
@@ -39,8 +39,7 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("constitution", 2)
+		H.change_stat("strength", 1)
 		H.change_stat("endurance", 3)
 		
 		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
@@ -55,7 +54,7 @@
 
 /datum/outfit/job/roguetown/psydoniantemplar/choose_loadout(mob/living/carbon/human/H)
 	. = ..()
-	var/weapons = list("Sword", "Axe", "Whip", "Flail", "Mace", "Spear")
+	var/weapons = list("Sword", "Axe", "Whip", "Flail")
 	var/weapon_choice = input(H,"Choose your PSYDON weapon.", "TAKE UP PSYDON'S ARMS") as anything in weapons
 	switch(weapon_choice)
 		if("Sword")
@@ -70,9 +69,3 @@
 		if("Flail")
 			H.put_in_hands(new /obj/item/rogueweapon/flail/sflail/psyflail(H), TRUE)
 			H.mind.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, 4, TRUE)
-		if("Mace")
-			H.put_in_hands(new /obj/item/rogueweapon/mace/goden/psymace(H), TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE)
-		if("Spear")
-			H.put_in_hands(new /obj/item/rogueweapon/spear/psyspear(H), TRUE)
-			H.mind.adjust_skillrank_up_to(/datum/skill/combat/polearms, 4, TRUE)

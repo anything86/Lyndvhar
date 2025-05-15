@@ -9,6 +9,7 @@
 	allowed_races = RACES_SHUNNED_UP
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
+	allowed_patrons = ALL_DIVINE_PATRONS
 
 	tutorial = "Your family were zealots. They scolded you with a studded belt and prayed like sinners every waking hour of the day they weren’t toiling in the fields. You escaped them by becoming a churchling--and a guaranteed education isn't so bad."
 

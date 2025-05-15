@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/sergeant
 
 	give_bank_account = 50
-	min_pq = 6
+	min_pq = 3
 	max_pq = null
 	cmode_music = 'sound/music/combat_guard2.ogg'
 

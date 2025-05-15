@@ -14,7 +14,7 @@
 	domain = "Archdaemon of Advancement, Hubris, Ambition, and Power"
 	desc = "The Archdaemon ZIZO was the first to be born from the sins of mortalkind. She represents the aspects of unbridled ambition, and the lust for more power. It was her forces that first breached through the Hells and into the realm of Beowricke proper, bringing destruction as she began to carve out a realm for herself. She and her cultists crafted the TIEFLING from her lesser daemons as well as mortals. "
 	worshippers = "Necromancers, Warlocks, and the Undead"
-	mob_traits = list(TRAIT_CABAL)
+	mob_traits = list(TRAIT_CABAL, TRAIT_LEECHIMMUNE)
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/profane/miracle
 	t2 = /obj/effect/proc_holder/spell/invoked/raise_lesser_undead/miracle
 	t3 = /obj/effect/proc_holder/spell/invoked/rituos/miracle
@@ -55,7 +55,7 @@
 /datum/patron/inhumen/baotha
 	name = "Baotha"
 	domain = "Archdaemon of Degeneracy, Debauchery and Addiction"
-	desc = "The Archdaemon BAOTHA was the final one to be born from the sins of mortalkind. She is the complete and physical embodiment of all unrestrained lust, as well as immense degeneracy. Destruction of the vow of marriage, mass addiction, and rape only follow in her wake, as her mere presence would awaken the worst aspects of the very things that Eora represents. Due to this, Baotha is an extreme opposite to her, and they are both mortal enemies. "
+	desc = "The Archdaemon BAOTHA was the final one to be born from the sins of mortalkind. She is the complete and physical embodiment of all unrestrained lust, as well as immense degeneracy. Destruction of the vow of marriage, and mass addiction only follow in her wake, as her mere presence would awaken the worst aspects of the very things that Eora represents. Due to this, Baotha is an extreme opposite to her, and they are both mortal enemies. "
 	worshippers = "Perverts, Gamblers, Drunkards, and Bards"
 	mob_traits = list(TRAIT_DEPRAVED, TRAIT_CRACKHEAD)
 	confess_lines = list(

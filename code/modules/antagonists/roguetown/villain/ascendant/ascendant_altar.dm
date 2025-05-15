@@ -150,9 +150,9 @@ GLOBAL_LIST_INIT(capstone_pool, list(
 			addomen(ASCEND_FIRST)
 			priority_announce("The leylines begin to tremble in unnatural perversion - MAJOR ARCANA: THE FOOL, UPRIGHT.", "THE DREAMER", 'sound/villain/dreamer_warning.ogg')
 		if(2)
-			to_chat(user, span_danger("The second capstone. Stuck in filth- FILTH AND SHIT! I grab the rotted, fetted thing and begin to peel it back. LAYER BY LAYER- THE COMET SYON. THE ARCHDEVIL. IS HE DEAD, OR SLEEPING? ..."))
+			to_chat(user, span_danger("The second capstone. Stuck in filth- FILTH AND SHIT! I grab the rotted, fetted thing and begin to peel it back. LAYER BY LAYER- THE HOLY SUN. THE ARCHDEVIL OF AMBITION. ARE THEY DEAD, OR SLEEPING? ..."))
 			sleep(30)
-			to_chat(user, span_userdanger("IS HE WEAK - OR A COWARD??"))
+			to_chat(user, span_userdanger("IS SHE WEAK - OR A COWARD??"))
 			sleep(20)
 			to_chat(user, span_userdanger("GOD IS COMING."))
 			sleep(10)
@@ -207,7 +207,7 @@ GLOBAL_LIST_INIT(capstone_pool, list(
 			heavensaysdanger() //Roger, our deal is honored; you will be rewarded in heaven.
 			addomen(ASCEND_ASCENDANT)
 			sleep(15 SECONDS)
-			to_chat(user, span_mind_control("i muST go O TO THE TRHORne. THE THRONE. THE THRONE. MY KINGDO M. AWAITS. PSYd ONIA IS DEAD. I MUST ASC end "))
+			to_chat(user, span_mind_control("i muST go O TO THE TRHORne. THE THRONE. THE THRONE. MY KINGDO M. AWAITS. BEOw RIcke IS DEAD. I MUST ASC end "))
 
 			qdel(src)
 
@@ -220,4 +220,4 @@ GLOBAL_LIST_INIT(capstone_pool, list(
 /obj/structure/ascendant_altar/proc/heavensaysdanger()
 	priority_announce("THE DREAMER HAS ASCENDED - MAJOR ARCANA : T$yh3 TOW##ER, RE v3RSED", "GOD IS COMING", 'sound/villain/ascendant_intro.ogg')
 	sleep(15 SECONDS)
-	to_chat(world, span_danger("The ground underneath THE THRONE shakes. The sky is opening."))
+	to_chat(world, span_danger("The ground underneath THE THRONE shakes. The sky is opening. Reality trembles."))

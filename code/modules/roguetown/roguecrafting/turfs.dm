@@ -13,26 +13,6 @@
 /datum/crafting_recipe/roguetown/turfs/woodfloor/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
-	if(!istype(T, /turf/open/floor/rogue))
-		return
-	return TRUE
-
-/datum/crafting_recipe/roguetown/turfs/woodplatform
-	name = "wooden platform"
-	result = /turf/open/floor/rogue/ruinedwood/platform
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/fibers = 1)
-	skillcraft = /datum/skill/craft/carpentry
-	verbage_simple = "construct"
-	verbage = "constructs"
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/turfs/woodplatform/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/transparent/openspace))
-		if(!istype(T, /turf/open/water))
-			return
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/woodwall
@@ -97,28 +77,6 @@
 /datum/crafting_recipe/roguetown/turfs/stonefloor/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
-	if(!istype(T, /turf/open/floor/rogue))
-		return
-	return TRUE
-
-/datum/crafting_recipe/roguetown/turfs/stoneplatform
-	name = "stone platform"
-	result = /turf/open/floor/rogue/blocks/platform
-	reqs = list(/obj/item/natural/stone = 1,
-				/obj/item/natural/fibers = 1)
-	skillcraft = /datum/skill/craft/masonry
-	verbage_simple = "build"
-	verbage = "builds"
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/turfs/stoneplatform/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/transparent/openspace))
-		if(!istype(T, /turf/open/water))
-			return
-		if(!istype(T, /turf/open/lava))
-			return
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/stonewall
@@ -247,29 +205,10 @@
 	verbage = "assembles"
 	craftdiff = 0
 
+
 /datum/crafting_recipe/roguetown/turfs/twig/TurfCheck(mob/user, turf/T)
 	if(isclosedturf(T))
 		return
-	if(!istype(T, /turf/open/floor/rogue/dirt))
-		if(!(istype(T, /turf/open/floor/rogue/grass) || istype(T, /turf/open/floor/rogue/grassred) || istype(T, /turf/open/floor/rogue/grassyel) || istype(T, /turf/open/floor/rogue/grasscold)))
-			return
-	return TRUE
-
-/datum/crafting_recipe/roguetown/turfs/twigplatform
-	name = "twig platform"
-	result = /turf/open/floor/rogue/twig/platform
-	reqs = list(/obj/item/grown/log/tree/stick = 3)
-	skillcraft = /datum/skill/craft/crafting
-	verbage_simple = "assemble"
-	verbage = "assembles"
-	craftdiff = 1
-
-/datum/crafting_recipe/roguetown/turfs/twigplatform/TurfCheck(mob/user, turf/T)
-	if(isclosedturf(T))
-		return
-	if(!istype(T, /turf/open/transparent/openspace))
-		if(!istype(T, /turf/open/water))
-			return
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/tentwall

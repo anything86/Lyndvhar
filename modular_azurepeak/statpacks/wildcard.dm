@@ -2,7 +2,7 @@
 
 /datum/statpack/wildcard/wretched
 	name = "Wretched"
-	desc = "The cruelty of Enigma leaves many in its wake - you among them. But with her terrible eye turned elsewhere, perhaps it is time for your fortune to be made..."
+	desc = "The cruelty of Lyndvhar leaves many in its wake - you among them. But with her terrible eye turned elsewhere, perhaps it is time for your fortune to be made..."
 	stat_array = list(STAT_STRENGTH = -2, STAT_PERCEPTION = -2, STAT_INTELLIGENCE = -2, STAT_CONSTITUTION = -2, STAT_ENDURANCE = -2, STAT_FORTUNE = 4)
 
 /datum/statpack/wildcard/fated

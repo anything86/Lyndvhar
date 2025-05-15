@@ -544,6 +544,23 @@
 	max_integrity = 50
 	sellprice = 50
 
+// Aasimar hoplite helmet
+/obj/item/clothing/head/roguetown/rare/hoplite
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	name = "ancient helmet"
+	desc = "A weathered bronze helmet topped with a symbol of Astrata's sun."
+	icon_state = "aasimarhead"
+	item_state = "aasimarhead"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	emote_environment = 3
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS|HIDEHAIR
+	blocksound = PLATEHIT
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	
 /obj/item/clothing/head/roguetown/priesthat
 	name = "priest's hat"
 	desc = ""
@@ -579,6 +596,7 @@
 	icon_state = "nun"
 	sellprice = 5
 	sewrepair = TRUE
+
 
 /obj/item/clothing/head/roguetown/hennin
 	name = "hennin"
@@ -825,7 +843,7 @@
 	max_integrity = 300
 	sellprice = 50
 
-/obj/item/clothing/head/roguetown/helmet/otavan
+/obj/item/clothing/head/roguetown/helmet/valorian
 	name = "valorian helmet"
 	desc = ""
 	icon_state = "otavahelm"
@@ -841,7 +859,7 @@
 	max_integrity = 300
 	sellprice = 55
 
-/obj/item/clothing/head/roguetown/helmet/otavan/AdjustClothes(mob/user)
+/obj/item/clothing/head/roguetown/helmet/valorian/AdjustClothes(mob/user)
 	if(loc == user)
 		playsound(user, "sound/items/visor.ogg", 100, TRUE, -1)
 		if(adjustable == CAN_CADJUST)
@@ -879,9 +897,9 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 400
-	equip_delay_self = 10 SECONDS
-	unequip_delay_self = 10 SECONDS
-	equip_delay_other = 5 SECONDS
+	equip_delay_self = 4 SECONDS
+	unequip_delay_self = 4 SECONDS
+	equip_delay_other = 4 SECONDS
 	strip_delay = 8 SECONDS
 	sellprice = 50
 
@@ -955,7 +973,7 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
-	equip_delay_self = 6 SECONDS
+	equip_delay_self = 4 SECONDS
 	unequip_delay_self = 4 SECONDS
 	equip_delay_other = 4 SECONDS
 	strip_delay = 5 SECONDS
@@ -1028,6 +1046,14 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
+//................. Captain's Helmet .............. //
+/obj/item/clothing/head/roguetown/helmet/visored/captain
+	name = "captain's helmet"
+	desc = "An elegant barbute, fitted with the gold trim and polished metal of nobility."
+	icon = 'icons/roguetown/clothing/special/captain.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
+	icon_state = "capbarbute"
+	
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet
 	name = "armet"
 	desc = "Holy lamb, sacrificial hero, blessed idiot - Psydon endures. Will you endure alongside Him, as a knight of humenity, or crumble before temptation?"
@@ -1323,6 +1349,17 @@
 			pic2.color = get_altdetail_color()
 		add_overlay(pic2)
 
+/obj/item/clothing/head/roguetown/helmet/nun
+	name = "chainmaile habbit"
+	desc = "Armored headware for the silent sisterhood"
+	icon_state = "battlenun"
+	allowed_sex = list(FEMALE)
+	item_state = "battlenun"
+	blocksound = CHAINHIT
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	armor = list("blunt" = 70, "slash" = 55, "stab" = 55, "piercing" = 30, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+
 /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
 	name = "noc helmet"
 	desc = "Headwear commonly worn by Templars in service to Noc. Without the night there can be no day, without Noc there can be no light in the dark hours."
@@ -1345,6 +1382,13 @@
 	block2add = FOV_BEHIND
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
+
+/obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
+	name = "pestran helmet"
+	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
+	icon_state = "pestrahelm"
+	item_state = "pestrahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 	name = "dendor helmet"

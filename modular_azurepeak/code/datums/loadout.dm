@@ -217,6 +217,14 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Feather"
 	path = /obj/item/natural/feather
 
+/datum/loadout_item/elfears
+	name = "Elfear Necklace"
+	path = /obj/item/clothing/neck/roguetown/elfears
+
+/datum/loadout_item/menears
+	name = "Menear Necklace"
+	path = /obj/item/clothing/neck/roguetown/menears
+
 /datum/loadout_item/collar
 	name = "Collar"
 	path = /obj/item/clothing/neck/roguetown/collar/leather

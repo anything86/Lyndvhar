@@ -772,25 +772,25 @@
 			heretic_text += "Comrade!"
 	else if((HAS_TRAIT(src, TRAIT_CABAL)))
 		if(seer)
-			heretic_text += "A member of Zizo's cabal."
+			heretic_text += "A member of Zizo's army."
 			if(HAS_TRAIT(examiner, TRAIT_CABAL))
 				heretic_text += " May their ambitions not interfere with mine."
 		else if(HAS_TRAIT(examiner, TRAIT_CABAL))
-			heretic_text += "Another of the Cabal!"
+			heretic_text += "Another of the Occult!"
 	else if((HAS_TRAIT(src, TRAIT_HORDE)))
 		if(seer)
 			heretic_text += "Hardened by Graggar's Rituals."
 			if(HAS_TRAIT(examiner, TRAIT_HORDE))
 				heretic_text += " Mine were a glorious memory."
 		else if(HAS_TRAIT(examiner, TRAIT_HORDE))
-			heretic_text += "Anointed!"
+			heretic_text += "One of the Anointed!"
 	else if((HAS_TRAIT(src, TRAIT_DEPRAVED)))
 		if(seer)
 			heretic_text += "Baotha's Touched."
 			if(HAS_TRAIT(examiner, TRAIT_DEPRAVED))
 				heretic_text += " She leads us to the greatest ends."
 		else if(HAS_TRAIT(examiner, TRAIT_DEPRAVED))
-			heretic_text += "Debased!"
+			heretic_text += "Another of Debauchery and Sin!"
 	
 	return heretic_text
 
@@ -815,7 +815,7 @@
 /mob/living/proc/get_inquisition_text(mob/examiner)
 	var/inquisition_text
 	if(HAS_TRAIT(src, TRAIT_INQUISITION) && HAS_TRAIT(examiner, TRAIT_INQUISITION))
-		inquisition_text += "Fellow Member of the Inquisition"
+		inquisition_text += "Another kindred of the Order."
 
 	return inquisition_text
 

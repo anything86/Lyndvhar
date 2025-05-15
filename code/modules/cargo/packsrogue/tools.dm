@@ -99,6 +99,11 @@
 					/obj/item/natural/worms/leech,
 				)
 
+/datum/supply_pack/rogue/tools/leechrepellent
+	name = "Leech Repellent"
+	cost = 25
+	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/leechrepellent)
+
 /datum/supply_pack/rogue/tools/prarml
 	name = "Prosthetic Wood Arm (L)"
 	cost = 40

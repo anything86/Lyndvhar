@@ -19,7 +19,7 @@
 	var/keycontrol = "steward"
 	var/current_tab = TAB_MAIN
 	var/compact = FALSE
-	var/list/excluded_jobs = list("Wretch","Vagabond","Adventurer")
+	var/list/excluded_jobs = list("Wretch","Vagabond","Outlander")
 
 
 /obj/structure/roguemachine/steward/attackby(obj/item/P, mob/user, params)
@@ -353,9 +353,9 @@
 
 /obj/structure/roguemachine/steward/proc/job_filter(advj, j)
 	if(advj in excluded_jobs)
-		return "Adventurer"
+		return "Outlander"
 	if(j in excluded_jobs)
-		return "Adventurer"
+		return "Outlander"
 	if(advj)
 		return advj
 	else

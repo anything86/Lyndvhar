@@ -52,7 +52,7 @@
 /obj/item/clothing/suit/roguetown/armor/armordress/alt
 	icon_state = "armordressalt"
 
-//otavan brute skin
+//Valorian brute skin
 /obj/item/clothing/suit/roguetown/armor/skin_armor/monk_skin/Initialize(mapload)
 	. = ..()
 	name = "monk's skin"
@@ -104,7 +104,7 @@
 	sellprice = 30
 	color = "#976E6B"
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/otavan
+/obj/item/clothing/suit/roguetown/armor/gambeson/valorian
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "fencer gambeson"
 	desc = "A large shirt with heavy padding meant to be used below armor."
@@ -243,8 +243,6 @@
 		STR.max_w_class = WEIGHT_CLASS_NORMAL
 		STR.max_items = 3
 
-
-
 /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 	name = "scourge breastplate"
 	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
@@ -270,7 +268,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
 	name = "stalker robe"
-	desc = "A thick robe in royal purple, befitting the hand, while remaining easy for them to slip about in.."
+	desc = "A thick robe in royal purple, while remaining easy for them to slip about in.."
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	icon_state = "shadowrobe"
 
@@ -680,6 +678,22 @@
 	smelt_bar_num = 4
 	sellprice = 240
 
+/obj/item/clothing/suit/roguetown/armor/plate/hoplite
+	name = "ancient plate armor"
+	desc = "A battered set of bronze plate armor. Intricate runes and carvings once adorned the pieces, but most have faded with age."
+	icon_state = "aasimarplate"
+	item_state = "aasimarplate"
+	armor = list("blunt" = 100, "slash" = 100, "stab" = 95, "piercing" = 100, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|VITALS|LEGS
+	max_integrity = 500
+	anvilrepair = /datum/skill/craft/armorsmithing
+	equip_delay_self = 6 SECONDS
+	unequip_delay_self = 6 SECONDS
+	equip_delay_other = 3 SECONDS
+	strip_delay = 4 SECONDS
+	armor_class = ARMOR_CLASS_HEAVY
+	sellprice = 300
+
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/zizo
 	name = "darksteel fullplate"
@@ -751,7 +765,7 @@
 	smelt_bar_num = 4
 	sellprice = 160
 
-/obj/item/clothing/suit/roguetown/armor/otavan
+/obj/item/clothing/suit/roguetown/armor/valorian
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "valorian half-plate"
 	desc = "Half-plate armor with pauldrons, in the Valorian style."
@@ -773,7 +787,7 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	sellprice = 150
 
-/obj/item/clothing/suit/roguetown/armor/otavan/AdjustClothes(mob/user)
+/obj/item/clothing/suit/roguetown/armor/valorian/AdjustClothes(mob/user)
 	if(loc == user)
 		playsound(user, "sound/foley/dropsound/cloth_drop.ogg", 100, TRUE, -1)
 		if(adjustable == CAN_CADJUST)
@@ -844,6 +858,54 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
+
+/obj/item/clothing/suit/roguetown/armor/captain
+	name = "captain's brigandine"
+	desc = "A coat with plates specifically tailored and forged for the captain of Lyndvhar."
+	icon_state = "capplate"
+	icon = 'icons/roguetown/clothing/special/captain.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/captain.dmi'
+	detail_tag = "_detail"
+	detail_color = CLOTHING_BLUE
+	blocksound = SOFTHIT
+	equip_delay_self = 4 SECONDS
+	unequip_delay_self = 4 SECONDS
+	anvilrepair = /datum/skill/craft/armorsmithing
+	smeltresult = /obj/item/ingot/steel
+	sellprice = 170
+	clothing_flags = CANT_SLEEP_IN
+	armor_class = ARMOR_CLASS_HEAVY
+	armor = list("blunt" = 80, "slash" = 70, "stab" = 75, "piercing" = 70, "fire" = 0, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	max_integrity = 450
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_SMASH, BCLASS_TWIST)
+	do_sound_plate = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/captain/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/suit/roguetown/armor/captain/lordcolor(primary,secondary)
+	detail_color = primary
+	update_icon()
+
+/obj/item/clothing/suit/roguetown/armor/captain/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+
+/obj/item/clothing/suit/roguetown/armor/captain/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
+
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/Initialize()
 	. = ..()

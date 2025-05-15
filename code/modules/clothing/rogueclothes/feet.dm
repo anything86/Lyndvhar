@@ -54,6 +54,13 @@
 	salvage_result = /obj/item/natural/hide/cured
 	sellprice = 30
 
+/obj/item/clothing/shoes/roguetown/nobleboot/thighboots
+	name = "thigh boots"
+	icon_state = "thighboot"
+	icon = 'icons/roguetown/clothing/special/hand.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/hand.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/hand.dmi'
+
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
 	color = "#d5c2aa"
@@ -129,6 +136,16 @@
 	item_state = "sandals"
 	sewrepair = TRUE
 
+/obj/item/clothing/shoes/roguetown/hoplite
+	name = "ancient sandals"
+	desc = "Worn sandals lined with bronze, ready to march ever onwards."
+	gender = PLURAL
+	icon_state = "aasimarfeet"
+	item_state = "aasimarfeet"
+	sewrepair = TRUE
+	sellprice = 20
+
+
 /obj/item/clothing/shoes/roguetown/shalal
 	name = "babouche"
 	desc = ""
@@ -199,7 +216,7 @@
 		return
 	qdel(src)
 
-/obj/item/clothing/shoes/roguetown/otavan
+/obj/item/clothing/shoes/roguetown/valorian
 	name = "valorian leather boots"
 	desc = "Boots of outstanding craft, your fragile feet has never felt so protected and comfortable before."
 	body_parts_covered = FEET
@@ -320,7 +337,7 @@
 	sewrepair = TRUE
 	armor = list("blunt" = 5, "slash" = 5, "stab" = 5, "piercing" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/shoes/roguetown/otavan/inqboots
+/obj/item/clothing/shoes/roguetown/valorian/inqboots
 	name = "inquisitorial boots"
 	desc = "Finely crafted boots, made to stomp out darkness."
 	icon_state = "inqboots"

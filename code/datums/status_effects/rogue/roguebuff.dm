@@ -408,7 +408,7 @@
 	REMOVE_TRAIT(owner, TRAIT_FORTITUDE, MAGIC_TRAIT)
 
 /atom/movable/screen/alert/status_effect/buff/censerbuff
-	name = "Orthodoxist Blessing."
+	name = "Orthodoxist Blessing"
 	desc = "A shard of his blessings has inspired me to ENDURE!"
 	icon_state = "censerbuff"
 
@@ -452,9 +452,14 @@
 	desc = "The wailing box is disrupting magicks around me!"
 	icon_state = "buff"
 
+/atom/movable/screen/alert/status_effect/buff/churnernegative
+	name = "Magick Distorted"
+	desc = "That infernal contraption is sapping my very arcyne essence!"
+	icon_state = "buff"
+
 /datum/status_effect/buff/churnerprotection
 	var/outline_colour = "#fad55a"
-	id = "soulchurnerprotection"
+	
 	alert_type = /atom/movable/screen/alert/status_effect/buff/churnerprotection
 	duration = 20 SECONDS
 
@@ -471,6 +476,25 @@
 	to_chat(owner, span_warning("The wailing box's protection fades..."))
 	owner.remove_filter(CRANKBOX_FILTER)
 	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, MAGIC_TRAIT)
+
+/datum/status_effect/buff/churnernegative
+	id ="soulchurnernegative"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/churnernegative
+	duration = 20 SECONDS
+
+/datum/status_effect/buff/churnernegative/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_SPELLCOCKBLOCK, MAGIC_TRAIT)
+	ADD_TRAIT(owner, TRAIT_ANTIMAGIC, MAGIC_TRAIT)
+	to_chat(owner, span_warning("I feel as if my connection to the Arcyne disappears entirely. The air feels still..."))
+	owner.visible_message("[owner]'s arcyne aura seems to fade.")
+
+/datum/status_effect/buff/churnernegative/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_SPELLCOCKBLOCK, MAGIC_TRAIT)
+	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, MAGIC_TRAIT)
+	to_chat(owner, span_warning("I feel my connection to the arcyne surround me once more."))
+	owner.visible_message("[owner]'s arcyne aura seems to return once more.")
 
 #undef CRANKBOX_FILTER
 #undef MIRACLE_HEALING_FILTER

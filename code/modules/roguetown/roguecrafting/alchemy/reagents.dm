@@ -190,6 +190,42 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/leechrepellent
+	name = "Lecherine"
+	description = ""
+	reagent_state = LIQUID
+	color = "#385c38"
+	taste_description = "acrid vomit"
+	overdose_threshold = 15
+	metabolization_rate = 0.02 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/leechrepellent/on_mob_metabolize(mob/living/carbon/human/C)
+	..()
+	if(HAS_TRAIT(C, TRAIT_LEECHIMMUNE))
+		volume = 0
+		to_chat(C, "<span class='necrosis'>My body's humors are already as vile as they could be.</span>")
+		return
+	else
+		var/con = max(1, (C.STACON - 8))
+		to_chat(C, "<span class='infection'>Your stomach churns.</span>")
+		C.add_nausea(240-(con*40))
+		ADD_TRAIT(C, TRAIT_LEECHIMMUNE, type)
+
+/datum/reagent/medicine/leechrepellent/on_mob_end_metabolize(mob/living/carbon/human/C)
+	REMOVE_TRAIT(C, TRAIT_LEECHIMMUNE, type)
+	..()
+
+/datum/reagent/medicine/leechrepellent/overdose_start(mob/living/carbon/human/C)
+	to_chat(C, "<span class='necrosisbig'>Repulsive!</span>")
+	C.add_nausea(100)
+
+/datum/reagent/medicine/leechrepellent/overdose_process(mob/living/carbon/human/C)
+	if(C.nausea < 100)
+		C.add_nausea(100)
+		volume -= 3
+	..()
+	. = 1
+
 //Buff potions
 /datum/reagent/buff
 	description = ""

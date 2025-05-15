@@ -36,7 +36,7 @@
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	belt = /obj/item/storage/belt/rogue/leather
-	gloves = /obj/item/clothing/gloves/roguetown/otavan
+	gloves = /obj/item/clothing/gloves/roguetown/valorian
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vaquerocoat
 	cloak = /obj/item/clothing/cloak/half/rider/red

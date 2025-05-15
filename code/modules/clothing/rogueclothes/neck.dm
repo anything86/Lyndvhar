@@ -57,6 +57,43 @@
 					H.update_inv_neck()
 					H.update_inv_head()
 
+/obj/item/clothing/neck/roguetown/coif/cloth
+	name = "padded coif"
+	desc = "A simple coif made of cloth. Not very effective armor, but may soften weak blows and keeps the head and neck warm."
+	icon_state = "ccoif"
+	item_state = "ccoif"
+	flags_inv = HIDEHAIR
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
+	blocksound = SOFTHIT
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+	armor = list("blunt" = 20, "slash" = 20, "stab" = 25, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST, BCLASS_BITE)
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	sewrepair = TRUE
+	max_integrity = 150
+
+/obj/item/clothing/neck/roguetown/coif/cloth/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = null
+			body_parts_covered = NECK
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_neck()
+				H.update_inv_head()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEHAIR
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_neck()
+					H.update_inv_head()
+
 /obj/item/clothing/neck/roguetown/leather
 	name = "hardened leather gorget"
 	desc = "Sturdy. Durable. Will protect your neck from some good lumbering."
@@ -235,6 +272,15 @@
 		return
 	qdel(src)
 */
+
+/obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bervor
+	name = "ancient gorget"
+	desc = "A heavy collar of bronze alloy, meant to protect the neck."
+	icon_state = "aasimarneck"
+	item_state = "aasimarneck"
+	armor = list("blunt" = 90, "slash" = 100, "stab" = 80, "piercing" = 80, "fire" = 0, "acid" = 0)
+	max_integrity = 250
+	smeltresult = null // No bronze ingots yet
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
@@ -516,6 +562,46 @@
 	desc = "A peculiar icon of worship from a foreign land. Forming a cross in a circular ring, this bracelet embodies the Khazumian belief in Khuzker."
 	icon_state = "psybracelet"
 	item_state = null
+
+/obj/item/clothing/neck/roguetown/elfears
+	name = "elfear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off elf ears."
+	icon_state = "elfears"
+
+/obj/item/clothing/neck/roguetown/menears
+	name = "menear necklace"
+	desc = "A grim necklace made to show off the wearer's macabre collection of cut off humen ears."
+	icon_state = "menears"
+
+/obj/item/clothing/neck/roguetown/mercmedal/zybatine
+	name = "desert rider chain"
+	desc = "A small, gilded neck-chain used to identify fellow slavers."
+	icon_state = "goldchain"
+
+/obj/item/clothing/neck/roguetown/mercmedal/grenzelhoft
+	name = "grenzelhoft gryphon of valor"
+	desc = "The fearsome beast of the Black Empire's heraldry, cast in brass. These service awards have lost much of their value since mercenaries started receiving them."
+	icon_state = "gryphon"
+
+/obj/item/clothing/neck/roguetown/mercmedal/underdweller
+	name = "underdweller compass"
+	desc = "A non-functional compass carried by seasoned miners as keepsake. Greed will light the way."
+	icon_state = "compass"
+
+/obj/item/clothing/neck/roguetown/mercmedal/blackoak
+	name = "black oak seedpouch"
+	desc = "A dark acorn resting in a canvas pouch. May your final resting place be the one life you give back to this world."
+	icon_state = "seedpouch"
+
+/obj/item/clothing/neck/roguetown/mercmedal/steppesman
+	name = "steppe effigy"
+	desc = "This straw doll is claimed to be a representation of Astrata. In truth, a homage to the steppe's wild spirits of yore."
+	icon_state = "effigy"
+
+/obj/item/clothing/neck/roguetown/mercmedal/jannisary
+	name = "jannisary medal"
+	desc = "Proof of veterancy among the Forvheipal Janissaries."
+	icon_state = "dogmedal"
 
 /*/obj/item/clothing/neck/roguetown/collar
 	name = "collar"

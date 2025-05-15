@@ -121,7 +121,7 @@
 					cloak = /obj/item/clothing/cloak/templar/psydon
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/psydonhelm
 				if(/datum/patron/divine/astrata)
-					cloak = /obj/item/clothing/cloak/templar/astrata
+					cloak = /obj/item/clothing/cloak/templar/astratan
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/astratan
 				if(/datum/patron/divine/noc)
 					cloak = /obj/item/clothing/cloak/templar/noc
@@ -149,7 +149,7 @@
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 				if (/datum/patron/divine/pestra)
 					cloak = /obj/item/clothing/cloak/templar/pestra
-					head = /obj/item/clothing/head/roguetown/helmet/heavy/pestran
+					head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 				else
 					cloak = /obj/item/clothing/cloak/cape/crusader
 					head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket

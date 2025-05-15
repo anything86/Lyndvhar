@@ -293,7 +293,7 @@
 
 
 /obj/structure/ritualcircle/zizo
-	name = "Rune of Progress"
+	name = "Rune of Ambition"
 	desc = "A Holy Rune of ZIZO"
 	icon_state = "zizo_chalky"
 	var/zizorites = list("Rite of Armaments")
@@ -312,7 +312,7 @@
 	switch(riteselection) // put ur rite selection here
 		if("Rite of Armaments")
 			if(do_after(user, 50))
-				user.say("ZIZO! ZIZO! DAME OF PROGRESS!!")
+				user.say("ZIZO! ZIZO! DAEMON OF AMBITION!!")
 				if(do_after(user, 50))
 					user.say("ZIZO! ZIZO! HEED MY CALL!!")
 					if(do_after(user, 50))
@@ -331,7 +331,7 @@
 		possible_targets += persononrune
 	var/mob/living/carbon/human/target = pick(possible_targets)
 	if(!HAS_TRAIT(target, TRAIT_CABAL))
-		loc.visible_message(span_cult("THE RITE REJECTS ONE NOT OF THE CABAL"))
+		loc.visible_message(span_cult("THE RITE REJECTS ONE NOT OF THE CULT"))
 		return
 	target.Stun(60)
 	target.Knockdown(60)

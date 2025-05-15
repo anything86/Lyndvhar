@@ -18,6 +18,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		/datum/species/demihuman
 	)
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_DIVINE_PATRONS
 
 	spells = list(
 		/obj/effect/proc_holder/spell/self/grant_title,
@@ -32,12 +33,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	display_order = JDO_LORD
 	tutorial = "At one point you were merely a vassal to the Ruby Throne, given special status and overseen by the Empress herself. However since her death there has been almost no communication outside of the city. You have had to take increasing amounts of autocratic power in order to sustain your port, so much so that many see you as effectively a monarch in your own right. And many want to take this from you, or use it to their advantage- keep your family alive and your power secure, and Lyndvhar may live to see another dae."
 	whitelist_req = FALSE
-	min_pq = 10
+	min_pq = 5
 	max_pq = null
 	round_contrib_points = 4
 	give_bank_account = 1000
 	required = TRUE
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/viscount.ogg'
 
 /datum/job/roguetown/exlord //just used to change the lords title
 	title = "Viscount Emeritus"

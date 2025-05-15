@@ -40,13 +40,13 @@
 #define TRAIT_NOSLEEP "Fatal Insomnia"
 #define TRAIT_FASTSLEEP "Fast Sleeper"
 #define TRAIT_GOODLOVER "Fabled Lover"
-#define TRAIT_SEEDKNOW "Seed Knower"
+#define TRAIT_SEEDKNOW "Skilled Herbalist"
 #define TRAIT_SQUIRE_REPAIR "Squire Knowledge"
 #define TRAIT_TRAINED_SMITH "Trained Smith"
 #define TRAIT_DEATHBARGAIN "Death Bargain" // Used by UNDERMAIDEN'S BARGAIN
 #define TRAIT_RITUALIST "Ritualist"  // Allows use of ritual chalk
 #define TRAIT_INQUISITION "Member of the Orthodoxy"
-#define TRAIT_GOODTRAINER "Good Trainer"
+#define TRAIT_GOODTRAINER "Educator"
 #define TRAIT_OUTDOORSMAN "Outdoorsman"
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
 #define TRAIT_STUDENT		"Student"
@@ -56,7 +56,7 @@
 
 //Hearthstone port (Tracking)
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //Will always find any tracks and analyzes them perfectly.
-#define TRAIT_NOCSIGHT "Blessing of Noc" // I can see just a bit more clearly in darkness.
+#define TRAIT_NOCSIGHT "Moonlite Blessings" // I can see just a bit more clearly in darkness.
 #define TRAIT_DEATHSIGHT "Veiled Whispers" // Is notified when a player character dies, but not told exactly where or how.
 //Hearthstone/Azure end.
 
@@ -66,16 +66,16 @@
 #define TRAIT_WATERBREATHING "Water Breathing"
 
 // PATRON GOD TRAITS
-#define TRAIT_ROT_EATER "Blessing of Pestra" //can eat rotten food
-#define TRAIT_ORGAN_EATER "Blessing of Graggar" //can eat organs
-#define TRAIT_KNEESTINGER_IMMUNITY "Blessing of Dendor"
-#define TRAIT_SOUL_EXAMINE "Blessing of Necra" //can check bodies to see if they have departed
+#define TRAIT_ROT_EATER "Pestran Endurance" //can eat rotten food
+#define TRAIT_ORGAN_EATER "Daemonic Appetite" //can eat organs
+#define TRAIT_KNEESTINGER_IMMUNITY "Swampland Walker"
+#define TRAIT_SOUL_EXAMINE "Deathly Visionary" //can check bodies to see if they have departed
 #define TRAIT_LEECHIMMUNE "Unleechable" //leeches wont attach in bog squares + Abyssor boon.
-#define TRAIT_CRACKHEAD "Blessing of Baotha" //will never overdose
+#define TRAIT_CRACKHEAD "Depraved Immunity" //will never overdose
 #define TRAIT_CHOSEN "Astrata's Chosen"
-#define TRAIT_ABYSSOR_SWIM "Blessing of Abyssor" //less base fatigue drain when swimming
-#define TRAIT_XYLIX "Blessing of Xylix" //secret thieves cant language
-#define TRAIT_FORGEBLESSED "Blessing of Malum" //Reduces the fatigue cost of smithing a bit.
+#define TRAIT_ABYSSOR_SWIM "Natural Swimmer" //less base fatigue drain when swimming
+#define TRAIT_XYLIX "Trickster's Teachings" //secret thieves cant language
+#define TRAIT_FORGEBLESSED "Forgeheart" //Reduces the fatigue cost of smithing a bit.
 
 // ARCHDAEMON CULTIST TRAITS (all of them recognize each other)
 #define TRAIT_COMMIE "Thiefborne Follower" //recognized by bandits as an ally
@@ -107,7 +107,7 @@
 #define TRAIT_SILVER_BLESSED "Silver Blessed"
 #define TRAIT_OUTLANDER "Outlander"
 #define TRAIT_OUTLAW "Outlaw"
-#define TRAIT_BIGGUY "Big Guy"
+#define TRAIT_BIGGUY "Giantism"
 #define TRAIT_RESIDENT "Resident"
 #define TRAIT_COUNTERCOUNTERSPELL "Counter Counterspell"
 #define TRAIT_UNSEEMLY "Ugly"
@@ -117,17 +117,17 @@
 #define TRAIT_SENTINELOFWITS "Sentinel of Wits"
 #define TRAIT_KEENEARS "Keen Ears"
 #define TRAIT_CICERONE "Cicerone"
-#define TRAIT_ARCYNE_T1 "Arcyne Training (Novice)"
-#define TRAIT_ARCYNE_T2 "Arcyne Training (Apprentice)"
-#define TRAIT_ARCYNE_T3 "Arcyne Training (Expert)"
-#define TRAIT_ARCYNE_T4 "Arcyne Training (Master)"
+#define TRAIT_ARCYNE_T1 "Arcyne Novitiate"
+#define TRAIT_ARCYNE_T2 "Arcyne Apprentice"
+#define TRAIT_ARCYNE_T3 "Arcyne Expertise"
+#define TRAIT_ARCYNE_T4 "Master of the Arcyne"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
 	TRAIT_DEATHBARGAIN = span_info("A horrible deal has been prepared in your name. May you never see it fulfilled..."),
 	TRAIT_RITUALIST = span_info("I am skilled in the holy arts. Using ritual chalk, I can more deftly channel my God's powers via runes."),
 	TRAIT_INQUISITION = span_info("I am a member of the Valorian Inquisition. I can easily identify others of my cadre at a glance."),
-	TRAIT_CHOSEN = "Astrata chose you to represent her glory.",
+	TRAIT_CHOSEN = "Astrata chose you to represent her glory. Sol tibi benedicit.",
 	TRAIT_WEBWALK = "I can move freely between webs.",
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",

@@ -274,11 +274,12 @@
 	force = 20
 
 /obj/item/rogueweapon/knuckles // no actual sprite for this yet so its just the basis for the eora knuckles + for later futureproofing
-	name = "iron knuckles"
-	desc = "A mean looking pair of iron knuckles."
+	name = "steel knuckles"
+	desc = "A mean looking pair of steel knuckles."
 	force = 15
 	possible_item_intents = list(/datum/intent/knuckles/strike, /datum/intent/knuckles/smash)
 	icon = 'icons/roguetown/weapons/32.dmi'
+	icon_state = "brass"
 	gripsprite = FALSE
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
@@ -288,7 +289,7 @@
 	swingsound = list('sound/combat/wooshes/punch/punchwoosh (1).ogg','sound/combat/wooshes/punch/punchwoosh (2).ogg','sound/combat/wooshes/punch/punchwoosh (3).ogg')
 	associated_skill = /datum/skill/combat/unarmed
 	throwforce = 12
-	wdefense = 4
+	wdefense = 5
 	wbalance = 1
 	blade_dulling = DULLING_BASHCHOP
 	anvilrepair = /datum/skill/craft/weaponsmithing

@@ -2,7 +2,7 @@
 	name = "Ascendant"
 	roundend_category = "maniacs"
 	antagpanel_category = "LISTENER"
-	antag_memory = "<b>PSYDON IS DEAD. The Old Pantheon ARE WEAK, and the New Gods ARE FOOLISH. The WORLD IS DYING, AND I AM THE ONLY THING THAT MAY SAVE IT- COMET SYON'S BLADE BLOODY ME UNTIL IT IS DONE.</b>"
+	antag_memory = "<b>THERE ARE NO TRUE GODS. The Pantheon ARE WEAK, and the Archdaemons ARE FOOLISH. The WORLD IS DYING, AND I AM THE ONLY THING THAT MAY SAVE IT- MAY MY BLADE BLOODY ME UNTIL IT IS DONE.</b>"
 	job_rank = ROLE_ASCENDANT
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "villain"

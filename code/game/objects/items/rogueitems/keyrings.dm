@@ -255,6 +255,9 @@
 /obj/item/storage/keyring/churchie
 	keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard)
 
+/obj/item/storage/keyring/orthodoxist
+	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/church)
+
 /obj/item/storage/keyring/inquisitor
 	keys = list(/obj/item/roguekey/inquisitor, /obj/item/roguekey/inquisition, /obj/item/roguekey/church)
 

@@ -11,7 +11,7 @@
 	outfit_female = null
 	display_order = JDO_WRETCH
 	show_in_credits = FALSE
-	min_pq = 20
+	min_pq = 10
 	max_pq = null
 
 	advclass_cat_rolls = list(CTAG_WRETCH = 20)

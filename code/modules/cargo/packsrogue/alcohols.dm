@@ -104,10 +104,10 @@
 	cost = 20
 	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/beer/nred)
 
-/datum/supply_pack/rogue/alcohol/gronnmead
+/datum/supply_pack/rogue/alcohol/rhaenvalianmead
 	name = "Ragnars Brew"
 	cost = 25
-	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead)
+	contains = list(/obj/item/reagent_containers/glass/bottle/rogue/beer/rhaenvalianmead)
 
 /datum/supply_pack/rogue/alcohol/avarmead
 	name = "Zögiin Bal"

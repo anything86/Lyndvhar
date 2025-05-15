@@ -379,6 +379,13 @@
 	last_used = 0
 	is_silver = TRUE
 
+//................ Fanged dagger ............... //
+/obj/item/rogueweapon/huntingknife/idagger/steel/dirk
+	name = "fanged dagger"
+	desc = "A dagger modeled after the fang of an anthrax spider."
+	icon_state = "spiderdagger"
+	smeltresult = null
+
 /obj/item/rogueweapon/huntingknife/idagger/navaja
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut/seax,  /datum/intent/dagger/thrust/pick)
 	name = "navaja"

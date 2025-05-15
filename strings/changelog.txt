@@ -1,7 +1,12 @@
-- The city is near-completion and able to be played properly for a full round.
-- Multiple dungeons littered around the game area to explore and spelunk.
-- Replacing racial stats with statpacks completely. Now you can be a super fast orc, or a slow but strong elf.
-- Full adjustment of racial locks and racial lore to fit the server setting.
-- Complete overhaul of the Inhumen. Similar to what you know, but no longer the same.
-- Complete rewriting of the Pantheon. Same gist, but written without AI.
-- And many more..
+Completely new maps. All maps are functionally complete and fully playable.
+Multiple layers of content outside of the city to explore.
+Difficult locations with rewarding surprises for those who want to explore.
+A complete removal of racials in favor of fully committing to statpacks.
+Completely rewritten lore for the entire setting and races. (Don't worry, the pantheon is still there.. but some gods have rewritten lore.)
+Very free-form rules allowing you to generally do what you see fit (minus what is outlined in the rules of course.)
+The Inhumen Pantheon has been made completely evil, as it should be. No beating around the bush.
+A decent-sized and expansive city to explore- from sewers, to caverns- from rooftops, to hallways. The map is being constantly updated and tweaked as well.
+Combat is much more stamina intensive, and punishing as a result- be careful! You may find some fights that would seem paltry on other servers slightly more difficult than expected.
+And much more soon..
+
+Remember: your feedback is usually heard and acted upon. Feel free to comment or contribute!

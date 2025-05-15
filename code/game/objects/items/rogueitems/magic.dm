@@ -26,7 +26,7 @@
 	. = ..()
 	if(!user.mind)
 		return
-	if(world.time < last_scry + 30 SECONDS)
+	if(world.time < last_scry + 90 SECONDS)
 		to_chat(user, span_warning("I look into the ball but only see inky smoke. Maybe I should wait."))
 		return
 	var/input = input(user, "Who are you looking for?", "Scrying Orb")
@@ -34,7 +34,7 @@
 		return
 	if(!user.key)
 		return
-	if(world.time < last_scry + 30 SECONDS)
+	if(world.time < last_scry + 90 SECONDS)
 		to_chat(user, span_warning("I look into the ball but only see inky smoke. Maybe I should wait."))
 		return
 	if(!user.mind || !user.mind.do_i_know(name=input))
@@ -54,7 +54,7 @@
 		if(SKILL_LEVEL_EXPERT)
 			success_chance = 94
 		if(SKILL_LEVEL_MASTER) // Magus has this
-			success_chance = 97
+			success_chance = 100
 		if(SKILL_LEVEL_LEGENDARY)
 			success_chance = 100
 	if(!prob(success_chance))

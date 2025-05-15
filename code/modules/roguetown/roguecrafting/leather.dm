@@ -378,9 +378,9 @@
 	craftdiff = 3
 	sellprice = 80
 
-/datum/crafting_recipe/roguetown/leather/otavanleatherpants
+/datum/crafting_recipe/roguetown/leather/valorianleatherpants
 	name = "valorian leather trousers"
-	result = list(/obj/item/clothing/under/roguetown/trou/otavan)
+	result = list(/obj/item/clothing/under/roguetown/trou/valorian)
 	reqs = list(/obj/item/reagent_containers/food/snacks/tallow = 1,
 	            /obj/item/natural/fibers = 1,
 	            /obj/item/natural/hide/cured = 2,
@@ -434,9 +434,9 @@
 	craftdiff = 4
 	sellprice = 15
 	
-/datum/crafting_recipe/roguetown/leather/otavanboots
+/datum/crafting_recipe/roguetown/leather/valorianboots
 	name = "valorian leather boots"
-	result = list(/obj/item/clothing/shoes/roguetown/otavan)
+	result = list(/obj/item/clothing/shoes/roguetown/valorian)
 	reqs = list(/obj/item/natural/hide/cured = 1,
 	            /obj/item/reagent_containers/food/snacks/tallow = 1,
 				/obj/item/natural/fur = 1,

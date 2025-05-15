@@ -44,10 +44,10 @@
 	cost = 100
 	contains = list(/obj/structure/fermenting_barrel/avarrice)
 
-/datum/supply_pack/rogue/bulk/gronmead
+/datum/supply_pack/rogue/bulk/rhaenvalianmead
 	name = "Barrel of Rhaenvalian Mead"
 	cost = 100
-	contains = list(/obj/structure/fermenting_barrel/gronmead)
+	contains = list(/obj/structure/fermenting_barrel/rhaenvalianmead)
 
 /datum/supply_pack/rogue/bulk/murkwine
 	name = "Barrel of Possumtail Murkwine"

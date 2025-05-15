@@ -14,6 +14,9 @@
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	list_reagents = list(/datum/reagent/water = 48)
 
+/obj/item/reagent_containers/glass/bottle/rogue/leechrepellent
+	list_reagents = list(/datum/reagent/medicine/leechrepellent = 48)
+
 //vanderlin potion stuff//
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
 	list_reagents = list(/datum/reagent/medicine/strongmana = 45)
@@ -145,8 +148,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/nred = 48)
 	desc = "A bottle with the City of Norwandine cork-seal. A red ale brewed to perfection in the lands of Rhaenval."
 
-/obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
-	list_reagents = list(/datum/reagent/consumable/ethanol/beer/gronnmead = 48)
+/obj/item/reagent_containers/glass/bottle/rogue/beer/rhaenvalianmead
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer/rhaenvalianmead = 48)
 	desc = "A bottle with a Shieldmaiden Berewrey cork-seal. A deep red honey-wine, refined with the red berries native to far northern Rhaenvalian highlands."
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead

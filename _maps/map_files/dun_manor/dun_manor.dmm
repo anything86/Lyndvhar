@@ -15036,7 +15036,7 @@
 	},
 /obj/structure/rack/rogue/shelf,
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred,
-/obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead{
+/obj/item/reagent_containers/glass/bottle/rogue/beer/rhaenvalianmead{
 	pixel_y = 32
 	},
 /turf/open/floor/rogue/cobble,

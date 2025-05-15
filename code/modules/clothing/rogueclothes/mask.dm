@@ -151,6 +151,11 @@
 	sellprice = 100
 	smeltresult = /obj/item/ingot/gold
 
+/obj/item/clothing/mask/rogue/facemask/shadowfacemask
+	name = "anthraxi war mask"
+	desc = "A metal mask resembling a spider's face. Such a visage haunts many a dark elf's nitemares - while the outsider simply scoffs at such."
+	icon_state = "shadowfacemask"
+
 /obj/item/clothing/mask/rogue/shepherd
 	name = "halfmask"
 	icon_state = "shepherd"
@@ -185,7 +190,7 @@
 /obj/item/clothing/mask/rogue/shepherd/shadowmask
 	name = "purple halfmask"
 	icon_state = "shadowmask"
-	desc = "For when one wants to conceal their face while performing dastardly deeds in the name of the crown."
+	desc = "For when one wants to conceal their face while performing dastardly deeds."
 
 /obj/item/clothing/mask/rogue/physician
 	name = "plague mask"

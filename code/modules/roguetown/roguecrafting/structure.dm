@@ -205,7 +205,7 @@
 	verbage_simple = "make"
 	verbage = "makes"
 	craftdiff = 0
-/*
+
 /datum/crafting_recipe/roguetown/structure/stairs
 	name = "stairs (up)"
 	result = /obj/structure/stairs
@@ -234,7 +234,7 @@
 		if(S.density)
 			return FALSE
 	return TRUE
-*/
+
 /datum/crafting_recipe/roguetown/structure/stairsd
 	name = "wooden stairs (down)"
 	result = /obj/structure/stairs/d
@@ -667,3 +667,12 @@
 	verbage = "assembles"
 	skillcraft = /datum/skill/craft/alchemy
 	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/structure/boat
+	name = "boat"
+	result = /obj/vehicle/ridden/boat
+	reqs = list(/obj/item/grown/log/tree/small = 7, /obj/item/rope)
+	verbage_simple = "build"
+	verbage = "build"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 3

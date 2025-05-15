@@ -87,5 +87,5 @@
 					r_hand = /obj/item/rogueweapon/whip
 					l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger/navaja, /obj/item/clothing/neck/roguetown/shalal)
+	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger/navaja, /obj/item/clothing/neck/roguetown/shalal, /obj/item/clothing/neck/roguetown/mercmedal/zybatine)
 

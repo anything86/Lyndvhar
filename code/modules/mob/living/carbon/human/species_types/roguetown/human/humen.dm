@@ -45,10 +45,10 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/testicles/human,
+		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
-		/datum/customizer/organ/vagina/human_anthro,
+		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,

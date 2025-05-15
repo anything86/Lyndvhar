@@ -467,6 +467,7 @@ h1.alert, h2.alert	{color: #c9c1ba;font-family: Pterra, TrueType;}
 .artery					{color: #9B5455;}
 .infection				{color: #77c72b;}
 .necrosis				{color: #558d20;}
+.necrosisbig				{color: #558d20;	font-weight: bold;	font-size: 150%;}
 .bone					{color: #e3dac9;}
 .love_low					{color: #eac8de;	font-size: 75%;}
 .love_mid					{color: #e9a8d1;	font-size: 75%;}

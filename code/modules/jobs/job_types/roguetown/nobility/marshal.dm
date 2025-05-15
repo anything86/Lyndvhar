@@ -6,6 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_patrons = ALL_DIVINE_PATRONS
 	allowed_races = RACES_RESPECTED_UP
 	display_order = JDO_MARSHAL
 	tutorial = "You are an agent of the Viscount in matters of local law and levy, making sure that laws are pushed, verified and carried out by the retinue upon the citizenry. While you preside over the knights and men-at-arms, much of your work happens behind a desk, deferring to the Garrison Captain to make sure your will is carried out in the field."
@@ -16,7 +17,7 @@
 
 	give_bank_account = 40
 	noble_income = 20
-	min_pq = 8
+	min_pq = 4
 	max_pq = null
 	round_contrib_points = 3
 	cmode_music = 'sound/music/combat_guard.ogg'
